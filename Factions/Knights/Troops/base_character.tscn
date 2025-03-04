@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://b72b26bopx4f7"]
+
+[ext_resource type="Script" path="res://Factions/Knights/Troops/base_character.gd" id="1_g4fgi"]
+
+[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_sprite2D", "_animation")]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource("1_g4fgi")
+_sprite2D = NodePath("Texture")
+_animation = NodePath("Animation")
+
+[node name="Texture" type="Sprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="CharacterCamera" type="Camera2D" parent="."]
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
