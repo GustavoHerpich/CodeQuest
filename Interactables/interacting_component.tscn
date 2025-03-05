@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://4fych35akjlc"]
+
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="1_0b43i"]
+[ext_resource type="Script" path="res://Interactables/interacting_component.gd" id="1_627co"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vwp7r"]
+radius = 64.7611
+
+[sub_resource type="LabelSettings" id="LabelSettings_smtsl"]
+font = ExtResource("1_0b43i")
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_627co")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="Collision" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("CircleShape2D_vwp7r")
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -49.0
+offset_right = 53.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] to Interact"
+label_settings = SubResource("LabelSettings_smtsl")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
