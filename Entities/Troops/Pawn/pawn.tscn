@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://b2ovknxt6pthb"]
+[gd_scene load_steps=11 format=3 uid="uid://b2ovknxt6pthb"]
 
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_8ahts"]
 [ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Entities/Troops/Pawn/Pawn_Blue.png" id="2_1s8jf"]
+[ext_resource type="PackedScene" uid="uid://4fych35akjlc" path="res://Interactables/Global Script/interacting_component.tscn" id="3_bp4gk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk6sk"]
 radius = 6.0
@@ -94,14 +95,14 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_55rpw"]
 _data = {
-"RESET": SubResource("Animation_wdf11"),
-"attack_axe": SubResource("Animation_fln06"),
-"attack_hammer": SubResource("Animation_1shkx"),
-"idle": SubResource("Animation_34hg0"),
-"run": SubResource("Animation_rmafu")
+&"RESET": SubResource("Animation_wdf11"),
+&"attack_axe": SubResource("Animation_fln06"),
+&"attack_hammer": SubResource("Animation_1shkx"),
+&"idle": SubResource("Animation_34hg0"),
+&"run": SubResource("Animation_rmafu")
 }
 
-[node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation") instance=ExtResource("1_8ahts")]
+[node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation") groups=["player"] instance=ExtResource("1_8ahts")]
 sprite2D = NodePath("Texture")
 animation = NodePath("Animation")
 
@@ -119,6 +120,9 @@ shape = SubResource("CapsuleShape2D_pk6sk")
 
 [node name="Animation" parent="." index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_55rpw")
+&"": SubResource("AnimationLibrary_55rpw")
 }
 autoplay = "run"
+
+[node name="InteractingComponent" parent="." index="4" instance=ExtResource("3_bp4gk")]
+position = Vector2(0, -12)

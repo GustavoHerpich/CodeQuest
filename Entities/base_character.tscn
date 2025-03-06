@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b72b26bopx4f7"]
 
-[ext_resource type="Script" path="res://Entities/base_character.gd" id="1_g4fgi"]
+[ext_resource type="Script" uid="uid://de8c5pamqkkte" path="res://Entities/base_character.gd" id="1_g4fgi"]
 
 [node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("_sprite2D", "_animation")]
 collision_layer = 9

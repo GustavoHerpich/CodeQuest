@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name BaseCharacter
 
+var is_in_terminal: bool = false
+
 var is_in_montain: bool = true
 
 var can_attack: bool = true
@@ -25,6 +27,9 @@ func _physics_process(_delta: float) -> void:
 	_animate()
 	
 func _move() -> void:
+	if is_in_terminal:
+		return
+		
 	var _direction: Vector2 = Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
 	)

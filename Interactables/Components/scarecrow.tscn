@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bahx37arsxye5"]
 
-[ext_resource type="Script" path="res://Interactables/scarecrow.gd" id="1_osodj"]
+[ext_resource type="Script" uid="uid://dmjnsm3tbpwoa" path="res://Interactables/Components/scarecrow.gd" id="1_osodj"]
 [ext_resource type="Texture2D" uid="uid://cyosvvh3tkhtj" path="res://Assets/Tiny Swords/Deco/18.png" id="2_688j0"]
-[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/interactable.tscn" id="3_hfqu5"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="3_hfqu5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3g3l"]
-radius = 109.458
+radius = 90.05
 
 [node name="scarecrow" type="StaticBody2D"]
 script = ExtResource("1_osodj")
@@ -17,7 +17,8 @@ texture = ExtResource("2_688j0")
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="Interactable" parent="." instance=ExtResource("3_hfqu5")]
+interact_name = "Open Terminal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+[node name="Collision" type="CollisionShape2D" parent="Interactable"]
 position = Vector2(0, -53)
 shape = SubResource("CircleShape2D_c3g3l")

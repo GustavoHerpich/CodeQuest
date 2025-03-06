@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://co4wo17djqold"]
+
+[ext_resource type="Script" uid="uid://vkblelw8osdk" path="res://Interactables/Global Script/interactable.gd" id="1_vuja0"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="2_35fio"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjrkc"]
+font = ExtResource("2_35fio")
+font_size = 12
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Interactable" type="Area2D"]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_vuja0")
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -129.0
+offset_right = 53.0
+offset_bottom = -106.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "[E] to Interact"
+label_settings = SubResource("LabelSettings_gjrkc")
+horizontal_alignment = 1
+vertical_alignment = 1

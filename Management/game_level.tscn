@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://ch40l5cts6n2e" path="res://Assets/Tiny Swords/Terrain/Ground/Shadows.png" id="8_sv0cp"]
 [ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="9_g6l0a"]
 [ext_resource type="Texture2D" uid="uid://brackoeklf5rw" path="res://Assets/Tiny Swords/Terrain/Bridge/Bridge_All.png" id="10_ldbhs"]
-[ext_resource type="Script" path="res://Interactables/bridge_area.gd" id="11_3x2o8"]
+[ext_resource type="Script" uid="uid://hhvyotlv2pqs" path="res://Interactables/Components/bridge_area.gd" id="11_3x2o8"]
 [ext_resource type="PackedScene" uid="uid://b2ovknxt6pthb" path="res://Entities/Troops/Pawn/pawn.tscn" id="12_jskgj"]
-[ext_resource type="Script" path="res://Interactables/ladder_area.gd" id="13_bqi7j"]
-[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/scarecrow.tscn" id="14_uki8w"]
+[ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/ladder_area.gd" id="13_bqi7j"]
+[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/scarecrow.tscn" id="14_uki8w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -283,7 +283,6 @@ tile_set = SubResource("TileSet_fwgd7")
 [node name="Bridget" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAYAAAABAAAAAAAVAAUAAAABAAEAAAASAAYAAAABAAAAAAAXAAYAAAABAAAAAAAYAAYAAAABAAAAAAAZAAYAAAABAAAAAAAmAAcAAAABAAEAAAAmAAUAAAACAAEAAAAcAAYAAAABAAAAAAAdAAYAAAABAAAAAAANAAYAAAAAAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAeAAYAAAACAAAAAAAaAAUAAAABAAAAAAAbAAcAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_okyr4")
-collision_visibility_mode = 1
 
 [node name="BridgeArea" type="Area2D" parent="Bridget"]
 position = Vector2(890, 417)
@@ -312,7 +311,7 @@ position = Vector2(30.5, 30)
 shape = SubResource("RectangleShape2D_rcjgg")
 
 [node name="scarecrow" parent="." instance=ExtResource("14_uki8w")]
-position = Vector2(613, 266)
+position = Vector2(1614, 402)
 
 [connection signal="body_entered" from="Bridget/BridgeArea" to="Bridget/BridgeArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Bridget/BridgeArea" to="Bridget/BridgeArea" method="_on_body_exited"]
