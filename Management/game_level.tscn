@@ -1,5 +1,6 @@
-[gd_scene load_steps=39 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=41 format=4 uid="uid://dre0r4vy5coly"]
 
+[ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
 [ext_resource type="Texture2D" uid="uid://c3qeowteqrqem" path="res://Assets/Tiny Swords/Terrain/Water/Foam/Foam.png" id="2_d57l2"]
 [ext_resource type="Texture2D" uid="uid://ddjt77d28jqbg" path="res://Assets/Tiny Swords/Terrain/Water/Rocks/Rocks_01.png" id="3_w077c"]
@@ -235,6 +236,31 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_1pwjh")
 
+[sub_resource type="GDScript" id="GDScript_fk5p6"]
+script/source = "extends GameObject
+class_name Bridge
+
+@export var tilemap: TileMap
+@export var layer_id: int = 0  
+
+func move(distance: int):
+	if not tilemap:
+		print(\"Erro: Nenhum TileMap definido!\")
+		return
+
+	var bridge_cells = tilemap.get_used_cells(layer_id) 
+
+	for cell in bridge_cells:
+		tilemap.erase_cell(layer_id, cell)
+
+	for cell in bridge_cells:
+		var new_position = Vector2i(cell.x + distance, cell.y)
+		var tile_data = tilemap.get_cell_source_id(layer_id, cell)
+		tilemap.set_cell(layer_id, new_position, tile_data)
+
+	print(\"Ponte movida\", distance, \"tiles para a direita!\")
+"
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
 size = Vector2(790.5, 32)
 
@@ -243,6 +269,7 @@ size = Vector2(63, 66)
 
 [node name="GameLevel" type="Node2D"]
 position = Vector2(-985, -291)
+script = ExtResource("1_fk5p6")
 
 [node name="TerrainManager" type="Node2D" parent="."]
 
@@ -267,7 +294,6 @@ tile_set = SubResource("TileSet_3ad06")
 [node name="Elevation" type="TileMapLayer" parent="TerrainManager"]
 tile_map_data = PackedByteArray("AAAGAAUAAAAAAAMAAAAHAAYAAAAAAAMAAAAIAAcAAAAAAAMAAAAJAAcAAAADAAcAAAAKAAcAAAABAAMAAAALAAcAAAABAAMAAAAIAAYAAAAAAAEAAAAHAAUAAAAAAAEAAAAGAAQAAAAAAAEAAAAGAAMAAAAAAAEAAAAHAAIAAAAAAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAKAAUAAAABAAEAAAAKAAQAAAABAAEAAAAKAAMAAAABAAEAAAAJAAMAAAABAAEAAAAIAAMAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAAMAAIAAAACAAAAAAANAAMAAAACAAAAAAANAAQAAAACAAEAAAANAAUAAAACAAEAAAANAAYAAAACAAIAAAAMAAYAAAABAAEAAAAMAAcAAAABAAMAAAANAAcAAAACAAMAAAA=")
 tile_set = SubResource("TileSet_mri3k")
-collision_visibility_mode = 1
 
 [node name="SandAux" type="TileMapLayer" parent="TerrainManager"]
 tile_map_data = PackedByteArray("AAAMAAYAAAAJAAAAAAALAAcAAAAJAAAAAAAKAAcAAAAJAAAAAAAJAAcAAAAJAAAAAAAIAAcAAAAJAAAAAAAHAAYAAAAJAAAAAAAGAAUAAAAJAAAAAAA=")
@@ -283,6 +309,7 @@ tile_set = SubResource("TileSet_fwgd7")
 [node name="Bridget" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAYAAAABAAAAAAAVAAUAAAABAAEAAAASAAYAAAABAAAAAAAXAAYAAAABAAAAAAAYAAYAAAABAAAAAAAZAAYAAAABAAAAAAAmAAcAAAABAAEAAAAmAAUAAAACAAEAAAAcAAYAAAABAAAAAAAdAAYAAAABAAAAAAANAAYAAAAAAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAeAAYAAAACAAAAAAAaAAUAAAABAAAAAAAbAAcAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_okyr4")
+script = SubResource("GDScript_fk5p6")
 
 [node name="BridgeArea" type="Area2D" parent="Bridget"]
 position = Vector2(890, 417)

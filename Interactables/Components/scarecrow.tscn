@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3g3l"]
 radius = 90.05
 
-[node name="scarecrow" type="StaticBody2D"]
+[node name="scarecrow" type="StaticBody2D" groups=["Interactable Objects"]]
 script = ExtResource("1_osodj")
 
 [node name="Sprite" type="Sprite2D" parent="."]

@@ -37,6 +37,9 @@ func _move() -> void:
 	move_and_slide()
 
 func _attack() -> void:
+	if is_in_terminal:
+		return
+		
 	if Input.is_action_just_pressed("left_attack") and can_attack:
 		can_attack = false
 		attack_animation_name = left_attack_name
