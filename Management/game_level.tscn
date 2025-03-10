@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="9_g6l0a"]
 [ext_resource type="Texture2D" uid="uid://brackoeklf5rw" path="res://Assets/Tiny Swords/Terrain/Bridge/Bridge_All.png" id="10_ldbhs"]
 [ext_resource type="Script" uid="uid://hhvyotlv2pqs" path="res://Interactables/Components/bridge_area.gd" id="11_3x2o8"]
+[ext_resource type="Script" uid="uid://da88ndrxb2nh3" path="res://Interactables/Components/bridget.gd" id="12_i0i7q"]
 [ext_resource type="PackedScene" uid="uid://b2ovknxt6pthb" path="res://Entities/Troops/Pawn/pawn.tscn" id="12_jskgj"]
 [ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/ladder_area.gd" id="13_bqi7j"]
 [ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/scarecrow.tscn" id="14_uki8w"]
@@ -237,29 +238,6 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_1pwjh")
 
-[sub_resource type="GDScript" id="GDScript_fk5p6"]
-script/source = "extends TileMapLayer
-class_name Bridge
-
-@onready var game_object_register = GameObject.new()
-
-func _ready() -> void:
-	add_child(game_object_register)
-
-func moveBridge():
-	# TODO: Modificar para mover apenas uma celula.
-	
-	var target_position := Vector2(0, 1)
-	var tween := get_tree().create_tween()
-	
-	tween.tween_property(
-		self,
-		\"position\",
-		self.position + target_position * 50,
-		0.5
-	)
-"
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
 size = Vector2(790.5, 32)
 
@@ -308,7 +286,7 @@ tile_set = SubResource("TileSet_fwgd7")
 [node name="Bridget" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAWAAYAAAABAAAAAAAVAAUAAAABAAEAAAASAAYAAAABAAAAAAAXAAYAAAABAAAAAAAYAAYAAAABAAAAAAAZAAYAAAABAAAAAAAmAAcAAAABAAEAAAAmAAUAAAACAAEAAAAcAAYAAAABAAAAAAAdAAYAAAABAAAAAAANAAYAAAAAAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAeAAYAAAACAAAAAAAaAAUAAAABAAAAAAAbAAcAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_okyr4")
-script = SubResource("GDScript_fk5p6")
+script = ExtResource("12_i0i7q")
 
 [node name="BridgeArea" type="Area2D" parent="Bridget"]
 position = Vector2(890, 417)
