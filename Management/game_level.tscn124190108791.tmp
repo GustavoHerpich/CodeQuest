@@ -220,7 +220,6 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, 32, -32, 32, -16, -16, -16)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 16, 32, 16, 32, 32, -16, 32)
-1:0/next_alternative_id = 2
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, -16, 32, -16)
 1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(32, 16, -32, 16, -32, 32, 32, 32)
@@ -246,18 +245,25 @@ class_name Bridge
 func _ready() -> void:
 	add_child(game_object_register)
 
-func moveBridge():
-	# TODO: Modificar para mover apenas uma celula.
+func __move():
+	var distance = 10
+	print(\"Chamando método de movimento da ponte...\")
 	
-	var target_position := Vector2(0, 1)
-	var tween := get_tree().create_tween()
-	
-	tween.tween_property(
-		self,
-		\"position\",
-		self.position + target_position * 50,
-		0.5
-	)
+	if not tilemap_layer:
+		print(\"Erro: Nenhum TileMapLayer definido!\")
+		return
+
+	var bridge_cells = tilemap_layer.get_used_cells()
+
+	for cell in bridge_cells:
+		tilemap_layer.erase_cell(cell)
+
+	for cell in bridge_cells:
+		var new_position = Vector2i(cell.x + distance, cell.y)
+		var tile_data = tilemap_layer.get_cell_source_id(cell)
+		tilemap_layer.set_cell(new_position, tile_data)
+
+	print(\"Ponte movida 10 tiles para a direita!\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=42 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b2ovknxt6pthb" path="res://Entities/Troops/Pawn/pawn.tscn" id="12_jskgj"]
 [ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/ladder_area.gd" id="13_bqi7j"]
 [ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/scarecrow.tscn" id="14_uki8w"]
+[ext_resource type="PackedScene" uid="uid://bg22hvyi68guj" path="res://Interactables/Components/teste.tscn" id="16_i0i7q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -220,7 +221,6 @@ texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, 32, -32, 32, -16, -16, -16)
 0:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(-16, 16, 32, 16, 32, 32, -16, 32)
-1:0/next_alternative_id = 2
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, -32, -32, -32, -32, -16, 32, -16)
 1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(32, 16, -32, 16, -32, 32, 32, 32)
@@ -246,18 +246,25 @@ class_name Bridge
 func _ready() -> void:
 	add_child(game_object_register)
 
-func moveBridge():
-	# TODO: Modificar para mover apenas uma celula.
+func __move():
+	var distance = 10
+	print(\"Chamando método de movimento da ponte...\")
 	
-	var target_position := Vector2(0, 1)
-	var tween := get_tree().create_tween()
-	
-	tween.tween_property(
-		self,
-		\"position\",
-		self.position + target_position * 50,
-		0.5
-	)
+	if not tilemap_layer:
+		print(\"Erro: Nenhum TileMapLayer definido!\")
+		return
+
+	var bridge_cells = tilemap_layer.get_used_cells()
+
+	for cell in bridge_cells:
+		tilemap_layer.erase_cell(cell)
+
+	for cell in bridge_cells:
+		var new_position = Vector2i(cell.x + distance, cell.y)
+		var tile_data = tilemap_layer.get_cell_source_id(cell)
+		tilemap_layer.set_cell(new_position, tile_data)
+
+	print(\"Ponte movida 10 tiles para a direita!\")
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
@@ -338,6 +345,9 @@ shape = SubResource("RectangleShape2D_rcjgg")
 
 [node name="scarecrow" parent="." instance=ExtResource("14_uki8w")]
 position = Vector2(1614, 402)
+
+[node name="Teste" parent="." instance=ExtResource("16_i0i7q")]
+position = Vector2(1471, 245)
 
 [connection signal="body_entered" from="Bridget/BridgeArea" to="Bridget/BridgeArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Bridget/BridgeArea" to="Bridget/BridgeArea" method="_on_body_exited"]

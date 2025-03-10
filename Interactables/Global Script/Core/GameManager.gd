@@ -1,22 +1,27 @@
 extends Node
 
-var registered_objects := {}
+var registered_methods := {}
+var terminal: LuaConsole = LuaConsole.new()
+
+func _ready() -> void:
+	terminal.called_method.connect(method_called_callback)
 
 func register_object(object: Node):
-	var object_name = object.name.to_lower()
-	registered_objects[object_name] = object
-	
 	var methods = object.get_method_list()
+	
 	for method in methods:
-		if method["name"].begins_with("_"): 
-			continue 
-		# Terminal.lua_console.bind_method(method["name"])
+		var method_callable = Callable(object, method["name"]) 
+		registered_methods[method["name"]] = method_callable
+		terminal.bind_method(method["name"]) 
+		continue 
 
-		print("Registrando método: %s em %s" % [method["name"], object_name])
-
-func call_method(object_name: String, method_name: String, args: Array = []):
-	var object = registered_objects.get(object_name.to_lower())
-	if object and object.has_method(method_name):
-		return object.callv(method_name, args)
+func method_called_callback(method_name: String):
+	var method_callable = registered_methods.get(method_name)
+	
+	if method_callable:
+		method_callable.call() 
 	else:
-		print("Erro: %s não tem o método %s" % [object_name, method_name])
+		print("Erro: método %s não registrado" % method_name)
+
+func run_lua_script(lua_code: String):
+	terminal.run_script(lua_code)
