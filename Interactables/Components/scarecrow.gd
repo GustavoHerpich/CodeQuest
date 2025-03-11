@@ -1,12 +1,11 @@
-extends StaticBody2D
 class_name Scarecrow
+extends StaticBody2D
+
+var has_interacted: bool = false
+var TerminalScene = preload("res://Interactables/Console/console.tscn") 
 
 @onready var interactable: Interactable = $Interactable
 @onready var sprite: Sprite2D = $Sprite
-
-var has_interacted: bool = false
-
-var TerminalScene = preload("res://Interactables/Console/console.tscn") 
 
 func _ready():
 	interactable.interact = _open_terminal

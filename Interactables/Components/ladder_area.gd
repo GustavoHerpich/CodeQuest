@@ -1,5 +1,5 @@
-extends Area2D
 class_name LadderArea
+extends Area2D
 
 func _on_body_exited(body: CharacterBody2D) -> void:
 	if body is BaseCharacter:

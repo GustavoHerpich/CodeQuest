@@ -1,7 +1,10 @@
-extends Control
 class_name Console
+extends Control
 
+var terminal: LuaConsole = LuaConsole.new()
 @onready var text_edit: TextEdit = $VBoxContainer/CodeEditor/TextEdit
+
+## Private Methods
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -28,3 +31,5 @@ func _on_tree_exiting() -> void:
 func _on_button_pressed() -> void:
 	var lua_source = text_edit.text
 	GameManager.run_lua_script(lua_source)
+
+##

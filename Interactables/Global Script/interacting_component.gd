@@ -1,9 +1,12 @@
-extends Node2D
 class_name InteractingComponent
+extends Node2D
 
-@onready var interact_label: Label = $InteractLabel
 var current_interactions := []
 var can_interact := true
+
+@onready var interact_label: Label = $InteractLabel
+
+## Private Methods
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("interact") and can_interact:
@@ -30,9 +33,9 @@ func _sort_by_nearest(area1, area2):
 	return area1_dist < area2_dist
 	
 func _on_interact_range_area_entered(area: Area2D) -> void:
-	print(area)
 	current_interactions.push_back(area)
 
 func _on_interact_range_area_exited(area: Area2D) -> void:
-	print(area)
 	current_interactions.erase(area)
+
+##

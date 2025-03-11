@@ -38,12 +38,5 @@ texture_normal = ExtResource("2_s6abk")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Control" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LuaConsole" type="LuaConsole" parent="Control"]
-
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
 [connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_button_pressed"]
