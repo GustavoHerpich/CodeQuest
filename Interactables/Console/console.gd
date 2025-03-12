@@ -1,12 +1,17 @@
 class_name Console
 extends Control
 
-var terminal: LuaConsole = LuaConsole.new()
-@onready var text_edit: TextEdit = $VBoxContainer/CodeEditor/TextEdit
+var lua_console: LuaConsole = LuaConsole.new()
+
+@onready var text_edit: TextEdit = $Panel/MarginContainer/VBoxContainer/CodeEditor/TextEdit
+@onready var message_container: MessageContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer
 
 ## Private Methods
 
 func _ready() -> void:
+	GameManager.print_message.connect(_print_callback)
+	GameManager.error_message.connect(_error_callback)
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
 	var player = get_tree().get_first_node_in_group("player")
@@ -32,4 +37,10 @@ func _on_button_pressed() -> void:
 	var lua_source = text_edit.text
 	GameManager.run_lua_script(lua_source)
 
+func _error_callback(message: String) -> void:
+	message_container.add_error(message)
+
+func _print_callback(message: String) -> void:
+	message_container.add_info(message)
+	
 ##

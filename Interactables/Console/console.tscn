@@ -1,35 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgfylm06ghbse"]
+[gd_scene load_steps=8 format=3 uid="uid://dgfylm06ghbse"]
 
 [ext_resource type="Script" uid="uid://cgt2xggldetxn" path="res://Interactables/Console/console.gd" id="1_yondo"]
 [ext_resource type="Texture2D" uid="uid://de6vy6a4487ix" path="res://Interactables/Console/play-solid.svg" id="2_s6abk"]
+[ext_resource type="Script" uid="uid://cjkrpjtbhmhrk" path="res://Interactables/Console/messages_container.gd" id="3_capk0"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="3_hel2v"]
+
+[sub_resource type="Theme" id="Theme_j3rbn"]
+default_font = ExtResource("3_hel2v")
+default_font_size = 17
+
+[sub_resource type="Theme" id="Theme_hel2v"]
+default_font = ExtResource("3_hel2v")
+default_font_size = 17
+
+[sub_resource type="Theme" id="Theme_omk74"]
+default_font = ExtResource("3_hel2v")
+default_font_size = 17
 
 [node name="Console" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -1.0
-offset_right = 292.0
-offset_bottom = 299.0
+offset_right = 418.0
+offset_bottom = 474.0
+size_flags_horizontal = 3
 script = ExtResource("1_yondo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 2
-offset_right = 292.0
-offset_bottom = 300.0
+offset_right = 393.0
+offset_bottom = 408.0
 
-[node name="CodeEditor" type="Panel" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 300)
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 391.0
+offset_bottom = 409.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
 layout_mode = 2
+
+[node name="ActionBar" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 8
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.06
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/CodeEditor"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/ActionBar"]
 custom_minimum_size = Vector2(28, 32)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -38,5 +55,47 @@ texture_normal = ExtResource("2_s6abk")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="CodeEditor" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer/CodeEditor"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_j3rbn")
+placeholder_text = "Caso precise de alguma ajuda digite help (H) no terminal."
+wrap_mode = 1
+indent_wrapped_lines = true
+draw_tabs = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MessagesContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("3_capk0")
+
+[node name="Info" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_hel2v")
+text = " Info"
+
+[node name="Error" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
+visible = false
+layout_mode = 2
+theme = SubResource("Theme_omk74")
+theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
+text = " Error"
+
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="VBoxContainer/TextureButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ActionBar/TextureButton" to="." method="_on_button_pressed"]

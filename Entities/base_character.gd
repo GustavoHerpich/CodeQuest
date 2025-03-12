@@ -91,6 +91,7 @@ func update_collision_layer_mask(type: String) -> void:
 		set_collision_mask_value(1, false)
 		set_collision_mask_value(2, true)
 		
+		
 	if type == "out":
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)
@@ -114,6 +115,7 @@ func get_is_in_mountain() -> bool:
 ## Methods that interact with the console
 
 func increaseSpeed(amount: float) -> void:
+	GameManager.print("Você aumentou sua velocidade para %s." %amount)
 	GameManager.set_value_variable(self, "move_speed", amount)
 
 ##
