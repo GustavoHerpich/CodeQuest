@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bahx37arsxye5"]
 
 [ext_resource type="Script" uid="uid://dmjnsm3tbpwoa" path="res://Interactables/Components/scarecrow.gd" id="1_osodj"]
-[ext_resource type="Texture2D" uid="uid://cyosvvh3tkhtj" path="res://Assets/Tiny Swords/Deco/18.png" id="2_688j0"]
+[ext_resource type="Texture2D" uid="uid://cyosvvh3tkhtj" path="res://Decoration/Signs/18.png" id="2_688j0"]
 [ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="3_hfqu5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3g3l"]

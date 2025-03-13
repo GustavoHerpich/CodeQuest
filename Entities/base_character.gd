@@ -91,7 +91,6 @@ func update_collision_layer_mask(type: String) -> void:
 		set_collision_mask_value(1, false)
 		set_collision_mask_value(2, true)
 		
-		
 	if type == "out":
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)

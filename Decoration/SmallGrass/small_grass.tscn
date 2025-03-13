@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://djakawdpvtt6x"]
+
+[ext_resource type="PackedScene" uid="uid://dtl0p32322qix" path="res://Decoration/decoration_component.tscn" id="1_3ixiy"]
+
+[node name="SmallGrass" instance=ExtResource("1_3ixiy")]
+texture_list = Array[String](["res://Decoration/SmallGrass/10.png", "res://Decoration/SmallGrass/11.png"])

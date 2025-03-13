@@ -22,6 +22,7 @@ GameManager="*res://Interactables/Global Script/Core/GameManager.gd"
 
 folder_colors={
 "res://Assets/": "red",
+"res://Decoration/": "yellow",
 "res://Entities/": "orange",
 "res://Extensions/": "blue",
 "res://Interactables/": "green",
