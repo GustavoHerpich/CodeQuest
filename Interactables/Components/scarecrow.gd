@@ -6,7 +6,7 @@ var TerminalScene = preload("res://Interactables/Console/console.tscn")
 
 @onready var interactable: Interactable = $Interactable
 @onready var sprite: Sprite2D = $Sprite
-
+	
 func _ready():
 	interactable.interact = _open_terminal
 

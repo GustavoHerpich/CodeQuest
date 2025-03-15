@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=4 uid="uid://ci1c2td2l4op2"]
+
+[ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="1_6fko4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u048f"]
+resource_name = "elevation"
+texture = ExtResource("1_6fko4")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -16, -16, -16, -16, 32, -32, 32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, -16, -32, -16)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, 16, -32, 16, -32, 16, -32, 16, -16, 16, -16, 16, 11.359, 16, 32)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, 16, -32, 16, -32, 16, -32, 16, -16, 16, -16, 16, 11.359, 16, 32)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -16, -32, -16, 32, -32, 32)
+1:2/0 = 0
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, -16, -32, -16, 32, -32, 32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(32, 32, 32, -32, 16, -32, 0, -32, -32, -32, -32, -16, 16, -16, 16, 32)
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mri3k"]
+tile_size = Vector2i(64, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_u048f")
+
+[node name="Elevation" type="TileMapLayer"]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAIAAYAAAABAAEAAAAHAAUAAAABAAEAAAAHAAIAAAAAAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAKAAUAAAABAAEAAAAKAAQAAAABAAEAAAAKAAMAAAABAAEAAAAJAAMAAAABAAEAAAAIAAMAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAJAAUAAAABAAEAAAAJAAQAAAABAAEAAAAJAAYAAAABAAEAAAAKAAYAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAAMAAIAAAACAAAAAAANAAMAAAACAAAAAAANAAQAAAACAAEAAAANAAUAAAACAAEAAAANAAYAAAACAAIAAAAMAAYAAAABAAEAAAAIAAkAAAAAAAMAAAAJAAkAAAADAAcAAAAKAAkAAAABAAMAAAALAAkAAAABAAMAAAAMAAkAAAABAAMAAAANAAkAAAACAAMAAAAHAAgAAAAAAAMAAAAGAAcAAAAAAAMAAAAFAAYAAAAAAAMAAAAIAAgAAAABAAIAAAAIAAcAAAABAAIAAAAHAAcAAAABAAIAAAAHAAYAAAABAAIAAAAGAAYAAAABAAIAAAAGAAUAAAABAAIAAAAJAAcAAAABAAIAAAAJAAgAAAABAAIAAAAKAAgAAAABAAIAAAAKAAcAAAABAAIAAAALAAgAAAABAAIAAAALAAcAAAABAAIAAAAMAAgAAAABAAIAAAAMAAcAAAABAAIAAAANAAgAAAABAAIAAAANAAcAAAABAAIAAAAFAAUAAAAAAAEAAAAFAAQAAAAAAAEAAAAFAAMAAAAAAAAAAAAGAAQAAAABAAEAAAAGAAMAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_mri3k")

@@ -114,7 +114,6 @@ func get_is_in_mountain() -> bool:
 ## Methods that interact with the console
 
 func increaseSpeed(amount: float) -> void:
-	GameManager.print("Você aumentou sua velocidade para %s." %amount)
 	GameManager.set_value_variable(self, "move_speed", amount)
 
 ##

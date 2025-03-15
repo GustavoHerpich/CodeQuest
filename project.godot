@@ -17,11 +17,13 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 GameManager="*res://Interactables/Global Script/Core/GameManager.gd"
+SceneSwitcher="*res://Interactables/Global Script/SceneSwitcher.tscn"
 
 [file_customization]
 
 folder_colors={
 "res://Assets/": "red",
+"res://Cave/": "gray",
 "res://Decoration/": "yellow",
 "res://Entities/": "orange",
 "res://Extensions/": "blue",

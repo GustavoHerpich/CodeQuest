@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4ywxuous87nu"]
+
+[ext_resource type="Script" uid="uid://be0qqxaprqwrm" path="res://Interactables/Components/mine.gd" id="1_hanhl"]
+[ext_resource type="Texture2D" uid="uid://cutnrxvr45r2m" path="res://Assets/Tiny Swords/Resources/Gold Mine/GoldMine_Inactive.png" id="1_ytyxl"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="2_b215k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b215k"]
+size = Vector2(231, 149)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hanhl"]
+radius = 84.1487
+
+[node name="Mine" type="StaticBody2D"]
+script = ExtResource("1_hanhl")
+
+[node name="Texture" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_ytyxl")
+
+[node name="PhysicsCollision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.499898, -13.5)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_b215k")
+
+[node name="Interactable" parent="." instance=ExtResource("2_b215k")]
+interact_name = "Enter the mine"
+
+[node name="Collision" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_hanhl")
