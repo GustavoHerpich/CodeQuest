@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dgfylm06ghbse"]
+[gd_scene load_steps=9 format=3 uid="uid://dgfylm06ghbse"]
 
 [ext_resource type="Script" uid="uid://cgt2xggldetxn" path="res://Interactables/Console/console.gd" id="1_yondo"]
 [ext_resource type="Texture2D" uid="uid://de6vy6a4487ix" path="res://Interactables/Console/play-solid.svg" id="2_s6abk"]
@@ -8,6 +8,8 @@
 [sub_resource type="Theme" id="Theme_j3rbn"]
 default_font = ExtResource("3_hel2v")
 default_font_size = 17
+
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_hel2v"]
 
 [sub_resource type="Theme" id="Theme_hel2v"]
 default_font = ExtResource("3_hel2v")
@@ -72,6 +74,9 @@ theme = SubResource("Theme_j3rbn")
 placeholder_text = "Caso precise de alguma ajuda digite help (H) no terminal."
 wrap_mode = 1
 indent_wrapped_lines = true
+syntax_highlighter = SubResource("SyntaxHighlighter_hel2v")
+highlight_all_occurrences = true
+highlight_current_line = true
 draw_tabs = true
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]

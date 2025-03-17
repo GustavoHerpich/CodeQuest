@@ -2,6 +2,7 @@ class_name Console
 extends Control
 
 var lua_console: LuaConsole = LuaConsole.new()
+const MyHighlighter = preload("res://Interactables/Global Script/CodeStyles/MyHighlighter.gd")
 
 @onready var text_edit: TextEdit = $Panel/MarginContainer/VBoxContainer/CodeEditor/TextEdit
 @onready var message_container: MessageContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer
@@ -9,6 +10,8 @@ var lua_console: LuaConsole = LuaConsole.new()
 ## Private Methods
 
 func _ready() -> void:
+	var highlighter = MyHighlighter.new()
+	text_edit.syntax_highlighter = highlighter
 	GameManager.print_message.connect(_print_callback)
 	GameManager.error_message.connect(_error_callback)
 	

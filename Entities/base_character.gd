@@ -116,4 +116,6 @@ func get_is_in_mountain() -> bool:
 func increaseSpeed(amount: float) -> void:
 	GameManager.set_value_variable(self, "move_speed", amount)
 
+func moveSpeed() -> Variant:
+	return GameManager.get_value_variable(self, "move_speed")
 ##
