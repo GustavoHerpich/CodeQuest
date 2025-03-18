@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4gkei8yt75pn"]
+
+[ext_resource type="Texture2D" uid="uid://brtib1x7ur1rv" path="res://Assets/Touch/animate torch 2.png" id="1_eq76e"]
+
+[sub_resource type="Animation" id="Animation_eq76e"]
+resource_name = "idle"
+length = 0.5
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_h1dsy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h3aje"]
+_data = {
+&"RESET": SubResource("Animation_h1dsy"),
+&"idle": SubResource("Animation_eq76e")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eq76e"]
+size = Vector2(17, 88)
+
+[node name="Torch" type="StaticBody2D"]
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_eq76e")
+hframes = 2
+vframes = 2
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_h3aje")
+}
+autoplay = "idle"
+speed_scale = 0.4
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 4)
+shape = SubResource("RectangleShape2D_eq76e")

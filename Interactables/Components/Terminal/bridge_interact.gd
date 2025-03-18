@@ -3,6 +3,7 @@ extends TileMapLayer
 
 @onready var game_object_register = GameObject.new()
 @onready var shadow_interact: TileMapLayer = $"../../TerrainManager/ShadowInteract"
+@onready var pawn: BaseCharacter = $"../../Decorations/Pawn"
 
 ## Private method
 
