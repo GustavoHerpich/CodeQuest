@@ -1,18 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://bahx37arsxye5"]
 
-[ext_resource type="Script" uid="uid://dmjnsm3tbpwoa" path="res://Interactables/Components/scarecrow.gd" id="1_osodj"]
-[ext_resource type="Texture2D" uid="uid://cyosvvh3tkhtj" path="res://Decoration/Signs/18.png" id="2_688j0"]
+[ext_resource type="Script" uid="uid://dmjnsm3tbpwoa" path="res://Interactables/Components/terminal.gd" id="1_osodj"]
+[ext_resource type="Texture2D" uid="uid://becccq6j3fxw0" path="res://Assets/Terminal/Terminal.png" id="2_iix3r"]
 [ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="3_hfqu5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3g3l"]
-radius = 90.05
+radius = 44.0454
 
-[node name="scarecrow" type="StaticBody2D" groups=["Interactable Objects"]]
+[node name="Terminal" type="StaticBody2D" groups=["Interactable Objects"]]
 script = ExtResource("1_osodj")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(0, -67)
-texture = ExtResource("2_688j0")
+position = Vector2(3, -39)
+scale = Vector2(0.474609, 0.444661)
+texture = ExtResource("2_iix3r")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
@@ -20,5 +21,5 @@ texture = ExtResource("2_688j0")
 interact_name = "Open Terminal"
 
 [node name="Collision" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(0, -53)
+position = Vector2(9, -27)
 shape = SubResource("CircleShape2D_c3g3l")

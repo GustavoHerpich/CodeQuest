@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/ladder_area.gd" id="13_bqi7j"]
 [ext_resource type="Script" uid="uid://c7tchb3v1ledc" path="res://Interactables/Components/Terminal/bridge_area_interact.gd" id="14_kx1xh"]
 [ext_resource type="Script" uid="uid://dthrakq3nwiev" path="res://Interactables/Components/Terminal/bridge_interact.gd" id="14_rbkwr"]
-[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/scarecrow.tscn" id="14_uki8w"]
+[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/terminal.tscn" id="14_uki8w"]
 [ext_resource type="PackedScene" uid="uid://kgq41akjgwlw" path="res://Decoration/Mushrooms/mush_room.tscn" id="15_kx1xh"]
 [ext_resource type="PackedScene" uid="uid://gbrcqq45scb" path="res://Decoration/Rocks/rocks.tscn" id="16_e8dj5"]
 [ext_resource type="PackedScene" uid="uid://nnirspy8dqnn" path="res://Decoration/Bones/bones.tscn" id="17_q2nny"]
@@ -456,7 +456,7 @@ y_sort_enabled = true
 [node name="Mine" parent="Decorations/Interactables" instance=ExtResource("25_ited3")]
 position = Vector2(3033, -13)
 
-[node name="scarecrow" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
+[node name="Terminal" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
 position = Vector2(1544, 403)
 
 [node name="LadderArea" type="Area2D" parent="."]

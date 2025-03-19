@@ -1,4 +1,4 @@
-class_name Scarecrow
+class_name Terminal
 extends StaticBody2D
 
 var has_interacted: bool = false
