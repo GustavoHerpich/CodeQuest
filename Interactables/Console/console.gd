@@ -30,10 +30,9 @@ func _on_tree_exiting() -> void:
 	if player:
 		player.is_in_terminal = false
 
-	var interactableObjects = get_tree().get_nodes_in_group("Interactable Objects")  
-	if interactableObjects:
-		interactableObjects[0].has_interacted = false
-		
+	for obj in get_tree().get_nodes_in_group("Interactable Objects"):
+		obj.has_interacted = false
+	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_button_pressed() -> void:

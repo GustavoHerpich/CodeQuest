@@ -15,6 +15,12 @@ func _open_terminal():
 		return
 	
 	has_interacted = true
+	
 	var terminal_instance = TerminalScene.instantiate()
-	terminal_instance.global_position = global_position + Vector2(525, 50)  
-	get_tree().current_scene.add_child(terminal_instance)
+
+	if SceneSwitcher.current_scene:
+		SceneSwitcher.current_scene.add_child(terminal_instance)
+	else:
+		print("⚠️ ERRO: Cena atual não encontrada!")
+
+	terminal_instance.global_position = global_position + Vector2(100, -150)  

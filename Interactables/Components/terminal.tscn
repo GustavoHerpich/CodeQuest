@@ -1,25 +1,78 @@
-[gd_scene load_steps=5 format=3 uid="uid://bahx37arsxye5"]
+[gd_scene load_steps=9 format=3 uid="uid://bahx37arsxye5"]
 
 [ext_resource type="Script" uid="uid://dmjnsm3tbpwoa" path="res://Interactables/Components/terminal.gd" id="1_osodj"]
-[ext_resource type="Texture2D" uid="uid://becccq6j3fxw0" path="res://Assets/Terminal/Terminal.png" id="2_iix3r"]
+[ext_resource type="Texture2D" uid="uid://dbgfaji5agql1" path="res://Assets/Terminal/Terminal.png" id="2_iix3r"]
 [ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="3_hfqu5"]
 
+[sub_resource type="Animation" id="Animation_p1amy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pc1tw"]
+resource_name = "idle"
+length = 1.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pswsr"]
+_data = {
+&"RESET": SubResource("Animation_p1amy"),
+&"idle": SubResource("Animation_pc1tw")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x8wdi"]
+radius = 17.0294
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3g3l"]
-radius = 44.0454
+radius = 30.0666
 
 [node name="Terminal" type="StaticBody2D" groups=["Interactable Objects"]]
 script = ExtResource("1_osodj")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-position = Vector2(3, -39)
-scale = Vector2(0.474609, 0.444661)
+position = Vector2(15, -61)
 texture = ExtResource("2_iix3r")
+hframes = 6
+vframes = 3
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pswsr")
+}
+autoplay = "idle"
+speed_scale = 0.4
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(16, -45)
+shape = SubResource("CircleShape2D_x8wdi")
 
 [node name="Interactable" parent="." instance=ExtResource("3_hfqu5")]
+position = Vector2(12, -14)
 interact_name = "Open Terminal"
 
 [node name="Collision" type="CollisionShape2D" parent="Interactable"]
-position = Vector2(9, -27)
+position = Vector2(3, -34)
 shape = SubResource("CircleShape2D_c3g3l")

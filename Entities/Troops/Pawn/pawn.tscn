@@ -124,5 +124,7 @@ libraries = {
 }
 autoplay = "run"
 
+[node name="CharacterCamera" parent="." index="3" groups=["camera"]]
+
 [node name="InteractingComponent" parent="." index="4" instance=ExtResource("3_bp4gk")]
 position = Vector2(0, -12)

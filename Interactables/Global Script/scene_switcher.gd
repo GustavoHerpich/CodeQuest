@@ -48,7 +48,8 @@ func _deferred_switch_scene(res_path):
 
 		current_scene = scene
 		stored_scenes[res_path] = scene
-
+	
+	print(current_scene)
 	var spawn_point = current_scene.get_node_or_null("SpawnPoint")
 	if spawn_point:
 		player.global_position = spawn_point.global_position

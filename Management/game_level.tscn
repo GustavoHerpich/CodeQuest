@@ -340,7 +340,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(1424, 405)
+position = Vector2(2761, 163)
 left_attack_name = "attack_axe"
 right_attack_name = "attack_hammer"
 bridge = NodePath("../../Bridge/Bridget")
@@ -457,7 +457,7 @@ y_sort_enabled = true
 position = Vector2(3033, -13)
 
 [node name="Terminal" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
-position = Vector2(1544, 403)
+position = Vector2(2669, 282)
 
 [node name="LadderArea" type="Area2D" parent="."]
 position = Vector2(579, 578)
