@@ -35,10 +35,10 @@ func _on_tree_exiting() -> void:
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _on_button_pressed() -> void:
+func _on_execute_pressed() -> void:
 	var lua_source = text_edit.text
 	GameManager.run_lua_script(lua_source)
-
+	
 func _error_callback(message: String) -> void:
 	message_container.add_error(message)
 

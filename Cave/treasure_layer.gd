@@ -5,7 +5,7 @@ extends Node2D
 @onready var door_1: Node2D = $Door1
 const DOOR_VALUES: Array = [26, 13, 17]
 
-@onready var game_object_register := GameObject.new()
+@onready var game_object_register = GameObject.new()
 
 func _ready() -> void:
 	add_child(game_object_register)

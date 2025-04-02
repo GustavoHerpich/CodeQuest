@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3lsh8uua3aem"
-path="res://.godot/imported/Door Cave.png-67ec16b8891969d037a56005bc0bb609.ctex"
+uid="uid://clrlq4t2n7ij3"
+path="res://.godot/imported/SwordPressedIcon.png-d5f617e6a315b166bb8de68a1e042d8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Doors/Door Cave.png"
-dest_files=["res://.godot/imported/Door Cave.png-67ec16b8891969d037a56005bc0bb609.ctex"]
+source_file="res://Assets/Terminal/SwordPressedIcon.png"
+dest_files=["res://.godot/imported/SwordPressedIcon.png-d5f617e6a315b166bb8de68a1e042d8f.ctex"]
 
 [params]
 
