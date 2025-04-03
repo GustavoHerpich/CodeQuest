@@ -23,4 +23,4 @@ func _open_terminal():
 	else:
 		print("⚠️ ERRO: Cena atual não encontrada!")
 
-	terminal_instance.global_position = global_position + Vector2(100, -150)  
+	terminal_instance.get_child(0).global_position += Vector2(100, 100)  

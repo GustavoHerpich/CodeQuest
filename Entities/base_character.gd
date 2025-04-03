@@ -17,6 +17,7 @@ var attack_animation_name: String = ""
 @export var animation: AnimationPlayer
 
 @onready var game_object_register = GameObject.new()
+@onready var actionable_finder: Area2D = $Direction/ActionableFinder
 
 ## Private Methods
 
@@ -119,3 +120,9 @@ func increaseSpeed(amount: float) -> void:
 func moveSpeed() -> Variant:
 	return GameManager.get_value_variable(self, "move_speed")
 ##
+
+func _on_actionable_finder_area_entered(_area: Area2D) -> void:
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		actionables[0].action()
+		return

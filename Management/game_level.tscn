@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=59 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://djakawdpvtt6x" path="res://Decoration/SmallGrass/small_grass.tscn" id="21_r3afb"]
 [ext_resource type="PackedScene" uid="uid://bb40cvmxuohhw" path="res://Interactables/Resources/tree.tscn" id="23_30a5j"]
 [ext_resource type="PackedScene" uid="uid://c4ywxuous87nu" path="res://Interactables/Components/mine.tscn" id="25_ited3"]
+[ext_resource type="PackedScene" uid="uid://iqng6n74dui3" path="res://Dialogues/actionable.tscn" id="26_rkog2"]
+[ext_resource type="Resource" uid="uid://m167kvuhmxp8" path="res://Dialogues/FirstDialog.dialogue" id="27_ufrq5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -258,6 +260,9 @@ sources/0 = SubResource("TileSetAtlasSource_1pwjh")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
 size = Vector2(1068.25, 32)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ufrq5"]
+radius = 53.3667
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcjgg"]
 size = Vector2(63, 66)
 
@@ -340,7 +345,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(3003, 97)
+position = Vector2(1470, 406)
 left_attack_name = "attack_axe"
 right_attack_name = "attack_hammer"
 bridge = NodePath("../../Bridge/Bridget")
@@ -457,7 +462,13 @@ y_sort_enabled = true
 position = Vector2(3033, -13)
 
 [node name="Terminal" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
-position = Vector2(2828, 195)
+position = Vector2(1586, 404)
+
+[node name="Actionable" parent="Decorations/Interactables/Terminal" instance=ExtResource("26_rkog2")]
+dialogue_resource = ExtResource("27_ufrq5")
+
+[node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal/Actionable"]
+shape = SubResource("CircleShape2D_ufrq5")
 
 [node name="LadderArea" type="Area2D" parent="."]
 position = Vector2(579, 578)

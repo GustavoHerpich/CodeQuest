@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b2ovknxt6pthb"]
+[gd_scene load_steps=12 format=3 uid="uid://b2ovknxt6pthb"]
 
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_8ahts"]
 [ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Entities/Troops/Pawn/Pawn_Blue.png" id="2_1s8jf"]
@@ -102,6 +102,9 @@ _data = {
 &"run": SubResource("Animation_rmafu")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ny03g"]
+radius = 35.0143
+
 [node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation") groups=["player"] instance=ExtResource("1_8ahts")]
 sprite2D = NodePath("Texture")
 animation = NodePath("Animation")
@@ -128,3 +131,16 @@ autoplay = "run"
 
 [node name="InteractingComponent" parent="." index="4" instance=ExtResource("3_bp4gk")]
 position = Vector2(0, -12)
+
+[node name="Direction" type="Marker2D" parent="." index="5"]
+position = Vector2(0, -12)
+
+[node name="ActionableFinder" type="Area2D" parent="Direction" index="0"]
+position = Vector2(0, 5)
+collision_layer = 0
+collision_mask = 16
+
+[node name="Collision" type="CollisionShape2D" parent="Direction/ActionableFinder" index="0"]
+shape = SubResource("CircleShape2D_ny03g")
+
+[connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]

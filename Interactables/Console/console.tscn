@@ -20,6 +20,10 @@ corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ta28"]
 bg_color = Color(0.152941, 0.117647, 0.0588235, 1)
@@ -44,7 +48,10 @@ default_font_size = 17
 default_font = ExtResource("3_hel2v")
 default_font_size = 17
 
-[node name="Console" type="Control"]
+[node name="CanvasLayer" type="CanvasLayer"]
+layer = 10
+
+[node name="Console" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -1.0
@@ -53,28 +60,28 @@ offset_bottom = 474.0
 size_flags_horizontal = 3
 script = ExtResource("1_yondo")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="Console"]
 layout_mode = 2
 offset_right = 393.0
 offset_bottom = 408.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_odklk")
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Console/Panel"]
 layout_mode = 0
 offset_right = 391.0
 offset_bottom = 409.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Console/Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="ActionBar" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ActionBar" type="HBoxContainer" parent="Console/Panel/MarginContainer/VBoxContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.06
 
-[node name="Execute" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/ActionBar"]
+[node name="Execute" type="TextureButton" parent="Console/Panel/MarginContainer/VBoxContainer/ActionBar"]
 custom_minimum_size = Vector2(28, 32)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -84,7 +91,7 @@ texture_hover = ExtResource("3_odklk")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="Clear" type="TextureButton" parent="Panel/MarginContainer/VBoxContainer/ActionBar"]
+[node name="Clear" type="TextureButton" parent="Console/Panel/MarginContainer/VBoxContainer/ActionBar"]
 custom_minimum_size = Vector2(28, 32)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -94,13 +101,13 @@ texture_hover = ExtResource("4_omk74")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="CodeEditor" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="CodeEditor" type="Panel" parent="Console/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_2ta28")
 
-[node name="TextEdit" type="TextEdit" parent="Panel/MarginContainer/VBoxContainer/CodeEditor"]
+[node name="TextEdit" type="TextEdit" parent="Console/Panel/MarginContainer/VBoxContainer/CodeEditor"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,29 +127,29 @@ highlight_all_occurrences = true
 highlight_current_line = true
 draw_tabs = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Console/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MessagesContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="MessagesContainer" type="VBoxContainer" parent="Console/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
 clip_contents = true
 layout_mode = 2
 size_flags_vertical = 3
 script = ExtResource("3_capk0")
 
-[node name="Info" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
+[node name="Info" type="Label" parent="Console/Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
 visible = false
 layout_mode = 2
 theme = SubResource("Theme_hel2v")
 text = " Info"
 
-[node name="Error" type="Label" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
+[node name="Error" type="Label" parent="Console/Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer"]
 visible = false
 layout_mode = 2
 theme = SubResource("Theme_omk74")
 theme_override_colors/font_color = Color(0.94902, 0, 0, 1)
 text = " Error"
 
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ActionBar/Execute" to="." method="_on_execute_pressed"]
-[connection signal="pressed" from="Panel/MarginContainer/VBoxContainer/ActionBar/Clear" to="Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer" method="_on_clear_pressed"]
+[connection signal="tree_exiting" from="Console" to="Console" method="_on_tree_exiting"]
+[connection signal="pressed" from="Console/Panel/MarginContainer/VBoxContainer/ActionBar/Execute" to="Console" method="_on_execute_pressed"]
+[connection signal="pressed" from="Console/Panel/MarginContainer/VBoxContainer/ActionBar/Clear" to="Console/Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer" method="_on_clear_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://cj48ven86xi7s"]
+[gd_scene load_steps=21 format=4 uid="uid://cj48ven86xi7s"]
 
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="1_ej5d6"]
 [ext_resource type="Script" uid="uid://mx6p4blokmyp" path="res://Cave/cave.gd" id="1_sak7u"]
@@ -55,6 +55,16 @@ gradient = SubResource("Gradient_06e0p")
 fill = 1
 fill_from = Vector2(0.445205, 0.523973)
 fill_to = Vector2(0.945205, 0.140411)
+
+[sub_resource type="Gradient" id="Gradient_rgstr"]
+offsets = PackedFloat32Array(0, 0.903509)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_06e0p"]
+gradient = SubResource("Gradient_rgstr")
+fill = 1
+fill_from = Vector2(0.512346, 0.422839)
+fill_to = Vector2(0.945, 0.14)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sak7u"]
 radius = 68.0294
@@ -170,6 +180,13 @@ color = Color(1, 0.34902, 0, 1)
 energy = 1.7
 texture = SubResource("GradientTexture2D_0ida8")
 
+[node name="OutCave" type="PointLight2D" parent="Iluminasion"]
+position = Vector2(576, 1513)
+scale = Vector2(3.14063, 2.9375)
+color = Color(1, 0.34902, 0, 1)
+energy = 1.2
+texture = SubResource("GradientTexture2D_06e0p")
+
 [node name="Interactable" parent="." instance=ExtResource("2_0ida8")]
 position = Vector2(576, 1538)
 interact_name = "Exit Of The Cave"
@@ -226,7 +243,7 @@ position = Vector2(720, 305)
 rotation = -0.2399
 
 [node name="Terminal" parent="." instance=ExtResource("5_0ulg3")]
-position = Vector2(202, 569)
+position = Vector2(165, 565)
 
 [connection signal="body_entered" from="TreasureLayer/Enter_Treasure" to="TreasureLayer/Enter_Treasure" method="_on_body_entered"]
 [connection signal="body_exited" from="TreasureLayer/Enter_Treasure" to="TreasureLayer/Enter_Treasure" method="_on_body_exited"]
