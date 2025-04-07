@@ -294,7 +294,7 @@ tile_map_data = PackedByteArray("AAAUAAYAAAAAAAAAAQAVAAYAAAAAAAAAAQAWAAYAAAAAAAA
 tile_set = SubResource("TileSet_3ad06")
 
 [node name="ShadowInteract" type="TileMapLayer" parent="TerrainManager"]
-tile_map_data = PackedByteArray("AAAaAAUAAAAAAAAAAAAbAAUAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAYAAQAAAAAAAAAAAAZAAQAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_kx1xh")
 
 [node name="SandAux" type="TileMapLayer" parent="TerrainManager"]
@@ -313,12 +313,12 @@ tile_set = SubResource("TileSet_fwgd7")
 [node name="Bridge" type="Node2D" parent="."]
 
 [node name="BridgeInteract" type="TileMapLayer" parent="Bridge"]
-tile_map_data = PackedByteArray("AAAaAAUAAAABAAAAAAAbAAUAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAYAAQAAAABAAAAAAAZAAQAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_rbkwr")
 script = ExtResource("14_rbkwr")
 
 [node name="BridgeAreaInteract" type="Area2D" parent="Bridge/BridgeInteract"]
-position = Vector2(1670, 345)
+position = Vector2(1542, 285)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("14_kx1xh")
@@ -345,7 +345,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(1470, 406)
+position = Vector2(1389, 413)
 left_attack_name = "attack_axe"
 right_attack_name = "attack_hammer"
 bridge = NodePath("../../Bridge/Bridget")
@@ -359,6 +359,12 @@ position = Vector2(2288, -44)
 [node name="MushRoom2" parent="Decorations/MushRooms" instance=ExtResource("15_kx1xh")]
 position = Vector2(2002, -154)
 
+[node name="MushRoom3" parent="Decorations/MushRooms" instance=ExtResource("15_kx1xh")]
+position = Vector2(2715, 212)
+
+[node name="MushRoom4" parent="Decorations/MushRooms" instance=ExtResource("15_kx1xh")]
+position = Vector2(2731, 256)
+
 [node name="Rocks" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
@@ -371,13 +377,11 @@ position = Vector2(3133, -39)
 [node name="Bones" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
-[node name="Bones3" parent="Decorations/Bones" instance=ExtResource("17_q2nny")]
-visible = false
-position = Vector2(2090, 717)
+[node name="Bones1" parent="Decorations/Bones" instance=ExtResource("17_q2nny")]
+position = Vector2(3125, -77)
 
 [node name="Bones2" parent="Decorations/Bones" instance=ExtResource("17_q2nny")]
-visible = false
-position = Vector2(2154, 734)
+position = Vector2(3110, 5)
 
 [node name="Bushes" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
@@ -388,22 +392,35 @@ position = Vector2(2080, 680)
 [node name="Bushes2" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
 position = Vector2(2144, 711)
 
+[node name="Bushes3" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
+position = Vector2(2699, 173)
+
+[node name="Bushes4" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
+position = Vector2(2157, -162)
+
+[node name="Bushes5" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
+position = Vector2(2192, 218)
+
 [node name="Pumpkins" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
 [node name="Pumpkins1" parent="Decorations/Pumpkins" instance=ExtResource("19_30a5j")]
-visible = false
-position = Vector2(2713, 227)
+position = Vector2(2775, 645)
 
 [node name="Pumpkins2" parent="Decorations/Pumpkins" instance=ExtResource("19_30a5j")]
-visible = false
-position = Vector2(2777, 483)
+position = Vector2(2815, 687)
+
+[node name="Pumpkins3" parent="Decorations/Pumpkins" instance=ExtResource("19_30a5j")]
+position = Vector2(2749, 697)
 
 [node name="Signs" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
 [node name="DecorationSign" parent="Decorations/Signs" instance=ExtResource("20_ited3")]
 position = Vector2(3140, 74)
+
+[node name="DecorationSign2" parent="Decorations/Signs" instance=ExtResource("20_ited3")]
+position = Vector2(2771, 478)
 
 [node name="SmallGrasses" type="Node2D" parent="Decorations"]
 
@@ -415,6 +432,21 @@ position = Vector2(3018, -158)
 
 [node name="SmallGrass3" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
 position = Vector2(464, 352)
+
+[node name="SmallGrass4" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
+position = Vector2(2660, 229)
+
+[node name="SmallGrass5" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
+position = Vector2(2242, 699)
+
+[node name="SmallGrass6" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
+position = Vector2(2912, 485)
+
+[node name="SmallGrass7" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
+position = Vector2(3012, 557)
+
+[node name="SmallGrass8" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
+position = Vector2(2940, 550)
 
 [node name="Trees" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
@@ -455,6 +487,39 @@ position = Vector2(3087, -110)
 [node name="Tree12" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2882, -90)
 
+[node name="Tree13" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2291, 632)
+
+[node name="Tree14" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2186, 623)
+
+[node name="Tree15" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2424, 685)
+
+[node name="Tree16" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2545, 713)
+
+[node name="Tree17" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2680, 668)
+
+[node name="Tree18" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2452, -81)
+
+[node name="Tree19" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2877, 461)
+
+[node name="Tree20" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2994, 506)
+
+[node name="Tree21" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(3087, 551)
+
+[node name="Tree22" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2272, 396)
+
+[node name="Tree23" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+position = Vector2(2255, 282)
+
 [node name="Interactables" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
@@ -462,7 +527,7 @@ y_sort_enabled = true
 position = Vector2(3033, -13)
 
 [node name="Terminal" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
-position = Vector2(1586, 404)
+position = Vector2(1560, 408)
 
 [node name="Actionable" parent="Decorations/Interactables/Terminal" instance=ExtResource("26_rkog2")]
 dialogue_resource = ExtResource("27_ufrq5")
@@ -483,6 +548,7 @@ shape = SubResource("RectangleShape2D_rcjgg")
 [node name="SpawnPoint" type="Marker2D" parent="."]
 position = Vector2(4057, 352)
 
+[connection signal="area_entered" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_area_entered"]
 [connection signal="body_entered" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_body_entered"]
 [connection signal="body_exited" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_body_exited"]
 [connection signal="body_entered" from="Bridge/Bridget/BridgeArea" to="Bridge/Bridget/BridgeArea" method="_on_body_entered"]

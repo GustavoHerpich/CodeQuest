@@ -2,6 +2,7 @@ class_name BaseCharacter
 extends CharacterBody2D
 
 var is_in_terminal: bool = false
+var is_in_dialogue: bool = false
 var is_in_montain: bool = true
 var can_attack: bool = true
 var attack_animation_name: String = ""
@@ -24,14 +25,18 @@ var attack_animation_name: String = ""
 func _ready() -> void:
 	update_montain_state(is_in_montain)
 	add_child(game_object_register)
+	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
 func _physics_process(_delta: float) -> void:
 	_move()
 	_attack()
 	_animate()
-	
+
+func _on_dialogue_ended(_resource: DialogueResource) -> void:
+	is_in_dialogue = false
+
 func _move() -> void:
-	if is_in_terminal:
+	if is_in_terminal or is_in_dialogue:
 		return
 		
 	var _direction: Vector2 = Input.get_vector(
@@ -41,7 +46,7 @@ func _move() -> void:
 	move_and_slide()
 
 func _attack() -> void:
-	if is_in_terminal:
+	if is_in_terminal or is_in_dialogue:
 		return
 		
 	if Input.is_action_just_pressed("left_attack") and can_attack:
@@ -55,7 +60,7 @@ func _attack() -> void:
 		set_physics_process(false)
 
 func _animate() -> void:
-	if is_in_terminal:
+	if is_in_terminal or is_in_dialogue:
 		animation.play("idle")
 		return
 	
@@ -80,6 +85,13 @@ func _on_animation_finished(anim_name: StringName) -> void:
 		can_attack = true
 		set_physics_process(true)
 
+func _on_actionable_finder_area_entered(_area: Area2D) -> void:
+	var actionables = actionable_finder.get_overlapping_areas()
+	if actionables.size() > 0:
+		is_in_dialogue = true
+		actionables[0].action()
+		return
+		
 ## 
 
 ## Public Methods
@@ -120,9 +132,3 @@ func increaseSpeed(amount: float) -> void:
 func moveSpeed() -> Variant:
 	return GameManager.get_value_variable(self, "move_speed")
 ##
-
-func _on_actionable_finder_area_entered(_area: Area2D) -> void:
-	var actionables = actionable_finder.get_overlapping_areas()
-	if actionables.size() > 0:
-		actionables[0].action()
-		return
