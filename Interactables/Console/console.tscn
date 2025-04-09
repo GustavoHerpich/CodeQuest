@@ -77,6 +77,7 @@ layout_mode = 2
 [node name="DragArea" type="Control" parent="Console/Panel/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 15)
 layout_mode = 2
+mouse_default_cursor_shape = 2
 
 [node name="ActionBar" type="HBoxContainer" parent="Console/Panel/MarginContainer/VBoxContainer"]
 clip_contents = true

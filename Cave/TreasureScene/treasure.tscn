@@ -1,9 +1,9 @@
 [gd_scene load_steps=13 format=4 uid="uid://dq1tkwxcmy0hd"]
 
-[ext_resource type="Script" uid="uid://eb47i65quimv" path="res://Cave/treasure.gd" id="1_emrkj"]
+[ext_resource type="Script" uid="uid://eb47i65quimv" path="res://Cave/TreasureScene/treasure.gd" id="1_emrkj"]
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="1_qwh2u"]
 [ext_resource type="PackedScene" uid="uid://c4gkei8yt75pn" path="res://Cave/tourch.tscn" id="2_emrkj"]
-[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/interactable.tscn" id="3_onc48"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/InteractablesManage/interactable.tscn" id="3_onc48"]
 
 [sub_resource type="Gradient" id="Gradient_m6mkn"]
 offsets = PackedFloat32Array(0.31, 1)
@@ -129,7 +129,7 @@ texture = SubResource("GradientTexture2D_emrkj")
 
 [node name="Interactable" parent="." instance=ExtResource("3_onc48")]
 position = Vector2(304, 656)
-interact_name = "Exit the Treasure Area"
+interact_name = "Saia da Área do Tesouro"
 
 [node name="Collision" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_h7rf0")

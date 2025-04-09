@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://5wyogobj7iub"
+path="res://.godot/imported/cave themeb4.ogg-bc6e3389aab0ada0b449d70cf47fcb3c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/cave themeb4.ogg"
+dest_files=["res://.godot/imported/cave themeb4.ogg-bc6e3389aab0ada0b449d70cf47fcb3c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

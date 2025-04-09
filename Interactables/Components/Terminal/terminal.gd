@@ -6,7 +6,9 @@ var TerminalScene = preload("res://Interactables/Console/console.tscn")
 
 @onready var interactable: Interactable = $Interactable
 @onready var sprite: Sprite2D = $Sprite
-	
+
+## Private Methods
+
 func _ready():
 	interactable.interact = _open_terminal
 
@@ -24,3 +26,5 @@ func _open_terminal():
 		print("⚠️ ERRO: Cena atual não encontrada!")
 
 	terminal_instance.get_child(0).global_position += Vector2(100, 100)  
+
+##

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dqcbsv275b7o8"]
 
-[ext_resource type="Script" uid="uid://dlfwd1e8bd4wf" path="res://Interactables/Global Script/scene_switcher.gd" id="1_8sm3p"]
+[ext_resource type="Script" uid="uid://dlfwd1e8bd4wf" path="res://Interactables/Global Script/SceneSwitcher/scene_switcher.gd" id="1_8sm3p"]
 
 [sub_resource type="Animation" id="Animation_ioy1e"]
 length = 0.001

@@ -1,8 +1,8 @@
 class_name Console
 extends Control
 
-var lua_console: LuaConsole = LuaConsole.new()
 const MyHighlighter = preload("res://Interactables/Global Script/CodeStyles/MyHighlighter.gd")
+var lua_console: LuaConsole = LuaConsole.new()
 var dragging: bool = false
 var drag_offset: Vector2
 
@@ -23,6 +23,7 @@ func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
 		player.is_in_terminal = true
+		
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):

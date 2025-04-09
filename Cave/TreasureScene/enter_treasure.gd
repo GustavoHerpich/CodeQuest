@@ -3,10 +3,12 @@ extends Area2D
 
 var changing_scene = false
 
-## Métodos Privados
+## Private Methods
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is BaseCharacter and not changing_scene:
 		changing_scene = true
 		set_deferred("monitoring", false)
-		SceneSwitcher.switch_scene("res://Cave/treasure.tscn", self)
+		SceneSwitcher.switch_scene("res://Cave/TreasureScene/treasure.tscn", self)
+
+##

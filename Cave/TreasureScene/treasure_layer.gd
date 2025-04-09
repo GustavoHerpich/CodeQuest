@@ -1,16 +1,21 @@
 class_name TreasureLayer
 extends Node2D
 
-@onready var doors: Array = [$Door1, $Door2, $Door3]
-@onready var door_1: Node2D = $Door1
 const DOOR_VALUES: Array = [26, 13, 17]
 
+@onready var doors: Array = [$Door1, $Door2, $Door3]
+@onready var door_1: Node2D = $Door1
 @onready var game_object_register = GameObject.new()
+@onready var door_open: AudioStreamPlayer2D = $"../Sounds/DoorOpen"
+
+## Private Methods
 
 func _ready() -> void:
 	add_child(game_object_register)
 
-## Métodos Públicos
+##
+
+## Methods that interact with the console
 
 func getDoorValues() -> Array:
 	return DOOR_VALUES.duplicate()
@@ -27,9 +32,12 @@ func openDoor(password: int) -> void:
 		door_1.set_collision_layer_value(1, false)
 		var anim_player: AnimationPlayer = door_1.get_node("AnimationPlayer")
 		if anim_player:
-			if anim_player.has_animation("open"):
+			if anim_player.has_animation("open"):	 
 				anim_player.play("open")
+				door_open.play()
 				GameManager.print("🚪 A porta está abrindo!")
 
 	else:
 		GameManager.error("🔒 A senha está incorreta. Tente novamente!")
+
+##

@@ -17,8 +17,9 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 [autoload]
 
 GameManager="*res://Interactables/Global Script/Core/GameManager.gd"
-SceneSwitcher="*res://Interactables/Global Script/SceneSwitcher.tscn"
+SceneSwitcher="*res://Interactables/Global Script/SceneSwitcher/SceneSwitcher.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+BookManager="*res://Interactables/BookHelper/BookManager.gd"
 
 [dialogue_manager]
 
@@ -91,6 +92,11 @@ interact={
 exit={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+open_book={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":72,"key_label":0,"unicode":104,"location":0,"echo":false,"script":null)
 ]
 }
 

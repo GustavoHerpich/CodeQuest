@@ -9,6 +9,8 @@ var default_environment = null
 @onready var color_rect = $ColorRect
 @onready var global_environment = $WorldEnvironment 
 
+## Private Methods
+
 func _ready() -> void:
 	color_rect.visible = false
 	var root = get_tree().root
@@ -76,5 +78,11 @@ func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_n
 		area_to_reactivate.set_deferred("monitoring", true)
 		area_to_reactivate.changing_scene = false
 
+##
+
+## Public Methods
+
 func switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_name: String = "SpawnPoint"):
 	call_deferred("_deferred_switch_scene", res_path, area_to_reactivate, spawn_name)
+
+##

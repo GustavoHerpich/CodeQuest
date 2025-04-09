@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://brackoeklf5rw" path="res://Assets/Tiny Swords/Terrain/Bridge/Bridge_All.png" id="10_ldbhs"]
 [ext_resource type="Script" uid="uid://hhvyotlv2pqs" path="res://Interactables/Components/Bridge/bridge_area.gd" id="11_3x2o8"]
 [ext_resource type="PackedScene" uid="uid://b2ovknxt6pthb" path="res://Entities/Troops/Pawn/pawn.tscn" id="12_jskgj"]
-[ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/ladder_area.gd" id="13_bqi7j"]
+[ext_resource type="Script" uid="uid://b6w6dba0qisdj" path="res://Interactables/Components/Ladder/ladder_area.gd" id="13_bqi7j"]
 [ext_resource type="Script" uid="uid://c7tchb3v1ledc" path="res://Interactables/Components/Bridge/bridge_area_interact.gd" id="14_kx1xh"]
 [ext_resource type="Script" uid="uid://dthrakq3nwiev" path="res://Interactables/Components/Bridge/bridge_interact.gd" id="14_rbkwr"]
 [ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/Terminal/terminal.tscn" id="14_uki8w"]
@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://b0phv0yg0f8r6" path="res://Decoration/Signs/decoration_sign.tscn" id="20_ited3"]
 [ext_resource type="PackedScene" uid="uid://djakawdpvtt6x" path="res://Decoration/SmallGrass/small_grass.tscn" id="21_r3afb"]
 [ext_resource type="PackedScene" uid="uid://bb40cvmxuohhw" path="res://Interactables/Resources/tree.tscn" id="23_30a5j"]
-[ext_resource type="PackedScene" uid="uid://c4ywxuous87nu" path="res://Interactables/Components/mine.tscn" id="25_ited3"]
+[ext_resource type="PackedScene" uid="uid://c4ywxuous87nu" path="res://Interactables/Components/Mine/mine.tscn" id="25_ited3"]
 [ext_resource type="PackedScene" uid="uid://iqng6n74dui3" path="res://Dialogues/actionable.tscn" id="26_rkog2"]
 [ext_resource type="Resource" uid="uid://m167kvuhmxp8" path="res://Dialogues/Dialogues/FirstDialog.dialogue" id="27_ufrq5"]
 
@@ -536,13 +536,15 @@ dialogue_resource = ExtResource("27_ufrq5")
 [node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal/Actionable"]
 shape = SubResource("CircleShape2D_ufrq5")
 
-[node name="LadderArea" type="Area2D" parent="."]
+[node name="Ladders" type="Node2D" parent="."]
+
+[node name="LadderArea" type="Area2D" parent="Ladders"]
 position = Vector2(579, 578)
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("13_bqi7j")
 
-[node name="Collision" type="CollisionShape2D" parent="LadderArea"]
+[node name="Collision" type="CollisionShape2D" parent="Ladders/LadderArea"]
 position = Vector2(30.5, 30)
 shape = SubResource("RectangleShape2D_rcjgg")
 
@@ -556,4 +558,4 @@ position = Vector2(4057, 352)
 [connection signal="body_exited" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_body_exited"]
 [connection signal="body_entered" from="Bridge/Bridget/BridgeArea" to="Bridge/Bridget/BridgeArea" method="_on_body_entered"]
 [connection signal="body_exited" from="Bridge/Bridget/BridgeArea" to="Bridge/Bridget/BridgeArea" method="_on_body_exited"]
-[connection signal="body_exited" from="LadderArea" to="LadderArea" method="_on_body_exited"]
+[connection signal="body_exited" from="Ladders/LadderArea" to="Ladders/LadderArea" method="_on_body_exited"]

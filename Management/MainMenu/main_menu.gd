@@ -11,6 +11,8 @@ extends Node2D
 @onready var main_volume: HSlider = $CenterContainer/SettingsMenu/MainVolume
 @onready var music_volume: HSlider = $CenterContainer/SettingsMenu/MusicVolume
 
+## Private Methods
+
 func _ready() -> void:
 	full_screen.button_pressed = true if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN else false
 	main_volume.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")))
@@ -48,3 +50,5 @@ func _on_main_volume_value_changed(value: float) -> void:
 	
 func _on_music_volume_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_linear(AudioServer.get_bus_index("MUSIC"), value)
+
+##

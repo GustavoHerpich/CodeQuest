@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 var is_in_terminal: bool = false
 var is_in_dialogue: bool = false
+var is_in_bookHelper: bool = false
 var is_in_montain: bool = true
 var can_attack: bool = true
 var attack_animation_name: String = ""
@@ -19,6 +20,8 @@ var attack_animation_name: String = ""
 
 @onready var game_object_register = GameObject.new()
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
+@onready var axe_attack_sound: AudioStreamPlayer2D = $Sounds/AxeAttackSound
+@onready var hammer_attack_sound: AudioStreamPlayer2D = $Sounds/HammerAttackSound
 
 ## Private Methods
 
@@ -35,7 +38,7 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 	is_in_dialogue = false
 
 func _move() -> void:
-	if is_in_terminal or is_in_dialogue:
+	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
 		return
 		
 	var _direction: Vector2 = Input.get_vector(
@@ -45,21 +48,23 @@ func _move() -> void:
 	move_and_slide()
 
 func _attack() -> void:
-	if is_in_terminal or is_in_dialogue:
+	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
 		return
 		
 	if Input.is_action_just_pressed("left_attack") and can_attack:
 		can_attack = false
 		attack_animation_name = left_attack_name
+		hammer_attack_sound.play()
 		set_physics_process(false)
 		
 	if Input.is_action_just_pressed("right_attack") and can_attack:
 		can_attack = false
 		attack_animation_name = right_attack_name
+		axe_attack_sound.play()
 		set_physics_process(false)
 
 func _animate() -> void:
-	if is_in_terminal or is_in_dialogue:
+	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
 		animation.play("idle")
 		return
 	
@@ -130,4 +135,5 @@ func increaseSpeed(amount: float) -> void:
 
 func moveSpeed() -> Variant:
 	return GameManager.get_value_variable(self, "move_speed")
+
 ##
