@@ -8,6 +8,7 @@ var drag_offset: Vector2
 
 @onready var text_edit: TextEdit = $Panel/MarginContainer/VBoxContainer/CodeEditor/TextEdit
 @onready var message_container: MessageContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/MessagesContainer
+@onready var drag_area: Control = $Panel/MarginContainer/VBoxContainer/DragArea
 
 ## Private Methods
 
@@ -26,16 +27,18 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
 		queue_free()
+		
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			if event.pressed:
-				if get_global_rect().has_point(event.position):
+				if drag_area.get_global_rect().has_point(get_global_mouse_position()):
 					dragging = true
 					drag_offset = event.position - global_position
 			else:
 				dragging = false
+	
 	elif event is InputEventMouseMotion and dragging:
-		global_position = event.position - drag_offset  
+		global_position = event.position - drag_offset 
 		
 func _on_tree_exiting() -> void:
 	var player = get_tree().get_first_node_in_group("player")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de6vy6a4487ix"
-path="res://.godot/imported/play-solid.svg-3ac5cf4dd5628e90fcee85312542c06f.ctex"
+uid="uid://bvc5cxfmwtyco"
+path="res://.godot/imported/BackGroundMenu.png-b7ed254ad5a1e8fef9ba78de549e7423.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Interactables/Console/play-solid.svg"
-dest_files=["res://.godot/imported/play-solid.svg-3ac5cf4dd5628e90fcee85312542c06f.ctex"]
+source_file="res://Assets/Menu/BackGroundMenu.png"
+dest_files=["res://.godot/imported/BackGroundMenu.png-b7ed254ad5a1e8fef9ba78de549e7423.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

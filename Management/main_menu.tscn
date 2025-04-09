@@ -1,0 +1,169 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3dxrvy5ou5yu"]
+
+[ext_resource type="Script" uid="uid://dve50l1tj488" path="res://Management/main_menu.gd" id="1_h2xi5"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="2_3qcjh"]
+[ext_resource type="Texture2D" uid="uid://bvc5cxfmwtyco" path="res://Assets/Menu/BackGroundMenu.png" id="2_lhon8"]
+[ext_resource type="AudioStream" uid="uid://bula5eqj2nhea" path="res://Assets/Music/rpg_menu_loop.ogg" id="4_lhon8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lhon8"]
+font = ExtResource("2_3qcjh")
+font_size = 110
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jb8f0"]
+Button/fonts/font = ExtResource("2_3qcjh")
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_h2xi5")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+scale = Vector2(1.129, 0.68)
+texture = ExtResource("2_lhon8")
+stretch_mode = 5
+
+[node name="Title" type="Label" parent="."]
+offset_right = 1156.0
+offset_bottom = 350.0
+text = "CodeQuest"
+label_settings = SubResource("LabelSettings_lhon8")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 150.0
+offset_right = 1156.0
+offset_bottom = 650.0
+theme = SubResource("Theme_jb8f0")
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Play" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+text = "PLAY"
+
+[node name="Settings" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+text = "SETTINGS"
+
+[node name="Credits" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+text = "CREDITS"
+
+[node name="Exit" type="Button" parent="CenterContainer/MainButtons"]
+layout_mode = 2
+text = "EXIT"
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="FullScreen" type="CheckBox" parent="CenterContainer/SettingsMenu"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "FULLSCREEN"
+
+[node name="MainVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MainVolume"]
+custom_minimum_size = Vector2(126, 25)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 126.0
+offset_bottom = 9.0
+text = "MAIN VOLUME"
+horizontal_alignment = 1
+
+[node name="MusicVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MusicVolume"]
+custom_minimum_size = Vector2(126, 25)
+layout_mode = 0
+offset_top = -16.0
+offset_right = 126.0
+offset_bottom = 9.0
+text = "MUSIC VOLUME"
+horizontal_alignment = 1
+
+[node name="Back" type="Button" parent="CenterContainer/SettingsMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Back
+"
+
+[node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/CreditsMenu"]
+custom_minimum_size = Vector2(800, 250)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center][b]CodeQuest[/b][/center]
+[center]Um jogo educativo feito para ensinar lógica de programação de forma divertida.[/center]
+
+[b]📚 Sobre o Projeto[/b]
+Este jogo foi desenvolvido como parte do TCC do curso de Análise e Desenvolvimento de Sistemas. 
+O objetivo é ensinar conceitos de lógica, algoritmos e programação com uma abordagem interativa, divertida e acessível.
+
+[b]👨‍💻 Desenvolvido por[/b]
+Gustavo Herpich
+Desenvolvedor, game designer e roteirista.
+
+[b]🔗 GitHub[/b]
+- Meu GitHub:
+[url]https://github.com/GustavoHerpich[/url]
+
+- O do Gabriel Lovato:
+[url]https://github.com/gabrielLV-BR[/url]
+
+[b]🎮 Feito com[/b]
+Godot Engine 4.4  
+Lua (para os scripts no jogo)  
+DialogueManager 3
+
+[b]🧠 Agradecimentos[/b]
+- Ao professor/orientador 
+- Aos amigos e colegas que testaram e me ajudaram, principalmente ao Gabriel Lovato  que me ajudou com o GDExtension
+- À comunidade Godot e ao mundo open source ❤️"
+
+[node name="Back" type="Button" parent="CenterContainer/CreditsMenu"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 20
+text = "Back
+"
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_lhon8")
+autoplay = true
+bus = &"MUSIC"
+
+[connection signal="pressed" from="CenterContainer/MainButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="toggled" from="CenterContainer/SettingsMenu/FullScreen" to="." method="_on_full_screen_toggled"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MainVolume" to="." method="_on_main_volume_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/CreditsMenu/Back" to="." method="_on_back_pressed"]

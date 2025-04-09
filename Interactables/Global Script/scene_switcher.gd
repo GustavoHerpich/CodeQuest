@@ -22,16 +22,9 @@ func _ready() -> void:
 		default_environment = global_environment.environment.duplicate()
 
 func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_name: String = "SpawnPoint"):
-	if player == null:
-		print("⚠️ ERRO: O jogador não foi encontrado! Cancelando troca de cena.")
-		return
-
 	color_rect.visible = true
 	animation_player.play("fade_in")
 	await animation_player.animation_finished
-
-	if player.get_parent():
-		player.get_parent().remove_child(player)
 
 	if stored_scenes.has(res_path):
 		if current_scene:
@@ -48,8 +41,17 @@ func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_n
 
 		current_scene = scene
 		stored_scenes[res_path] = scene
-
-	var spawn_point = current_scene.get_node_or_null(spawn_name)
+	
+	if player == null:
+		var players = get_tree().get_nodes_in_group("player")
+		if players.size() > 0:
+			player = players[0]
+			
+	if player.get_parent():
+		player.get_parent().remove_child(player)
+	
+	var spawn_point = current_scene.get_node_or_null("SpawnPoints/%s" % spawn_name)
+	
 	if spawn_point:
 		player.global_position = spawn_point.global_position
 

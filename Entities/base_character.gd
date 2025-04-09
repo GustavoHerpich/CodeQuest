@@ -23,7 +23,6 @@ var attack_animation_name: String = ""
 ## Private Methods
 
 func _ready() -> void:
-	update_montain_state(is_in_montain)
 	add_child(game_object_register)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 

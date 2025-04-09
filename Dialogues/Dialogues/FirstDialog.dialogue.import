@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://m167kvuhmxp8"
+path="res://.godot/imported/FirstDialog.dialogue-9e7f0e3826bd9074801501c33d1fc811.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/FirstDialog.dialogue"
+dest_files=["res://.godot/imported/FirstDialog.dialogue-9e7f0e3826bd9074801501c33d1fc811.tres"]
+
+[params]
+
+defaults=true
