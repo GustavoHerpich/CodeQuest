@@ -1,4 +1,4 @@
-# 📚 Jogo Educativo de Programação – *"Aprendendo com Aventuras"*
+# 📚 Jogo Educativo de Programação – *"CodeQuest"*
 
 Bem-vindo ao repositório oficial do **Jogo Educativo de Programação**, um jogo feito com amor para ajudar iniciantes a aprender lógica de programação de forma divertida e interativa! 💻🎮
 
@@ -45,8 +45,8 @@ Você assume o papel de um(a) aventureiro(a) que precisa resolver desafios de l�
 
 1. Instale a [Godot 4.4](https://godotengine.org/download).
 2. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+```bash
+git clone https://github.com/seu-usuario/seu-repositorio.git
 3. Abra o projeto na Godot.
 4. Execute clicando em **F5**.
 
@@ -84,10 +84,10 @@ Este livro traz informações essenciais para resolver os desafios de programaç
 
 - 🧠 **Programação em Lua**: exemplos de `if`, `for`, funções e lógica básica
 - 🧩 **Funções dos objetos do jogo**:
-  - `moveBridge(direction)` – movimenta a ponte
-  - `getDoorValues()` – retorna os valores da porta
-  - `showPassword(valor)` – mostra a senha se o valor for correto
-  - `openDoor(senha)` – tenta abrir a porta
+- `moveBridge(direction)` – movimenta a ponte
+- `getDoorValues()` – retorna os valores da porta
+- `showPassword(valor)` – mostra a senha se o valor for correto
+- `openDoor(senha)` – tenta abrir a porta
 - 📖 **Dicas visuais** para reforçar o aprendizado e auxiliar no raciocínio lógico
 
 Use as setas ➡️ ⬅️ no livro para navegar entre páginas.
