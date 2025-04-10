@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bb40cvmxuohhw"]
 
-[ext_resource type="Texture2D" uid="uid://cjgjnbeudnh3f" path="res://Assets/Tiny Swords/Resources/Trees/Tree.png" id="1_77yra"]
+[ext_resource type="Texture2D" uid="uid://cjgjnbeudnh3f" path="res://Assets/Externals/Tiny Swords/Resources/Trees/Tree.png" id="1_77yra"]
 
 [sub_resource type="Animation" id="Animation_fh8a4"]
 length = 0.001

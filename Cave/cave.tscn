@@ -1,16 +1,18 @@
-[gd_scene load_steps=23 format=4 uid="uid://cj48ven86xi7s"]
+[gd_scene load_steps=26 format=4 uid="uid://cj48ven86xi7s"]
 
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="1_ej5d6"]
 [ext_resource type="Script" uid="uid://mx6p4blokmyp" path="res://Cave/cave.gd" id="1_sak7u"]
 [ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/InteractablesManage/interactable.tscn" id="2_0ida8"]
-[ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="3_420yn"]
+[ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Externals/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="3_420yn"]
 [ext_resource type="Script" uid="uid://ryqxkjy7lgl2" path="res://Cave/TreasureScene/treasure_layer.gd" id="3_lk6j5"]
 [ext_resource type="PackedScene" uid="uid://c4gkei8yt75pn" path="res://Cave/tourch.tscn" id="4_pohhc"]
 [ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/Terminal/terminal.tscn" id="5_0ulg3"]
-[ext_resource type="PackedScene" uid="uid://cqm312lqswmcj" path="res://Cave/ritgh_door.tscn" id="5_rgstr"]
+[ext_resource type="PackedScene" uid="uid://cqm312lqswmcj" path="res://Cave/right_door.tscn" id="5_rgstr"]
 [ext_resource type="Script" uid="uid://d1v747dw6ckqe" path="res://Cave/TreasureScene/enter_treasure.gd" id="6_rgstr"]
-[ext_resource type="AudioStream" uid="uid://5wyogobj7iub" path="res://Assets/Sounds/cave themeb4.ogg" id="10_06e0p"]
-[ext_resource type="AudioStream" uid="uid://bc168hfciik1m" path="res://Assets/Sounds/door-2-6841.mp3" id="11_77t66"]
+[ext_resource type="AudioStream" uid="uid://5wyogobj7iub" path="res://Assets/Sounds/CaveMusic.ogg" id="10_06e0p"]
+[ext_resource type="PackedScene" uid="uid://iqng6n74dui3" path="res://Dialogues/actionable.tscn" id="10_8syav"]
+[ext_resource type="Resource" uid="uid://buw50fcue0twq" path="res://Dialogues/Dialogues/SecondDialogue.dialogue" id="11_3w21a"]
+[ext_resource type="AudioStream" uid="uid://bc168hfciik1m" path="res://Assets/Sounds/DoorOpen.mp3" id="11_77t66"]
 
 [sub_resource type="Gradient" id="Gradient_sak7u"]
 offsets = PackedFloat32Array(0.31, 1)
@@ -67,6 +69,9 @@ gradient = SubResource("Gradient_rgstr")
 fill = 1
 fill_from = Vector2(0.512346, 0.422839)
 fill_to = Vector2(0.945, 0.14)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3w21a"]
+radius = 65.0692
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sak7u"]
 radius = 68.0294
@@ -182,11 +187,23 @@ color = Color(1, 0.34902, 0, 1)
 energy = 1.2
 texture = SubResource("GradientTexture2D_06e0p")
 
-[node name="Interactable" parent="." instance=ExtResource("2_0ida8")]
+[node name="Interactables" type="Node2D" parent="."]
+
+[node name="Terminal" parent="Interactables" instance=ExtResource("5_0ulg3")]
+position = Vector2(165, 565)
+
+[node name="Actionable" parent="Interactables/Terminal" instance=ExtResource("10_8syav")]
+dialogue_resource = ExtResource("11_3w21a")
+
+[node name="Collision" type="CollisionShape2D" parent="Interactables/Terminal/Actionable"]
+position = Vector2(16, -45)
+shape = SubResource("CircleShape2D_3w21a")
+
+[node name="Interactable" parent="Interactables" instance=ExtResource("2_0ida8")]
 position = Vector2(576, 1538)
 interact_name = "Saída da Caverna"
 
-[node name="Collision" type="CollisionShape2D" parent="Interactable"]
+[node name="Collision" type="CollisionShape2D" parent="Interactables/Interactable"]
 shape = SubResource("CircleShape2D_sak7u")
 
 [node name="Torches" type="Node2D" parent="."]
@@ -236,9 +253,6 @@ scale = Vector2(-1, 1)
 [node name="Torch10" parent="Torches" instance=ExtResource("4_pohhc")]
 position = Vector2(720, 305)
 rotation = -0.2399
-
-[node name="Terminal" parent="." instance=ExtResource("5_0ulg3")]
-position = Vector2(165, 565)
 
 [node name="SpawnPoints" type="Node2D" parent="."]
 

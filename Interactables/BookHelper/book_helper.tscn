@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3lcynkdn7ogk"]
+[gd_scene load_steps=6 format=3 uid="uid://b3lcynkdn7ogk"]
 
 [ext_resource type="Script" uid="uid://dhuf6101u2sbj" path="res://Interactables/BookHelper/book.gd" id="1_gpkfv"]
 [ext_resource type="Texture2D" uid="uid://bf1xp37ingl28" path="res://Assets/BookHelper/Book.png" id="2_5j1j7"]
 [ext_resource type="Texture2D" uid="uid://cxy508fg3rda6" path="res://Assets/BookHelper/Previous.png" id="3_5j1j7"]
 [ext_resource type="Texture2D" uid="uid://ccu54maty260q" path="res://Assets/BookHelper/Next.png" id="4_om8wl"]
+[ext_resource type="AudioStream" uid="uid://dm76kcj1pn7h2" path="res://Assets/Sounds/PageTurn.mp3" id="5_om8wl"]
 
 [node name="BookHelper" type="CanvasLayer"]
 layer = 15
@@ -85,6 +86,9 @@ icon = ExtResource("4_om8wl")
 flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Book"]
+
+[node name="TurnPage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_om8wl")
 
 [connection signal="pressed" from="Book/HBoxContainer/Previous" to="." method="_on_previous_pressed"]
 [connection signal="pressed" from="Book/HBoxContainer/Next" to="." method="_on_next_pressed"]

@@ -10,6 +10,7 @@ extends Node2D
 @onready var full_screen: CheckBox = $CenterContainer/SettingsMenu/FullScreen
 @onready var main_volume: HSlider = $CenterContainer/SettingsMenu/MainVolume
 @onready var music_volume: HSlider = $CenterContainer/SettingsMenu/MusicVolume
+@onready var menu_music: AudioStreamPlayer = $MenuMusic
 
 ## Private Methods
 
@@ -19,6 +20,10 @@ func _ready() -> void:
 	music_volume.value = db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index("MUSIC")))
 	
 func _on_play_pressed() -> void:
+	var tween := create_tween()
+	tween.tween_property(menu_music, "volume_db", -30, 4.0)
+	await tween.finished
+	menu_music.stop()
 	SceneSwitcher.switch_scene("res://Management/game_level.tscn")
 
 func _on_settings_pressed() -> void:

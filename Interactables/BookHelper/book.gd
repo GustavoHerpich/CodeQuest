@@ -11,6 +11,7 @@ var drag_offset := Vector2.ZERO
 @onready var content_text_2: RichTextLabel = $Book/Content2
 @onready var book: Control = $Book
 @onready var drag_area: Control = $Book/DragArea
+@onready var turn_page: AudioStreamPlayer = $TurnPage
 
 func _ready() -> void:
 	_load_pages()
@@ -45,11 +46,13 @@ func _update_page() -> void:
 func _on_next_pressed() -> void:
 	if current_page < pages.size() - 1:
 		current_page += 1
+		turn_page.play()
 		_update_page()
 
 func _on_previous_pressed() -> void:
 	if current_page > 0:
 		current_page -= 1
+		turn_page.play()
 		_update_page()
 
 func _input(event: InputEvent) -> void:

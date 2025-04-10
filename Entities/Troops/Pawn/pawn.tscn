@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_8ahts"]
 [ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Entities/Troops/Pawn/Pawn_Blue.png" id="2_1s8jf"]
 [ext_resource type="PackedScene" uid="uid://4fych35akjlc" path="res://Interactables/Global Script/InteractablesManage/interacting_component.tscn" id="3_bp4gk"]
-[ext_resource type="AudioStream" uid="uid://u3lo3muph8u5" path="res://Assets/Sounds/weapon-axe-hit-01-153372.mp3" id="4_oi64a"]
-[ext_resource type="AudioStream" uid="uid://dt8m7cyjytevk" path="res://Assets/Sounds/hammer-hitting-a-head-100624.mp3" id="5_uswhi"]
+[ext_resource type="AudioStream" uid="uid://u3lo3muph8u5" path="res://Assets/Sounds/AxeAttack.mp3" id="4_oi64a"]
+[ext_resource type="AudioStream" uid="uid://dt8m7cyjytevk" path="res://Assets/Sounds/HammerAttack.mp3" id="5_uswhi"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk6sk"]
 radius = 6.0

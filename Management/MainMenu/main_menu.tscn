@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dve50l1tj488" path="res://Management/MainMenu/main_menu.gd" id="1_h2xi5"]
 [ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="2_3qcjh"]
 [ext_resource type="Texture2D" uid="uid://bvc5cxfmwtyco" path="res://Assets/Menu/BackGroundMenu.png" id="2_lhon8"]
-[ext_resource type="AudioStream" uid="uid://bula5eqj2nhea" path="res://Assets/Sounds/rpg_menu_loop.ogg" id="4_lhon8"]
+[ext_resource type="AudioStream" uid="uid://ci5367dwo7cjw" path="res://Assets/Sounds/MainMenu.ogg" id="4_mx2ti"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lhon8"]
 font = ExtResource("2_3qcjh")
@@ -155,7 +155,7 @@ theme_override_font_sizes/font_size = 20
 text = "VOLTAR"
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_lhon8")
+stream = ExtResource("4_mx2ti")
 autoplay = true
 bus = &"MUSIC"
 

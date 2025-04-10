@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://buw50fcue0twq"
+path="res://.godot/imported/SecondDialogue.dialogue-0598dfeb6a51eb8fb36438584b5c195e.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/SecondDialogue.dialogue"
+dest_files=["res://.godot/imported/SecondDialogue.dialogue-0598dfeb6a51eb8fb36438584b5c195e.tres"]
+
+[params]
+
+defaults=true

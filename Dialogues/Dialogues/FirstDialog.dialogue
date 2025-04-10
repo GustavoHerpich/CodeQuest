@@ -1,6 +1,21 @@
 ~ start
-You: O que..[wait=1] é isso?
-You: Parece uma lata velha..
-You: E se eu chegasse mais perto?
-You: Talvez eu consiga interagir com ela.. seja la o que isso for.
+
+Você: O que... [wait=1] é isso?
+
+Você: Parece uma... [wait=0.5] caixa de ferro com luzes? Em plena época medieval?
+
+Você: Hmm... E se eu chegar mais perto?
+
+Você: Talvez eu consiga interagir com ela... seja lá o que isso for.
+
+???: Estás perdido, viajante?
+
+Você: Q-quê?! [wait=0.4] Quem disse isso?!
+
+???: Este artefato guarda um caminho... mas só quem comanda a lógica pode prosseguir.
+
+???: Posicione os passos. Oriente a ponte. Um erro, e cairás no vazio.
+
+???: Quando a mente guia os movimentos, o caminho se alinha.
+
 => END

@@ -6,8 +6,6 @@ var book_instance: CanvasLayer = null
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("open_book"):
 		toggle_book()
-	elif Input.is_action_just_pressed("exit"):
-		hide_book()
 
 func _set_player_book_state(is_in_book: bool) -> void:
 	var player = get_tree().get_first_node_in_group("player")
