@@ -34,7 +34,7 @@ Você assume o papel de um(a) aventureiro(a) que precisa resolver desafios de l�
 
 ✅ **Recomendado para jogadores**
 
-1. Baixe o arquivo `.zip` da release.
+1. Baixe o arquivo `.zip` da [release](https://github.com/GustavoHerpich/CodeQuest/releases/tag/V1.0).
 2. Extraia os arquivos em uma pasta.
 3. Execute o arquivo `jogo.exe`.
 4. Certifique-se de que o arquivo `.pck` esteja na mesma pasta que o `.exe`.
