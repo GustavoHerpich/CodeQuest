@@ -73,12 +73,12 @@ Cada terminal controla algum sistema do ambiente (como pontes ou portas). Você 
 ```lua
 moveBridge("down")
 showPassword(4)
-openDoor("senha123")
+openDoor(123)
 ```
 
 ## 📘 Livro de Ajuda
 
-Durante o jogo, pressione **H** para abrir o Livro de Ajuda.
+Durante o jogo, pressione **F1** para abrir o Livro de Ajuda.
 
 Este livro traz informações essenciais para resolver os desafios de programação do jogo:
 
