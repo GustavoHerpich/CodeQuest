@@ -58,7 +58,7 @@ Você assume o papel de um(a) aventureiro(a) que precisa resolver desafios de l�
 ## 📖 Como Jogar
 
 - **WASD**: movimentar o personagem
-- **E**: interagir com o terminal
+- **E**: interagir com os objetos
 - **F1**: abrir e fechar o Livro de Ajuda
 - **Esc**: sair de interações
 
