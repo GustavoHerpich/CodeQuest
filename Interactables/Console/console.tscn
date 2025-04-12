@@ -51,7 +51,7 @@ default_font_size = 17
 [node name="CanvasLayer" type="CanvasLayer"]
 layer = 10
 
-[node name="Console" type="Control" parent="."]
+[node name="Console" type="Control" parent="." groups=["ConsoleInstances"]]
 layout_mode = 3
 anchors_preset = 0
 offset_top = -1.0

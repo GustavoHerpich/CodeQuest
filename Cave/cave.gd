@@ -1,8 +1,8 @@
 class_name Cave
 extends Node2D
 
-@onready var interactable: Interactable = $Interactable
 @onready var cave_music: AudioStreamPlayer2D = $Sounds/CaveMusic
+@onready var interactable: Interactable = $Interactables/Interactable
 
 ## Private Methods
 

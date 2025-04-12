@@ -25,10 +25,18 @@ func show_book() -> void:
 
 	book_instance.get_node("Book").visible = true
 	_set_player_book_state(true)
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	GameManager.update_mouse_visibility()
 
 func hide_book() -> void:
 	if book_instance:
 		book_instance.get_node("Book").visible = false
 		_set_player_book_state(false)
-		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		GameManager.update_mouse_visibility()
+
+func add_book_page(section: String, title: String, content1: String, content2: String = "") -> void:
+	if not book_instance:
+		book_instance = BookScene.instantiate()
+		book_instance.get_node("Book").visible = false
+		get_tree().root.add_child(book_instance)
+
+	book_instance.add_page(section, title, content1, content2)

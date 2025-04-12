@@ -12,3 +12,9 @@ func _open_trunk() -> void:
 	if anim_player:
 		if anim_player.has_animation("open"):	 
 			anim_player.play("open")
+			BookManager.add_book_page(
+				"funcoes_objetos",
+				"👤 Player",
+				"👟 [code]increaseSpeed(amount)[/code]\nAumenta a velocidade do jogador em uma certa quantidade.\n\nExemplo:\n[code]increaseSpeed(5)[/code]",
+				"⚡ [code]moveSpeed()[/code]\nRetorna a velocidade atual do jogador.\n\nExemplo:\n[code]print(moveSpeed())[/code]"
+			)

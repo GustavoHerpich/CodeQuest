@@ -1,8 +1,15 @@
 class_name Book
 extends CanvasLayer
 
+var sections := {
+	"funcoes_objetos": [],
+	"como_programar": [],
+	"inicio": []
+}
+
+var current_page := 0
 var pages: Array = []
-var current_page: int = 0
+
 var dragging := false
 var drag_offset := Vector2.ZERO
 
@@ -13,28 +20,44 @@ var drag_offset := Vector2.ZERO
 @onready var drag_area: Control = $Book/DragArea
 @onready var turn_page: AudioStreamPlayer = $TurnPage
 
+## Private Methods
+
 func _ready() -> void:
 	_load_pages()
+	_flatten_pages()
 	_update_page()
 
 func _load_pages() -> void:
-	pages = [
-		{
-			"title": "Bem-vindo ao Livro de Ajuda",
-			"content1": "[center][b]Bem-vindo, aventureiro![/b][/center]\n\nAqui você encontrará tudo que precisa para resolver os desafios.\n\nUse as setas abaixo para navegar pelas páginas.",
-			"content2": "[center]\n[b]📖 Dica:[/b] Preste atenção nos nomes das funções e exemplos.\nEles irão te ajudar a aprender programação de forma divertida![/center]"
-		},
-		{
-			"title": "Funções dos Objetos",
-			"content1": "[b]🔧 Ponte:[/b]\n[code]moveBridge(direction)[/code]\nDireções possíveis: 'up', 'down', 'left', 'right'\n\nExemplo:\n[code]moveBridge(\"down\")[/code]",
-			"content2": "[b]🔐 Porta:[/b]\n[code]getDoorValues()[/code] → Retorna lista de valores da porta\n[code]showPassword(valor)[/code] → Mostra a senha se o valor estiver correto\n[code]openDoor(senha)[/code] → Tenta abrir a porta com a senha\n\nExemplo:\n[code]showPassword(4)[/code]"
-		},
-		{
-			"title": "Como Programar em Lua",
-			"content1": "[b]🔁 Repetição (for):[/b]\n[code]for i = 1, 5 do\n  print(i)\nend[/code]\n\n[b]🔀 Condicional (if):[/b]\n[code]if x > 0 then\n  print(\"Positivo\")\nend[/code]",
-			"content2": "[b]🧠 Funções:[/b]\n[code]function minha_funcao(param)\n  print(param)\nend\n\nminha_funcao(\"Olá\")[/code]\n\n[b]💡 Dica:[/b] Combine estruturas para resolver os desafios do jogo!"
-		}
-	]
+	add_page(
+		"inicio",
+		"📘 Bem-vindo ao Livro de Ajuda",
+		"[center][b]Bem-vindo, aventureiro![/b][/center]\n\nAqui você encontrará tudo que precisa para resolver os desafios.\n\nUse as setas abaixo para navegar pelas páginas.",
+		"[center]\n[b]📖 Dica:[/b] Preste atenção nos nomes das funções e exemplos.\nEles irão te ajudar a aprender programação de forma divertida![/center]"
+	)
+
+	add_page(
+		"funcoes_objetos",
+		"🧩 Funções dos Objetos",
+		"[b]🔧 Ponte:[/b]\n[code]moveBridge(direction)[/code]\nDireções possíveis: 'up', 'down', 'left', 'right'\n\nExemplo:\n[code]moveBridge(\"down\")[/code]",
+		"[b]🔐 Porta:[/b]\n[code]getDoorValues()[/code] → Retorna lista de valores da porta\n[code]showPassword(valor)[/code] → Mostra a senha se o valor estiver correto\n[code]openDoor(senha)[/code] → Tenta abrir a porta com a senha\n\nExemplo:\n[code]showPassword(4)[/code]"
+	)
+
+	add_page(
+		"como_programar",
+		"📚 Como Programar em Lua",
+		"[b]🔁 Repetição (for):[/b]\n[code]for i = 1, 5 do\n  print(i)\nend[/code]\n\n[b]🔀 Condicional (if):[/b]\n[code]if x > 0 then\n  print(\"Positivo\")\nend[/code]",
+		"[b]🧠 Funções:[/b]\n[code]function minha_funcao(param)\n  print(param)\nend\n\nminha_funcao(\"Olá\")[/code]\n\n[b]💡 Dica:[/b] Combine estruturas para resolver os desafios do jogo!"
+	)
+
+func _flatten_pages() -> void:
+	pages.clear()
+
+	var ordered_keys := ["inicio", "funcoes_objetos", "como_programar"]
+	for key in ordered_keys:
+		if sections.has(key):
+			pages += sections[key]
+
+	current_page = 0
 
 func _update_page() -> void:
 	if current_page >= 0 and current_page < pages.size():
@@ -64,6 +87,23 @@ func _input(event: InputEvent) -> void:
 					drag_offset = get_viewport().get_mouse_position() - book.global_position
 			else:
 				dragging = false
-
 	elif event is InputEventMouseMotion and dragging:
 		book.global_position = get_viewport().get_mouse_position() - drag_offset
+
+##
+
+## Public Methods
+
+func add_page(section_name: String, title: String, content1: String, content2: String = "") -> void:
+	if not sections.has(section_name):
+		sections[section_name] = []
+
+	var new_page = {
+		"title": title,
+		"content1": content1,
+		"content2": content2
+	}
+	sections[section_name].append(new_page)
+	
+	_flatten_pages()
+##

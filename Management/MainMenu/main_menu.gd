@@ -21,7 +21,7 @@ func _ready() -> void:
 	
 func _on_play_pressed() -> void:
 	var tween := create_tween()
-	tween.tween_property(menu_music, "volume_db", -30, 4.0)
+	tween.tween_property(menu_music, "volume_db", -30, 2.0)
 	await tween.finished
 	menu_music.stop()
 	SceneSwitcher.switch_scene("res://Management/game_level.tscn")

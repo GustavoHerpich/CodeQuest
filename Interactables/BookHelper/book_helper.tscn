@@ -41,25 +41,25 @@ texture = ExtResource("2_5j1j7")
 
 [node name="Title" type="Label" parent="Book"]
 layout_mode = 0
-offset_left = 104.0
-offset_top = 78.0
-offset_right = 326.0
-offset_bottom = 109.0
+offset_left = 100.0
+offset_top = 94.0
+offset_right = 322.0
+offset_bottom = 125.0
 
 [node name="Content1" type="RichTextLabel" parent="Book"]
 layout_mode = 0
 offset_left = 73.0
-offset_top = 121.0
+offset_top = 125.0
 offset_right = 353.0
-offset_bottom = 392.0
+offset_bottom = 396.0
 bbcode_enabled = true
 
 [node name="Content2" type="RichTextLabel" parent="Book"]
 layout_mode = 0
 offset_left = 398.0
-offset_top = 121.0
+offset_top = 125.0
 offset_right = 678.0
-offset_bottom = 392.0
+offset_bottom = 396.0
 bbcode_enabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Book"]

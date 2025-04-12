@@ -92,10 +92,12 @@ func _on_animation_finished(anim_name: StringName) -> void:
 func _on_actionable_finder_area_entered(_area: Area2D) -> void:
 	var actionables = actionable_finder.get_overlapping_areas()
 	if actionables.size() > 0:
-		is_in_dialogue = true
-		actionables[0].action()
-		return
-		
+		var target = actionables[0]
+		if target.has_method("action") and target.auto_start:
+			if not is_in_dialogue:
+				is_in_dialogue = true
+				target.action()
+
 ## 
 
 ## Public Methods
@@ -131,7 +133,10 @@ func get_is_in_mountain() -> bool:
 ## Methods that interact with the console
 
 func increaseSpeed(amount: float) -> void:
-	GameManager.set_value_variable(self, "move_speed", amount)
+	if moveSpeed() + amount <= 500:
+		GameManager.set_value_variable(self, "move_speed", amount)
+	else:
+		GameManager.print("A velocidade atribuída ultrapassou os limites. Limite: 500, Velocidade Atual: " + str(moveSpeed()))
 
 func moveSpeed() -> Variant:
 	return GameManager.get_value_variable(self, "move_speed")

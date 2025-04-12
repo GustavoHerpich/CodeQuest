@@ -47,6 +47,7 @@ folder_colors={
 
 player="Organiza e permite o acesso centralizado ao personagem principal, facilitando interações e lógicas relacionadas a ele em qualquer parte do jogo, sem depender da hierarquia de cenas. Ele é usado para centralizar ações como movimentação e interações."
 "Interactable Objects"="Este grupo contém todos os objetos interativos do jogo, permitindo um gerenciamento centralizado de interações. Ele facilita a identificação e o controle de elementos que podem ser ativados pelo jogador, como NPCs, terminais, baús e portas."
+ConsoleInstances=""
 
 [input]
 
@@ -102,7 +103,7 @@ open_book={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/Dialogues/FirstDialog.dialogue", "res://Dialogues/Dialogues/SecondDialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/Dialogues/FirstDialog.dialogue", "res://Dialogues/Dialogues/SecondDialogue.dialogue", "res://Dialogues/Dialogues/ThirdDialogue.dialogue")
 
 [layer_names]
 

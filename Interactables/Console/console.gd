@@ -18,7 +18,7 @@ func _ready() -> void:
 	GameManager.print_message.connect(_print_callback)
 	GameManager.error_message.connect(_error_callback)
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	GameManager.update_mouse_visibility()
 	
 	var player = get_tree().get_first_node_in_group("player")
 	if player:
@@ -27,6 +27,7 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("exit"):
+		self.visible = false
 		queue_free()
 		
 	if event is InputEventMouseButton:
@@ -49,7 +50,7 @@ func _on_tree_exiting() -> void:
 	for obj in get_tree().get_nodes_in_group("Interactable Objects"):
 		obj.has_interacted = false
 	
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	GameManager.update_mouse_visibility()
 
 func _on_execute_pressed() -> void:
 	var lua_source = text_edit.text

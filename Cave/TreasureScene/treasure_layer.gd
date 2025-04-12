@@ -22,7 +22,7 @@ func getDoorValues() -> Array:
 
 func showPassword(door_value: int) -> void:
 	if door_value in DOOR_VALUES and door_value % 2 == 0:
-		GameManager.print("⚔️ Porta correta! Senha revelada: " + str(door_value * 3))
+		GameManager.print("⚔️ Porta correta! Senha revelada: " + str(door_value))
 	else:
 		GameManager.error("⛔ Valor incorreto, tente novamente.")
 

@@ -1,15 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://xdvv36h5a7e6"]
+[gd_scene load_steps=10 format=3 uid="uid://xdvv36h5a7e6"]
 
 [ext_resource type="Texture2D" uid="uid://b057qqrg4mjj6" path="res://Assets/Treasure/Treasure.png" id="1_kpkps"]
 [ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/InteractablesManage/interactable.tscn" id="2_nbp1h"]
+[ext_resource type="Resource" uid="uid://btu6x6wtk4ix0" path="res://Dialogues/Dialogues/ThirdDialogue.dialogue" id="3_nbp1h"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_52tvy"]
 radius = 39.0512
 
-[sub_resource type="Animation" id="Animation_kpkps"]
-resource_name = "open"
-length = 0.3
-step = 0.1
+[sub_resource type="Animation" id="Animation_52tvy"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -17,10 +16,10 @@ tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0, 1]
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_nbp1h"]
@@ -40,8 +39,10 @@ tracks/0/keys = {
 "values": [0]
 }
 
-[sub_resource type="Animation" id="Animation_52tvy"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_kpkps"]
+resource_name = "open"
+length = 0.3
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -49,10 +50,10 @@ tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [0]
+"values": [0, 1]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4yudu"]
@@ -65,7 +66,7 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yudu"]
 radius = 48.0104
 
-[node name="Trunk" type="Node2D"]
+[node name="Trunk" type="Node2D" groups=["Interactable Objects"]]
 
 [node name="Texture" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -84,6 +85,7 @@ autoplay = "idle"
 
 [node name="Interactable" parent="." instance=ExtResource("2_nbp1h")]
 interact_name = "Abrir Baú"
+dialogue_resource = ExtResource("3_nbp1h")
 
 [node name="Collision" type="CollisionShape2D" parent="Interactable"]
 shape = SubResource("CircleShape2D_4yudu")
