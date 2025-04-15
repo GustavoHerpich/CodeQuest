@@ -48,7 +48,8 @@ func _on_tree_exiting() -> void:
 		player.is_in_terminal = false
 
 	for obj in get_tree().get_nodes_in_group("Interactable Objects"):
-		obj.has_interacted = false
+		if obj is Terminal:
+			obj.has_interacted = false
 	
 	GameManager.update_mouse_visibility()
 
