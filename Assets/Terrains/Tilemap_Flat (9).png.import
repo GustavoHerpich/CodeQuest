@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djb6hq32lieen"
-path="res://.godot/imported/DirtPath.png-c8f9313f942ade295c8fdc50a83699f2.ctex"
+uid="uid://crlq7akkmotvi"
+path="res://.godot/imported/Tilemap_Flat (9).png-1e433660931e6089f0f119f9a7f0aba7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Terrains/DirtPath.png"
-dest_files=["res://.godot/imported/DirtPath.png-c8f9313f942ade295c8fdc50a83699f2.ctex"]
+source_file="res://Assets/Terrains/Tilemap_Flat (9).png"
+dest_files=["res://.godot/imported/Tilemap_Flat (9).png-1e433660931e6089f0f119f9a7f0aba7.ctex"]
 
 [params]
 
