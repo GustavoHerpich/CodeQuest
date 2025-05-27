@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://7obynmrp7sdm"
+path="res://.godot/imported/HalfStepH.wav-7f8cbeda6f503cb057f1d76eb958999b.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/High/HalfStepH.wav"
+dest_files=["res://.godot/imported/HalfStepH.wav-7f8cbeda6f503cb057f1d76eb958999b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

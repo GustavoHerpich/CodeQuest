@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://csw4n7uu5m88t"
+path="res://.godot/imported/Major Scale H.wav-f719a22dc88a04c692b0df367810fc41.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_1/Runs/High/Major Scale H.wav"
+dest_files=["res://.godot/imported/Major Scale H.wav-f719a22dc88a04c692b0df367810fc41.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

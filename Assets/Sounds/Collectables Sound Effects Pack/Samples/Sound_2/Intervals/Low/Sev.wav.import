@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jsl5jbffr67d"
+path="res://.godot/imported/Sev.wav-a024d005fe6b52831205f31d40f5e500.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/Low/Sev.wav"
+dest_files=["res://.godot/imported/Sev.wav-a024d005fe6b52831205f31d40f5e500.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

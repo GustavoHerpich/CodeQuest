@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fyhc7wpwwcg5"
+path="res://.godot/imported/Collectable_06.wav-c32535a9f55a4e9b1ce5f2c906899864.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Collectables/Collectable_06.wav"
+dest_files=["res://.godot/imported/Collectable_06.wav-c32535a9f55a4e9b1ce5f2c906899864.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

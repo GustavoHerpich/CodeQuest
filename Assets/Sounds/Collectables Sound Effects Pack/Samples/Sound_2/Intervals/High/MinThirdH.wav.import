@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bsqck28ismou6"
+path="res://.godot/imported/MinThirdH.wav-2b7f8473c2a5ba2c0f7fed493b93545e.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/High/MinThirdH.wav"
+dest_files=["res://.godot/imported/MinThirdH.wav-2b7f8473c2a5ba2c0f7fed493b93545e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

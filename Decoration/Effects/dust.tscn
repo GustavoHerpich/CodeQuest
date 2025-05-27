@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpnohd4y6ftiq"]
+
+[ext_resource type="Texture2D" uid="uid://d1a645r1gtlmk" path="res://Assets/Effects/dust.png" id="1_lgqts"]
+
+[sub_resource type="Curve" id="Curve_faqhb"]
+_limits = [0.0, 2.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.253906, 2), 0.0, 0.0, 0, 0, Vector2(0.746094, 1), 0.0, 0.0, 0, 0, Vector2(0.996094, 0.00389111), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_0wjmp"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="Dust" type="CPUParticles2D"]
+show_behind_parent = true
+emitting = false
+amount = 16
+texture = ExtResource("1_lgqts")
+emission_shape = 1
+emission_sphere_radius = 16.0
+gravity = Vector2(0, 0)
+scale_amount_curve = SubResource("Curve_faqhb")
+color_ramp = SubResource("Gradient_0wjmp")

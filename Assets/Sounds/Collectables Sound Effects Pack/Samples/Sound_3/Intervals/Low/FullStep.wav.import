@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bms3o8eql7ihj"
+path="res://.godot/imported/FullStep.wav-f9fefa7706652a2c0dd61b8677d7dfd4.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_3/Intervals/Low/FullStep.wav"
+dest_files=["res://.godot/imported/FullStep.wav-f9fefa7706652a2c0dd61b8677d7dfd4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

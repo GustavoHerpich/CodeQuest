@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bu1lffi51rdcl"
+path="res://.godot/imported/FifthArp.wav-2f79e1d3bc7a5157fe819ac0e2db544c.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_1/Runs/Low/FifthArp.wav"
+dest_files=["res://.godot/imported/FifthArp.wav-2f79e1d3bc7a5157fe819ac0e2db544c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

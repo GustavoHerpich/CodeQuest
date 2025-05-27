@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b75rmqht6dohm"
+path="res://.godot/imported/FlatSev.wav-76482ac5edb0e51716dba9032bde5d2d.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/Low/FlatSev.wav"
+dest_files=["res://.godot/imported/FlatSev.wav-76482ac5edb0e51716dba9032bde5d2d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

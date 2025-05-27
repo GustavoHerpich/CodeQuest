@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpro65gwo70xm"]
+
+[ext_resource type="Script" uid="uid://jrk45xehu130" path="res://Interactables/Components/Collectables/collectable_component.gd" id="1_c7jv3"]
+[ext_resource type="AudioStream" uid="uid://c7lykpytds23h" path="res://Assets/Sounds/Collectables Sound Effects Pack/Collectables/Collectable_07.wav" id="2_sye6h"]
+
+[node name="CollectableComponent" type="Area2D"]
+script = ExtResource("1_c7jv3")
+
+[node name="Texture" type="Sprite2D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[node name="SoundEffect" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_sye6h")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://87xfayhkwoaj"
+path="res://.godot/imported/Oct.wav-673c45e6bcc68bfd4d2349d57f02c713.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/Low/Oct.wav"
+dest_files=["res://.godot/imported/Oct.wav-673c45e6bcc68bfd4d2349d57f02c713.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

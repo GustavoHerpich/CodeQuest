@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://4tk3ekar6kg3"
+path="res://.godot/imported/MajThirdH.wav-58e2e937d42bb0a3e1a1f9b485312192.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_3/Intervals/High/MajThirdH.wav"
+dest_files=["res://.godot/imported/MajThirdH.wav-58e2e937d42bb0a3e1a1f9b485312192.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

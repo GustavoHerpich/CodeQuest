@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://di48vk875ui4t"
+path="res://.godot/imported/FifthH.wav-c004aefbb07b9fca8ce75d7e5e33b9bf.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/Collectables Sound Effects Pack/Samples/Sound_3/Intervals/High/FifthH.wav"
+dest_files=["res://.godot/imported/FifthH.wav-c004aefbb07b9fca8ce75d7e5e33b9bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -12,11 +12,15 @@ var attack_animation_name: String = ""
 @export var move_speed: float = 200.0
 @export var left_attack_name: String = ""
 @export var right_attack_name: String = ""
+@export var min_attack: int = 1
+@export var max_attack: int = 5
 
 @export_category("Objects")
 @export var sprite2D: Sprite2D
 @export var bridge: TileMapLayer
 @export var animation: AnimationPlayer
+@export var attack_area_collision: CollisionShape2D
+@export var dust: CPUParticles2D
 
 @onready var game_object_register = GameObject.new()
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
@@ -44,6 +48,11 @@ func _move() -> void:
 	var _direction: Vector2 = Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
 	)
+	
+	dust.emitting = false
+	if _direction:
+		dust.emitting = true
+	
 	velocity = _direction * move_speed
 	move_and_slide()
 
@@ -70,9 +79,11 @@ func _animate() -> void:
 	
 	if velocity.x > 0:
 		sprite2D.flip_h = false
+		attack_area_collision.position.x = 48
 		
 	if velocity.x < 0:
 		sprite2D.flip_h = true
+		attack_area_collision.position.x = -48
 	
 	if can_attack == false:
 		animation.play(attack_animation_name)
@@ -97,6 +108,13 @@ func _on_actionable_finder_area_entered(_area: Area2D) -> void:
 			if not is_in_dialogue:
 				is_in_dialogue = true
 				target.action()
+
+func _on_attack_area_body_entered(_body: Node2D) -> void:
+	if (
+		_body is PshysicsTree or 
+		_body is Sheep
+	):
+		_body.update_health([min_attack, max_attack])
 
 ## 
 
