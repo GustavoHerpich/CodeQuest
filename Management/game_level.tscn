@@ -821,7 +821,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(1460, 409)
+position = Vector2(4122, -151)
 platform_on_leave = 0
 left_attack_name = "attack_axe"
 right_attack_name = "attack_hammer"
@@ -1026,12 +1026,6 @@ position = Vector2(4014, 563)
 
 [node name="SmallGrass10" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
 position = Vector2(3922, 638)
-
-[node name="SmallGrass11" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
-position = Vector2(3892, -125)
-
-[node name="SmallGrass12" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
-position = Vector2(3947, -95)
 
 [node name="SmallGrass13" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
 position = Vector2(3846, 1280)
@@ -1376,7 +1370,7 @@ tile_set = SubResource("TileSet_7q4ve")
 [node name="Resources" type="Node2D" parent="Decorations"]
 
 [node name="Meat" type="TileMapLayer" parent="Decorations/Resources"]
-tile_map_data = PackedByteArray("AABEACsAAAAAAAAAAABEACwAAAAAAAEAAABFACsAAAAAAAEAAABFACwAAAABAAEAAABFACoAAAABAAEAAABGACoAAAABAAAAAABGACsAAAABAAEAAABEACkAAAAAAAAAAABEACoAAAAAAAEAAABFACkAAAABAAAAAAA7ACIAAAAAAAAAAAA7ACMAAAAAAAEAAAA8ACIAAAABAAAAAAA8ACMAAAABAAEAAAA8ACQAAAAAAAAAAAA8ACUAAAAAAAEAAAA9ACQAAAABAAAAAAA9ACUAAAABAAEAAAA=")
+tile_map_data = PackedByteArray("AAA7ACIAAAAAAAAAAAA7ACMAAAAAAAEAAAA8ACIAAAABAAAAAAA8ACMAAAABAAEAAAA8ACQAAAAAAAAAAAA8ACUAAAAAAAEAAAA9ACQAAAABAAAAAAA9ACUAAAABAAEAAABEACkAAAAAAAAAAABEACoAAAAAAAEAAABFACkAAAABAAAAAABFACoAAAABAAEAAABGACoAAAABAAAAAABFACsAAAAAAAEAAABGACsAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_e8bq6")
 
 [node name="Golden" type="TileMapLayer" parent="Decorations/Resources"]
@@ -1448,7 +1442,7 @@ shape = SubResource("RectangleShape2D_rcjgg")
 [node name="SpawnPoints" type="Node2D" parent="."]
 
 [node name="SpawnPoint2" type="Marker2D" parent="SpawnPoints"]
-position = Vector2(5256, 43)
+position = Vector2(4260, -291)
 
 [connection signal="area_entered" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_area_entered"]
 [connection signal="body_entered" from="Bridge/BridgeInteract/BridgeAreaInteract" to="Bridge/BridgeInteract/BridgeAreaInteract" method="_on_body_entered"]

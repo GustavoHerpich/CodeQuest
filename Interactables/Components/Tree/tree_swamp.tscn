@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://chtgt54lk7qdx"]
+[gd_scene load_steps=7 format=3 uid="uid://chtgt54lk7qdx"]
 
+[ext_resource type="Script" uid="uid://brb32f1f2iqbf" path="res://Interactables/Components/Tree/tree_swamp.gd" id="1_6qd4x"]
 [ext_resource type="Texture2D" uid="uid://mxwcd4m6314" path="res://Assets/Terrains/SwampTree.png" id="1_kvxqw"]
 
 [sub_resource type="Animation" id="Animation_qs1au"]
@@ -46,6 +47,7 @@ radius = 18.0
 height = 89.9809
 
 [node name="TreeSwamp" type="StaticBody2D"]
+script = ExtResource("1_6qd4x")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(-3, 103)

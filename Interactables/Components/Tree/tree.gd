@@ -18,40 +18,39 @@ var _is_dead: bool = false
 func _ready() -> void:
 	_health = randi_range(_min_health, _max_health)
 
-func update_health(damage_range: Array) -> void: # [1, 5]
+func update_health(damage_range: Array) -> void:
 	if _is_dead:
 		return
 		
 	_health -= randi_range(damage_range[0], damage_range[1])
-	
 	_spawn_particles()
 	
 	if _health <= 0:
 		_spawn_wood()
 		_is_dead = true
-		_animation.play("kill") 
-		return
-		
-	_animation.play("hit")
+		_animation.play("kill")
+	else:
+		_animation.play("hit")
 
 func _spawn_particles() -> void:
 	var hit = HIT_PARTICLES.instantiate()
 	hit.global_position = global_position + Vector2(32, 32)
-	hit.modulate = Color.SADDLE_BROWN
+	hit.modulate = get_hit_color()
 	hit.emitting = true
-	
 	get_tree().root.call_deferred("add_child", hit)
-	
+
 func _spawn_wood() -> void:
 	var wood_amount: int = randi_range(min_wood, max_wood)
 	for i in wood_amount:
-		var wood: CollectableComponent = WOOD_COLLECTABLE.instantiate()
+		var wood = WOOD_COLLECTABLE.instantiate()
 		wood.global_position = global_position + Vector2(
 			randi_range(-32, 32), randi_range(-32, 32)
 		)
-		
 		get_tree().root.call_deferred("add_child", wood)
-		
+
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "hit":
 		_animation.play("idle")
+
+func get_hit_color() -> Color:
+	return Color.SADDLE_BROWN
