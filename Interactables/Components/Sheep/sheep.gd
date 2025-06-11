@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Sheep
+extends CharacterBody2D
 
 const HIT_PARTICLES: PackedScene = preload("res://Decoration/Effects/hit_particles.tscn")
 const MEAT_COLLECTABLE: PackedScene = preload("res://Interactables/Components/Collectables/meat.tscn")

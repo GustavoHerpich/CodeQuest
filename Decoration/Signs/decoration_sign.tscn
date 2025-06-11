@@ -1,11 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0phv0yg0f8r6"]
+[gd_scene load_steps=3 format=3 uid="uid://cejj40yfq3khv"]
 
 [ext_resource type="PackedScene" uid="uid://dtl0p32322qix" path="res://Decoration/decoration_component.tscn" id="1_c61l6"]
-[ext_resource type="Script" uid="uid://dnyedfqqttg75" path="res://Decoration/Signs/decoration_sign.gd" id="2_c61l6"]
+[ext_resource type="Script" uid="uid://c7ytuxbfwwlnx" path="res://Decoration/Signs/decoration_sign.gd" id="2_c61l6"]
 
 [node name="DecorationSign" instance=ExtResource("1_c61l6")]
 script = ExtResource("2_c61l6")
-texture_list = Array[String](["res://Decoration/Signs/16.png", "res://Decoration/Signs/17.png"])
+texture_list = Array[String](["res://Decoration/Signs/16.png", "res://Decoration/Signs/17.png", "res://Decoration/Signs/18.png"])
 
 [node name="Texture1" parent="." index="0"]
 position = Vector2(0, -64)

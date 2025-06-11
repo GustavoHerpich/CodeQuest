@@ -1,5 +1,5 @@
-extends StaticBody2D
 class_name PshysicsTree
+extends StaticBody2D
 
 const HIT_PARTICLES: PackedScene = preload("res://Decoration/Effects/hit_particles.tscn")
 const WOOD_COLLECTABLE: PackedScene = preload("res://Interactables/Components/Collectables/wood.tscn")

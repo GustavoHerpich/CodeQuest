@@ -10,6 +10,7 @@ var TerminalScene = preload("res://Interactables/Console/console.tscn")
 ## Private Methods
 
 func _ready():
+	add_to_group("Interactable Objects")
 	interactable.interact = _open_terminal
 
 func _open_terminal():

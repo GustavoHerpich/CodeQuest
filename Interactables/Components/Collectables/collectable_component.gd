@@ -1,5 +1,5 @@
-extends Area2D
 class_name CollectableComponent
+extends Area2D
 
 @onready var sound_effect: AudioStreamPlayer = $SoundEffect
 

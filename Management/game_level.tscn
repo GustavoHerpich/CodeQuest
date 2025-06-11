@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://nnirspy8dqnn" path="res://Decoration/Bones/bones.tscn" id="17_q2nny"]
 [ext_resource type="PackedScene" uid="uid://d07266g6iu4cw" path="res://Decoration/Bushes/bushes.tscn" id="18_r3afb"]
 [ext_resource type="PackedScene" uid="uid://djp3qafgwkg7m" path="res://Decoration/Pumpkins/pumpkins.tscn" id="19_30a5j"]
-[ext_resource type="PackedScene" uid="uid://b0phv0yg0f8r6" path="res://Decoration/Signs/decoration_sign.tscn" id="20_ited3"]
+[ext_resource type="PackedScene" uid="uid://cejj40yfq3khv" path="res://Decoration/Signs/decoration_sign.tscn" id="20_ited3"]
 [ext_resource type="PackedScene" uid="uid://djakawdpvtt6x" path="res://Decoration/SmallGrass/small_grass.tscn" id="21_r3afb"]
 [ext_resource type="PackedScene" uid="uid://bb40cvmxuohhw" path="res://Interactables/Components/Tree/tree.tscn" id="23_30a5j"]
 [ext_resource type="PackedScene" uid="uid://c4ywxuous87nu" path="res://Interactables/Components/Mine/mine.tscn" id="25_ited3"]
@@ -821,7 +821,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(4122, -151)
+position = Vector2(712, 365)
 platform_on_leave = 0
 left_attack_name = "attack_axe"
 right_attack_name = "attack_hammer"
@@ -882,7 +882,7 @@ y_sort_enabled = true
 position = Vector2(4103, -364)
 
 [node name="Rocks2" parent="Decorations/Rocks" instance=ExtResource("16_e8dj5")]
-position = Vector2(4359, -356)
+position = Vector2(4362, -364)
 
 [node name="Rocks4" parent="Decorations/Rocks" instance=ExtResource("16_e8dj5")]
 position = Vector2(2503, 1966)
@@ -990,7 +990,7 @@ position = Vector2(3234, 2976)
 y_sort_enabled = true
 
 [node name="DecorationSign" parent="Decorations/Signs" instance=ExtResource("20_ited3")]
-position = Vector2(4310, -201)
+position = Vector2(4314, -194)
 
 [node name="DecorationSign2" parent="Decorations/Signs" instance=ExtResource("20_ited3")]
 position = Vector2(2771, 478)

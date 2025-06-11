@@ -39,11 +39,10 @@ func _physics_process(_delta: float) -> void:
 	_animate()
 
 func _on_dialogue_ended(_resource: DialogueResource) -> void:
-	is_in_dialogue = false
+	exit_dialogue_mode()
 
 func _move() -> void:
-	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
-		return
+	if is_busy(): return
 		
 	var _direction: Vector2 = Input.get_vector(
 		"move_left", "move_right", "move_up", "move_down"
@@ -57,8 +56,7 @@ func _move() -> void:
 	move_and_slide()
 
 func _attack() -> void:
-	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
-		return
+	if is_busy(): return
 		
 	if Input.is_action_just_pressed("left_attack") and can_attack:
 		can_attack = false
@@ -73,7 +71,7 @@ func _attack() -> void:
 		set_physics_process(false)
 
 func _animate() -> void:
-	if is_in_terminal or is_in_dialogue or is_in_bookHelper:
+	if is_busy():
 		animation.play("idle")
 		return
 	
@@ -106,7 +104,7 @@ func _on_actionable_finder_area_entered(_area: Area2D) -> void:
 		var target = actionables[0]
 		if target.has_method("action") and target.auto_start:
 			if not is_in_dialogue:
-				is_in_dialogue = true
+				enter_dialogue_mode()
 				target.action()
 
 func _on_attack_area_body_entered(_body: Node2D) -> void:
@@ -145,6 +143,22 @@ func update_montain_state(state: bool) -> void:
 		
 func get_is_in_mountain() -> bool:
 	return is_in_montain
+
+func enter_terminal() -> void:
+	is_in_terminal = true
+
+func exit_terminal() -> void:
+	is_in_terminal = false
+
+func enter_dialogue_mode() -> void:
+	is_in_dialogue = true
+	velocity = Vector2.ZERO
+
+func exit_dialogue_mode() -> void:
+	is_in_dialogue = false
+	
+func is_busy() -> bool:
+	return is_in_terminal or is_in_dialogue or is_in_bookHelper
 	
 ##
 

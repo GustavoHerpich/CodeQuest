@@ -17,7 +17,7 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-	var players = get_tree().get_nodes_in_group("player")
+	var players = get_tree().get_nodes_in_group("Player")
 	if players.size() > 0:
 		player = players[0]
 
@@ -56,7 +56,7 @@ func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_n
 	
 	# -- Garantir que o player está definido --
 	if player == null:
-		var players = get_tree().get_nodes_in_group("player")
+		var players = get_tree().get_nodes_in_group("Player")
 		if players.size() > 0:
 			player = players[0]
 
@@ -66,9 +66,7 @@ func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_n
 	# -- Posicionar o player --
 	var spawn_point = current_scene.get_node_or_null("SpawnPoints/%s" % spawn_name)
 	if spawn_point:
-		print(player.global_position)
 		player.global_position = spawn_point.global_position
-		print(player.global_position)
 	
 	var decorations = current_scene.get_node_or_null("Decorations")
 	if decorations:

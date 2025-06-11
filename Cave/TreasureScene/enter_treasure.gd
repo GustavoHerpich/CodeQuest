@@ -1,4 +1,4 @@
-class_name Enter_Treasure
+class_name EnterTreasure
 extends Area2D
 
 var changing_scene = false

@@ -10,7 +10,7 @@ size = Vector2(231, 149)
 [sub_resource type="CircleShape2D" id="CircleShape2D_hanhl"]
 radius = 84.1487
 
-[node name="Mine" type="StaticBody2D"]
+[node name="Mine" type="StaticBody2D" groups=["Interactable Objects"]]
 script = ExtResource("1_hanhl")
 
 [node name="Texture" type="Sprite2D" parent="."]

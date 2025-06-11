@@ -1,5 +1,7 @@
+class_name ActionableFinder
 extends Area2D
 
+@export_category("Variables")
 @export var interact_name: String = ""
 @export var is_interactable: bool = false
 @export var dialogue_resource: DialogueResource
@@ -16,5 +18,5 @@ func action() -> void:
 	if dialogue_resource:
 		var player = get_tree().get_first_node_in_group("player")
 		if player:
-			player.is_in_dialogue = true
+			player.enter_dialogue_mode()
 			DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

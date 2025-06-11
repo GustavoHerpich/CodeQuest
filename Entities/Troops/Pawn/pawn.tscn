@@ -146,7 +146,7 @@ radius = 35.0143
 [sub_resource type="CircleShape2D" id="CircleShape2D_oi64a"]
 radius = 48.0
 
-[node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation", "attack_area_collision") groups=["player"] instance=ExtResource("1_8ahts")]
+[node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation", "attack_area_collision") groups=["Player"] instance=ExtResource("1_8ahts")]
 sprite2D = NodePath("Texture")
 animation = NodePath("Animation")
 attack_area_collision = NodePath("AttackArea/Collision")
