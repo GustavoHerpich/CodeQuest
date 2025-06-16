@@ -14,7 +14,7 @@ var history_index := -1
 @onready var drag_area: Control = $Panel/MarginContainer/VBoxContainer/DragArea
 
 func _ready() -> void:
-	add_to_group("Console Instances")
+	add_to_group(GameConstants.GROUP_CONSOLE_INSTANCES)
 	var highlighter = CodeStyle.new()
 	highlighter.set_language("lua")
 	text_edit.syntax_highlighter = highlighter
@@ -23,12 +23,12 @@ func _ready() -> void:
 	GameManager.error_message.connect(_error_callback)
 	GameManager.update_mouse_visibility()
 
-	var player = get_tree().get_first_node_in_group("Player")
+	var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 	if player and "enter_terminal" in player:
 		player.enter_terminal()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("exit"):
+	if event.is_action_pressed(GameConstants.INPUT_EXIT):
 		close()
 
 	elif event is InputEventMouseButton:
@@ -69,11 +69,11 @@ func _print_callback(message: String) -> void:
 	message_container.add_info(message)
 
 func _on_tree_exiting() -> void:
-	var player = get_tree().get_first_node_in_group("Player")
+	var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 	if player and "exit_terminal" in player:
 		player.exit_terminal()
 
-	for obj in get_tree().get_nodes_in_group("Interactable Objects"):
+	for obj in get_tree().get_nodes_in_group(GameConstants.GROUP_INTERACTABLE_OBJECTS):
 		if obj is Terminal:
 			obj.has_interacted = false
 

@@ -40,15 +40,13 @@ func _update_cursor_visibility() -> void:
 	var book_visible = BookManager.book_instance and BookManager.book_instance.get_node("Book").visible
 	var console_visible := false
 
-	for console in get_tree().get_nodes_in_group("Console Instances"):
+	for console in get_tree().get_nodes_in_group(GameConstants.GROUP_CONSOLE_INSTANCES):
 		if is_instance_valid(console) and console.is_inside_tree() and console.visible:
 			console_visible = true
 			break
 
 	var should_show_cursor = book_visible or console_visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if should_show_cursor else Input.MOUSE_MODE_CAPTURED)
-
-#
 
 ## --- Public Interface ---
 

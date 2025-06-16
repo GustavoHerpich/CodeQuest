@@ -32,8 +32,8 @@ func openDoor(password: int) -> void:
 		door_1.set_collision_layer_value(1, false)
 		var anim_player: AnimationPlayer = door_1.get_node("AnimationPlayer")
 		if anim_player:
-			if anim_player.has_animation("open"):	 
-				anim_player.play("open")
+			if anim_player.has_animation(GameConstants.ANIM_OPEN):	 
+				anim_player.play(GameConstants.ANIM_OPEN)
 				door_open.play()
 				GameManager.print("🚪 A porta está abrindo!")
 

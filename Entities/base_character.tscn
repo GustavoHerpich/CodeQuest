@@ -1,14 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b72b26bopx4f7"]
+[gd_scene load_steps=2 format=3 uid="uid://b72b26bopx4f7"]
 
 [ext_resource type="Script" uid="uid://de8c5pamqkkte" path="res://Entities/base_character.gd" id="1_g4fgi"]
-[ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="2_exmpj"]
 
-[node name="BaseCharacter" type="CharacterBody2D" node_paths=PackedStringArray("dust")]
+[node name="BaseCharacter" type="CharacterBody2D"]
 collision_layer = 9
 collision_mask = 9
 platform_on_leave = 2
 script = ExtResource("1_g4fgi")
-dust = NodePath("Dust")
 
 [node name="Texture" type="Sprite2D" parent="."]
 
@@ -16,11 +14,4 @@ dust = NodePath("Dust")
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 
-[node name="CharacterCamera" type="Camera2D" parent="."]
-
-[node name="AttackArea" type="Area2D" parent="."]
-
-[node name="Dust" parent="." instance=ExtResource("2_exmpj")]
-
 [connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
-[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

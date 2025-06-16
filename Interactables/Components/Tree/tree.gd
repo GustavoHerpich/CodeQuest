@@ -28,9 +28,9 @@ func update_health(damage_range: Array) -> void:
 	if _health <= 0:
 		_spawn_wood()
 		_is_dead = true
-		_animation.play("kill")
+		_animation.play(GameConstants.ANIM_KILL)
 	else:
-		_animation.play("hit")
+		_animation.play(GameConstants.ANIM_HIT)
 
 func _spawn_particles() -> void:
 	var hit = HIT_PARTICLES.instantiate()
@@ -49,8 +49,8 @@ func _spawn_wood() -> void:
 		get_tree().root.call_deferred("add_child", wood)
 
 func _on_animation_finished(anim_name: StringName) -> void:
-	if anim_name == "hit":
-		_animation.play("idle")
+	if anim_name == GameConstants.ANIM_HIT:
+		_animation.play(GameConstants.ANIM_IDLE)
 
 func get_hit_color() -> Color:
 	return Color.SADDLE_BROWN

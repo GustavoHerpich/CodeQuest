@@ -1,10 +1,12 @@
-[gd_scene load_steps=15 format=3 uid="uid://b2ovknxt6pthb"]
+[gd_scene load_steps=17 format=3 uid="uid://b2ovknxt6pthb"]
 
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_8ahts"]
 [ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Entities/Troops/Pawn/Pawn_Blue.png" id="2_1s8jf"]
-[ext_resource type="PackedScene" uid="uid://4fych35akjlc" path="res://Interactables/Global Script/InteractablesManage/interacting_component.tscn" id="3_bp4gk"]
+[ext_resource type="Script" uid="uid://d0u8s2fxemrwn" path="res://Entities/Troops/Pawn/pawn.gd" id="2_uswhi"]
+[ext_resource type="PackedScene" uid="uid://4fych35akjlc" path="res://Management/Global Script/InteractablesManage/interacting_component.tscn" id="3_bp4gk"]
 [ext_resource type="AudioStream" uid="uid://u3lo3muph8u5" path="res://Assets/Sounds/AxeAttack.mp3" id="4_oi64a"]
 [ext_resource type="AudioStream" uid="uid://dt8m7cyjytevk" path="res://Assets/Sounds/HammerAttack.mp3" id="5_uswhi"]
+[ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="7_ow7b1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pk6sk"]
 radius = 6.0
@@ -27,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/path = NodePath("AttackArea/CollisionAttack:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -56,7 +58,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/path = NodePath("AttackArea/CollisionAttack:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -85,7 +87,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("AttackArea/Collision:disabled")
+tracks/1/path = NodePath("AttackArea/CollisionAttack:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -143,13 +145,21 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_ny03g"]
 radius = 35.0143
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_oi64a"]
-radius = 48.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_uswhi"]
+radius = 44.7214
 
-[node name="Pawn" node_paths=PackedStringArray("sprite2D", "animation", "attack_area_collision") groups=["Player"] instance=ExtResource("1_8ahts")]
+[node name="Pawn" node_paths=PackedStringArray("dust", "axe_attack_sound", "hammer_attack_sound", "attack_area_collision", "sprite2D", "animation") groups=["Player"] instance=ExtResource("1_8ahts")]
+script = ExtResource("2_uswhi")
+left_attack_name = "attack_hammer"
+right_attack_name = "attack_axe"
+min_attack = 1
+max_attack = 5
+dust = NodePath("Dust")
+axe_attack_sound = NodePath("Sounds/AxeAttackSound")
+hammer_attack_sound = NodePath("Sounds/HammerAttackSound")
+attack_area_collision = NodePath("AttackArea/CollisionAttack")
 sprite2D = NodePath("Texture")
 animation = NodePath("Animation")
-attack_area_collision = NodePath("AttackArea/Collision")
 
 [node name="Texture" parent="." index="0"]
 position = Vector2(0, -26)
@@ -169,12 +179,10 @@ libraries = {
 }
 autoplay = "run"
 
-[node name="CharacterCamera" parent="." index="3" groups=["camera"]]
-
-[node name="InteractingComponent" parent="." index="4" instance=ExtResource("3_bp4gk")]
+[node name="InteractingComponent" parent="." index="3" instance=ExtResource("3_bp4gk")]
 position = Vector2(0, -12)
 
-[node name="Direction" type="Marker2D" parent="." index="5"]
+[node name="Direction" type="Marker2D" parent="." index="4"]
 position = Vector2(0, -12)
 
 [node name="ActionableFinder" type="Area2D" parent="Direction" index="0"]
@@ -185,7 +193,7 @@ collision_mask = 16
 [node name="Collision" type="CollisionShape2D" parent="Direction/ActionableFinder" index="0"]
 shape = SubResource("CircleShape2D_ny03g")
 
-[node name="Sounds" type="Node2D" parent="." index="6"]
+[node name="Sounds" type="Node2D" parent="." index="5"]
 
 [node name="AxeAttackSound" type="AudioStreamPlayer2D" parent="Sounds" index="0"]
 stream = ExtResource("4_oi64a")
@@ -193,9 +201,16 @@ stream = ExtResource("4_oi64a")
 [node name="HammerAttackSound" type="AudioStreamPlayer2D" parent="Sounds" index="1"]
 stream = ExtResource("5_uswhi")
 
-[node name="Collision" type="CollisionShape2D" parent="AttackArea" index="0"]
-position = Vector2(48, 0)
-shape = SubResource("CircleShape2D_oi64a")
+[node name="CharacterCamera" type="Camera2D" parent="." index="6"]
+
+[node name="AttackArea" type="Area2D" parent="." index="7"]
+
+[node name="CollisionAttack" type="CollisionShape2D" parent="AttackArea" index="0"]
+position = Vector2(63, -12)
+shape = SubResource("CircleShape2D_uswhi")
 disabled = true
 
+[node name="Dust" parent="." index="8" instance=ExtResource("7_ow7b1")]
+
 [connection signal="area_entered" from="Direction/ActionableFinder" to="." method="_on_actionable_finder_area_entered"]
+[connection signal="body_entered" from="AttackArea" to="." method="_on_attack_area_body_entered"]

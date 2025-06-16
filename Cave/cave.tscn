@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="1_ej5d6"]
 [ext_resource type="Script" uid="uid://mx6p4blokmyp" path="res://Cave/cave.gd" id="1_sak7u"]
-[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Interactables/Global Script/InteractablesManage/interactable.tscn" id="2_0ida8"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/Global Script/InteractablesManage/interactable.tscn" id="2_0ida8"]
 [ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Externals/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png" id="3_420yn"]
 [ext_resource type="Script" uid="uid://ryqxkjy7lgl2" path="res://Cave/TreasureScene/treasure_layer.gd" id="3_lk6j5"]
 [ext_resource type="PackedScene" uid="uid://c4gkei8yt75pn" path="res://Cave/tourch.tscn" id="4_pohhc"]

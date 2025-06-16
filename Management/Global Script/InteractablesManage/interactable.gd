@@ -15,7 +15,7 @@ func action() -> void:
 		return
 	
 	if dialogue_resource:
-		var player = get_tree().get_first_node_in_group("Player")
+		var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 		if player:
 			player.enter_dialogue_mode()
 			DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

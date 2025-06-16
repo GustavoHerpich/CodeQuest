@@ -16,8 +16,8 @@ func _open_trunk() -> void:
 	
 	var anim_player: AnimationPlayer = trunk.get_node("Animation")
 	if anim_player:
-		if anim_player.has_animation("open"):	 
-			anim_player.play("open")
+		if anim_player.has_animation(GameConstants.ANIM_OPEN):	 
+			anim_player.play(GameConstants.ANIM_OPEN)
 			BookManager.add_book_page(
 				"funcoes_objetos",
 				"👤 Player",

@@ -5,12 +5,11 @@ var has_interacted: bool = false
 var TerminalScene = preload("res://Interactables/Console/console.tscn") 
 
 @onready var interactable: Interactable = $Interactable
-@onready var sprite: Sprite2D = $Sprite
 
 ## Private Methods
 
 func _ready():
-	add_to_group("Interactable Objects")
+	add_to_group(GameConstants.GROUP_INTERACTABLE_OBJECTS)
 	interactable.interact = _open_terminal
 
 func _open_terminal():

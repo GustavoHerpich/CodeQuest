@@ -17,7 +17,7 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 
-	var players = get_tree().get_nodes_in_group("Player")
+	var players = get_tree().get_nodes_in_group(GameConstants.GROUP_PLAYER)
 	if players.size() > 0:
 		player = players[0]
 
@@ -56,7 +56,7 @@ func _deferred_switch_scene(res_path, area_to_reactivate: Area2D = null, spawn_n
 	
 	# -- Garantir que o player está definido --
 	if player == null:
-		var players = get_tree().get_nodes_in_group("Player")
+		var players = get_tree().get_nodes_in_group(GameConstants.GROUP_PLAYER)
 		if players.size() > 0:
 			player = players[0]
 

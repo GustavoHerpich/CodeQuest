@@ -63,7 +63,7 @@ func _animate() -> void:
 		animation.play("walk")
 		return
 	
-	animation.play("idle")
+	animation.play(GameConstants.ANIM_IDLE)
 
 func _get_direction() -> Vector2:
 	return [

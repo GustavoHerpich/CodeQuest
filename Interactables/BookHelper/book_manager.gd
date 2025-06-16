@@ -6,11 +6,11 @@ const BOOK_NODE_PATH := "Book"
 var book_instance: CanvasLayer = null
 
 func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("open_book"):
+	if Input.is_action_just_pressed(GameConstants.INPUT_OPEN_BOOK):
 		toggle_book()
 
 func _set_player_book_state(is_in_book: bool) -> void:
-	var player = get_tree().get_first_node_in_group("Player")
+	var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 	if player:
 		player.is_in_bookHelper = is_in_book
 

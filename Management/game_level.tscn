@@ -1,4 +1,4 @@
-[gd_scene load_steps=127 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=130 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -25,7 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://nnirspy8dqnn" path="res://Decoration/Bones/bones.tscn" id="17_q2nny"]
 [ext_resource type="PackedScene" uid="uid://d07266g6iu4cw" path="res://Decoration/Bushes/bushes.tscn" id="18_r3afb"]
 [ext_resource type="PackedScene" uid="uid://djp3qafgwkg7m" path="res://Decoration/Pumpkins/pumpkins.tscn" id="19_30a5j"]
+[ext_resource type="PackedScene" uid="uid://d4hdsory4sv0" path="res://Entities/Troops/Goblins/goblin.tscn" id="19_yya47"]
 [ext_resource type="PackedScene" uid="uid://cejj40yfq3khv" path="res://Decoration/Signs/decoration_sign.tscn" id="20_ited3"]
+[ext_resource type="Resource" uid="uid://dx0hxwjqek27j" path="res://Dialogues/Dialogues/FourthDialogue.dialogue" id="21_kyvsf"]
 [ext_resource type="PackedScene" uid="uid://djakawdpvtt6x" path="res://Decoration/SmallGrass/small_grass.tscn" id="21_r3afb"]
 [ext_resource type="PackedScene" uid="uid://bb40cvmxuohhw" path="res://Interactables/Components/Tree/tree.tscn" id="23_30a5j"]
 [ext_resource type="PackedScene" uid="uid://c4ywxuous87nu" path="res://Interactables/Components/Mine/mine.tscn" id="25_ited3"]
@@ -349,6 +351,9 @@ sources/0 = SubResource("TileSetAtlasSource_1pwjh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
 size = Vector2(1068.25, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e8bq6"]
+radius = 42.5793
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ufrq5"]
 radius = 53.3667
@@ -730,7 +735,7 @@ sources/0 = SubResource("TileSetAtlasSource_nirgi")
 size = Vector2(63, 66)
 
 [node name="GameLevel" type="Node2D"]
-position = Vector2(-985, -291)
+position = Vector2(-975, -470)
 script = ExtResource("1_fk5p6")
 
 [node name="TerrainManager" type="Node2D" parent="."]
@@ -821,11 +826,22 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(712, 365)
+position = Vector2(725, 374)
 platform_on_leave = 0
-left_attack_name = "attack_axe"
-right_attack_name = "attack_hammer"
 bridge = NodePath("../../Bridge/Bridget")
+
+[node name="Goblins" type="Node2D" parent="Decorations"]
+position = Vector2(985, 290)
+
+[node name="Goblin" parent="Decorations/Goblins" instance=ExtResource("19_yya47")]
+position = Vector2(142, 2210)
+
+[node name="Actionable" parent="Decorations/Goblins/Goblin" instance=ExtResource("26_rkog2")]
+dialogue_resource = ExtResource("21_kyvsf")
+
+[node name="Collision" type="CollisionShape2D" parent="Decorations/Goblins/Goblin/Actionable"]
+position = Vector2(0, 21)
+shape = SubResource("CircleShape2D_e8bq6")
 
 [node name="MushRooms" type="Node2D" parent="Decorations"]
 y_sort_enabled = true

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://4fych35akjlc"]
 
 [ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="1_0b43i"]
-[ext_resource type="Script" uid="uid://cbcmxusonku24" path="res://Interactables/Global Script/InteractablesManage/interacting_component.gd" id="1_627co"]
+[ext_resource type="Script" uid="uid://cbcmxusonku24" path="res://Management/Global Script/InteractablesManage/interacting_component.gd" id="1_627co"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vwp7r"]
 radius = 30.0167

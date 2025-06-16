@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://d4hdsory4sv0"]
+
+[ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_o6666"]
+[ext_resource type="Script" uid="uid://e5sldqf56t2b" path="res://Entities/Troops/Goblins/goblin.gd" id="2_66pte"]
+[ext_resource type="Texture2D" uid="uid://dvaiaxrik5fin" path="res://Assets/Externals/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_gulpl"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/Global Script/InteractablesManage/interactable.tscn" id="4_66pte"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pte"]
+radius = 4.0
+height = 42.0
+
+[sub_resource type="Animation" id="Animation_1s8ar"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_kuka3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2rv32"]
+_data = {
+&"RESET": SubResource("Animation_kuka3"),
+&"idle": SubResource("Animation_1s8ar")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1s8ar"]
+radius = 39.0512
+
+[node name="Goblin" instance=ExtResource("1_o6666")]
+position = Vector2(0, -48)
+script = ExtResource("2_66pte")
+
+[node name="Texture" parent="." index="0"]
+texture = ExtResource("2_gulpl")
+hframes = 7
+vframes = 6
+
+[node name="Collision" parent="." index="1"]
+show_behind_parent = true
+position = Vector2(0, 48)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_66pte")
+
+[node name="Animation" parent="." index="2"]
+libraries = {
+&"": SubResource("AnimationLibrary_2rv32")
+}
+autoplay = "idle"
+
+[node name="Interactable" parent="." index="3" instance=ExtResource("4_66pte")]
+interact_name = "Goblin das perguntas"
+
+[node name="Collision" type="CollisionShape2D" parent="Interactable" index="1"]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_1s8ar")

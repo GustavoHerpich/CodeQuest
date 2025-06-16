@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://co4wo17djqold"]
 
-[ext_resource type="Script" uid="uid://vkblelw8osdk" path="res://Interactables/Global Script/InteractablesManage/interactable.gd" id="1_vuja0"]
+[ext_resource type="Script" uid="uid://vkblelw8osdk" path="res://Management/Global Script/InteractablesManage/interactable.gd" id="1_vuja0"]
 [ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="2_35fio"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjrkc"]
