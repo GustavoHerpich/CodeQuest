@@ -7,6 +7,8 @@ const ANIM_RUN := "run"
 const ANIM_HIT := "hit"
 const ANIM_KILL := "kill"
 const ANIM_OPEN := "open"
+const ANIM_WALK := "walk"
+const ANIM_ROTATE := "rotate"
 
 # Grupos
 const GROUP_PLAYER := "Player"

@@ -1,0 +1,85 @@
+[gd_scene load_steps=8 format=3 uid="uid://bf36qt5it4cha"]
+
+[ext_resource type="Texture2D" uid="uid://d3ko1lyyr707v" path="res://Assets/Wheel/Roleta.png" id="1_egbca"]
+[ext_resource type="Script" uid="uid://bbvixf05ek5y2" path="res://Interactables/Components/WheelScene/wheel.gd" id="1_l3l2q"]
+
+[sub_resource type="Animation" id="Animation_l3l2q"]
+resource_name = "idle"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WheelSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4jbp3"]
+resource_name = "rotate"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WheelSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_mtnb7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WheelSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qifeq"]
+_data = {
+&"RESET": SubResource("Animation_mtnb7"),
+&"idle": SubResource("Animation_l3l2q"),
+&"rotate": SubResource("Animation_4jbp3")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_egbca"]
+radius = 165.027
+
+[node name="Wheel" type="Node2D"]
+script = ExtResource("1_l3l2q")
+
+[node name="WheelSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_egbca")
+hframes = 3
+vframes = 3
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_qifeq")
+}
+autoplay = "idle"
+speed_scale = 0.5
+
+[node name="ClickArea" type="Area2D" parent="."]
+
+[node name="ClickAreaCollision" type="CollisionShape2D" parent="ClickArea"]
+position = Vector2(-1, 18)
+shape = SubResource("CircleShape2D_egbca")

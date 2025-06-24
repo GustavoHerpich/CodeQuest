@@ -1,7 +1,7 @@
 class_name Console
 extends Control
 
-const CodeStyle = preload("res://Interactables/Global Script/CodeStyles/code_style.gd")
+const CodeStyle = preload("res://Management/Global Script/CodeStyles/code_style.gd")
 
 var lua_console: LuaConsole = LuaConsole.new()
 var dragging: bool = false

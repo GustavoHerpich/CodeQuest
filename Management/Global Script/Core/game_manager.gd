@@ -14,14 +14,14 @@ var terminal: LuaConsole = LuaConsole.new()
 
 var current_state: GameState = GameState.PLAYING
 
-## --- Lifecycle ---
+## Lifecycle 
 
 func _ready() -> void:
 	terminal.print.connect(print)
 	terminal.error.connect(error)
 	terminal.called_method.connect(_method_called_callback)
 
-## --- Internal Methods ---
+## Private Methods 
 
 func _get_method_argument_types(object: Object, method_name: String) -> Array:
 	for method in object.get_method_list():
@@ -48,13 +48,13 @@ func _update_cursor_visibility() -> void:
 	var should_show_cursor = book_visible or console_visible
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE if should_show_cursor else Input.MOUSE_MODE_CAPTURED)
 
-## --- Public Interface ---
+##  Public Methods 
 
-func print(msg: String) -> void:
-	print_message.emit(msg)
+func print(msg: Variant) -> void:
+	print_message.emit(str(msg))
 
-func error(msg: String) -> void:
-	error_message.emit(msg)
+func error(msg: Variant) -> void:
+	error_message.emit(str(msg))
 
 func register_object(object: Node):
 	for method in object.get_method_list():

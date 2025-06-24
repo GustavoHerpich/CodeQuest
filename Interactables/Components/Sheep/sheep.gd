@@ -60,7 +60,7 @@ func _animate() -> void:
 		sprite.flip_h = true
 	
 	if velocity:
-		animation.play("walk")
+		animation.play(GameConstants.ANIM_WALK)
 		return
 	
 	animation.play(GameConstants.ANIM_IDLE)

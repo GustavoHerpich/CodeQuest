@@ -3,34 +3,34 @@ extends StaticBody2D
 
 const HIT_PARTICLES: PackedScene = preload("res://Decoration/Effects/hit_particles.tscn")
 const WOOD_COLLECTABLE: PackedScene = preload("res://Interactables/Components/Collectables/wood.tscn")
-var _is_dead: bool = false
+var is_dead: bool = false
 
 @export_category("Variables")
-@export var _health: int
-@export var _min_health: int = 10
-@export var _max_health: int = 30
+@export var health: int
+@export var min_health: int = 10
+@export var max_health: int = 30
 @export var min_wood: int = 1
 @export var max_wood: int = 5
 
 @export_category("Objects")
-@export var _animation: AnimationPlayer
+@export var animation: AnimationPlayer
 
 func _ready() -> void:
-	_health = randi_range(_min_health, _max_health)
+	health = randi_range(min_health, max_health)
 
 func update_health(damage_range: Array) -> void:
-	if _is_dead:
+	if is_dead:
 		return
 		
-	_health -= randi_range(damage_range[0], damage_range[1])
+	health -= randi_range(damage_range[0], damage_range[1])
 	_spawn_particles()
 	
-	if _health <= 0:
+	if health <= 0:
 		_spawn_wood()
-		_is_dead = true
-		_animation.play(GameConstants.ANIM_KILL)
+		is_dead = true
+		animation.play(GameConstants.ANIM_KILL)
 	else:
-		_animation.play(GameConstants.ANIM_HIT)
+		animation.play(GameConstants.ANIM_HIT)
 
 func _spawn_particles() -> void:
 	var hit = HIT_PARTICLES.instantiate()
@@ -50,7 +50,7 @@ func _spawn_wood() -> void:
 
 func _on_animation_finished(anim_name: StringName) -> void:
 	if anim_name == GameConstants.ANIM_HIT:
-		_animation.play(GameConstants.ANIM_IDLE)
+		animation.play(GameConstants.ANIM_IDLE)
 
 func get_hit_color() -> Color:
 	return Color.SADDLE_BROWN

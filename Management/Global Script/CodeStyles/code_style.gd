@@ -21,7 +21,7 @@ var custom_identifiers: Array[String] = []
 func _init(language: String = "lua"):
 	set_language(language)
 
-# === CONFIGURAÇÕES DE CORES ===
+# Configurações de cores 
 func apply_common_colors() -> void:
 	number_color = Color(0.8, 0.6, 0)               # Amarelo-alaranjado
 	function_color = Color(0.4, 0.6, 1)             # Azul-claro
@@ -45,22 +45,20 @@ func set_language(lang: String) -> void:
 	clear_all_highlights()
 	apply_common_colors()
 
-	# Palavras-chave da linguagem
 	for keyword in LANGUAGE_KEYWORDS[lang]:
 		add_keyword_color(keyword, Color(1, 0.4, 0.6))  # Rosa-vermelho suave
 
-	# Reaplica identificadores customizados, se houver
 	for id in custom_identifiers:
 		add_keyword_color(id, Color(0.9, 0.9, 0.4))  # Amarelo-claro
 
-# === VARIÁVEIS DEFINIDAS PELO USUÁRIO ===
+# Variáveis definidas pelo Usuário
 func highlight_custom_identifiers(identifiers: Array[String]) -> void:
 	custom_identifiers = identifiers.duplicate()
 	
 	for id in custom_identifiers:
 		add_keyword_color(id, Color(0.9, 0.9, 0.4))  # Amarelo-claro
 
-# === UTILITÁRIO ===
+# Utils
 func clear_all_highlights() -> void:
 	clear_keyword_colors()
 	clear_color_regions()

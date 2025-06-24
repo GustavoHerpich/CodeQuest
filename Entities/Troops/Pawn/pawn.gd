@@ -19,6 +19,7 @@ var attack_animation_name: String = ""
 var is_in_terminal: bool = false
 var is_in_dialogue: bool = false
 var is_in_bookHelper: bool = false
+var is_in_wheel: bool = false
 var is_in_montain: bool = true
 
 @onready var actionable_finder: Area2D = $Direction/ActionableFinder
@@ -99,7 +100,7 @@ func _on_attack_area_body_entered(_body: Node2D) -> void:
 # Public Methods
 
 func is_busy() -> bool:
-	return is_in_terminal or is_in_dialogue or is_in_bookHelper
+	return is_in_terminal or is_in_dialogue or is_in_bookHelper or is_in_wheel
 
 func can_move() -> bool:
 	return can_attack and not is_busy()
@@ -109,6 +110,18 @@ func enter_terminal() -> void:
 
 func exit_terminal() -> void:
 	is_in_terminal = false
+	
+func enter_bookHelper() -> void:
+	is_in_bookHelper = true
+
+func exit_bookHelper() -> void:
+	is_in_bookHelper = false
+
+func enter_wheel() -> void:
+	is_in_wheel = true
+	
+func exit_wheel() -> void:
+	is_in_wheel = false
 
 func enter_dialogue_mode() -> void:
 	is_in_dialogue = true
@@ -151,5 +164,22 @@ func increaseSpeed(amount: float) -> void:
 
 func moveSpeed() -> Variant:
 	return GameManager.get_value_variable(self, "move_speed")
+
+func increaseAttack(min_amount: int, max_amount: int) -> void:
+	var current_min_attack = GameManager.get_value_variable(self, "min_attack")
+	var current_max_attack = GameManager.get_value_variable(self, "max_attack")
+	
+	current_min_attack += min_amount
+	current_max_attack += max_amount
+	
+	GameManager.set_value_variable(self, "min_attack", min_amount)
+	GameManager.set_value_variable(self, "max_attack", max_amount)
+	
+	GameManager.print("Ataque aumentado.\nNovo intervalo: " + str(current_min_attack) + " - " + str(current_max_attack))
+
+func attackRange() -> Variant:
+	var min_attack = GameManager.get_value_variable(self, "min_attack")
+	var max_attack = GameManager.get_value_variable(self, "max_attack")
+	return "(" + str(min_attack) + ", " + str(max_attack) + ")" 
 
 #

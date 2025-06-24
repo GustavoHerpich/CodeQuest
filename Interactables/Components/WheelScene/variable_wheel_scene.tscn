@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhsvyggscm7xk"]
+
+[ext_resource type="Script" uid="uid://cvdr377kfhxfa" path="res://Interactables/Components/WheelScene/variable_wheel_scene.gd" id="1_pydt5"]
+[ext_resource type="PackedScene" uid="uid://bf36qt5it4cha" path="res://Interactables/Components/WheelScene/wheel.tscn" id="2_ho8ay"]
+
+[node name="VariableWheelScene" type="Node2D"]
+script = ExtResource("1_pydt5")
+
+[node name="Wheel" type="Node2D" parent="."]
+
+[node name="WheelContainer" type="VBoxContainer" parent="Wheel"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Wheel" parent="Wheel/WheelContainer" instance=ExtResource("2_ho8ay")]
+
+[node name="QuestionPanel" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="NinePatchRect" parent="QuestionPanel"]
+offset_left = 655.0
+offset_top = 254.0
+offset_right = 695.0
+offset_bottom = 294.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="QuestionPanel/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="QuestionLabel" type="Label" parent="QuestionPanel/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="OptionsContainer" type="VBoxContainer" parent="QuestionPanel/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Option1Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="Option2Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="Option3Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+
+[node name="FeedbackLabel" type="Label" parent="QuestionPanel/Panel/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
