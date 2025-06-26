@@ -3,26 +3,31 @@ extends Node2D
 
 const QUESTIONS := [
 	{
+		"title": "Tipos Numéricos",
 		"question": "Qual dessas é uma variável do tipo inteiro?",
 		"options": ["\"42\"", "42", "\"true\""],
 		"answer": 1
 	},
 	{
+		"title": "Valores Booleanos",
 		"question": "Qual dessas é uma variável do tipo booleano?",
 		"options": ["false", "\"false\"", "0"],
 		"answer": 0
 	},
 	{
+		"title": "Strings",
 		"question": "Qual dessas representa uma string?",
 		"options": ["\"Olá mundo\"", "123", "true"],
 		"answer": 0
 	},
 	{
+		"title": "Números Decimais",
 		"question": "Qual é um exemplo de número decimal?",
 		"options": ["3.14", "\"3.14\"", "3"],
 		"answer": 0
 	},
 	{
+		"title": "Nomes de Variáveis",
 		"question": "Qual dessas não é uma variável válida?",
 		"options": ["minha_variavel", "123abc", "_variavel"],
 		"answer": 1
@@ -34,18 +39,19 @@ var current_question := {}
 var question_index := -1
 var already_interacted: bool = false
 
+@onready var title_label: Label = $QuestionPanel/Panel/VBoxContainer/HBoxContainer/TitleBackground/TitleLabel
 @onready var wheel_node = $Wheel/WheelContainer/Wheel
 @onready var wheel_container: Control = $Wheel/WheelContainer
 @onready var click_area: Area2D = $Wheel/WheelContainer/Wheel/ClickArea
 @onready var question_panel: CanvasLayer = $QuestionPanel
-@onready var question_label: Label = $QuestionPanel/Panel/VBoxContainer/QuestionLabel
+@onready var question_label: Label = $QuestionPanel/Panel/QuestionLabel
 @onready var option_buttons := [
-	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/Option1Button,
-	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/Option2Button,
-	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/Option3Button
+	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground1/Option1Button,
+	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground2/Option2Button,
+	$QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground3/Option3Button
 ]
-@onready var options_container: VBoxContainer = $QuestionPanel/Panel/VBoxContainer/OptionsContainer
-@onready var feedback_label: Label = $QuestionPanel/Panel/VBoxContainer/FeedbackLabel
+@onready var options_container: HBoxContainer = $QuestionPanel/Panel/VBoxContainer/OptionsContainer
+@onready var feedback_label: Label = $QuestionPanel/Panel/FeedbackLabel
 
 func _ready():
 	add_to_group(GameConstants.GROUP_CONSOLE_INSTANCES)
@@ -98,6 +104,7 @@ func pick_and_show_question():
 	show_question(current_question)
 
 func show_question(q: Dictionary):
+	title_label.text = q.get("title", "")
 	question_label.text = q["question"]
 	for i in range(option_buttons.size()):
 		option_buttons[i].text = q["options"][i]

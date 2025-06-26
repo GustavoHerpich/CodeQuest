@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhsvyggscm7xk"]
+[gd_scene load_steps=10 format=3 uid="uid://bhsvyggscm7xk"]
 
 [ext_resource type="Script" uid="uid://cvdr377kfhxfa" path="res://Interactables/Components/WheelScene/variable_wheel_scene.gd" id="1_pydt5"]
 [ext_resource type="PackedScene" uid="uid://bf36qt5it4cha" path="res://Interactables/Components/WheelScene/wheel.tscn" id="2_ho8ay"]
+[ext_resource type="Texture2D" uid="uid://ckdv3675cdwuu" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0018.png" id="3_e15rc"]
+[ext_resource type="Texture2D" uid="uid://cuvedni4085f3" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0056.png" id="5_mx6yk"]
+[ext_resource type="FontFile" uid="uid://7h8vri6nq2rb" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="5_qecfl"]
+[ext_resource type="Texture2D" uid="uid://bsvl5ynjbeext" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0057.png" id="6_m00ee"]
+[ext_resource type="Texture2D" uid="uid://d1tm4fvc1a6dr" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0058.png" id="7_v8h61"]
+[ext_resource type="Theme" uid="uid://36vlbe7emmbk" path="res://Resources/Default_Button.tres" id="8_mx6yk"]
+
+[sub_resource type="Theme" id="Theme_m00ee"]
+default_font = ExtResource("5_qecfl")
 
 [node name="VariableWheelScene" type="Node2D"]
 script = ExtResource("1_pydt5")
@@ -15,35 +24,147 @@ offset_bottom = 40.0
 [node name="Wheel" parent="Wheel/WheelContainer" instance=ExtResource("2_ho8ay")]
 
 [node name="QuestionPanel" type="CanvasLayer" parent="."]
-visible = false
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Panel" type="NinePatchRect" parent="QuestionPanel"]
-offset_left = 655.0
-offset_top = 254.0
-offset_right = 695.0
-offset_bottom = 294.0
+offset_left = 308.5
+offset_top = 98.0
+offset_right = 501.5
+offset_bottom = 199.0
+texture = ExtResource("3_e15rc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="QuestionLabel" type="Label" parent="QuestionPanel/Panel"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 6.0
+offset_right = 187.0
+offset_bottom = 62.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_qecfl")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="FeedbackLabel" type="Label" parent="QuestionPanel/Panel"]
+layout_mode = 2
+offset_left = 6.0
+offset_top = 59.0
+offset_right = 187.0
+offset_bottom = 95.0
+theme_override_fonts/font = ExtResource("5_qecfl")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="QuestionPanel/Panel"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -32.0
+offset_top = -19.5
+offset_right = 228.0
+offset_bottom = 120.5
 
-[node name="QuestionLabel" type="Label" parent="QuestionPanel/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="QuestionPanel/Panel/VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="OptionsContainer" type="VBoxContainer" parent="QuestionPanel/Panel/VBoxContainer"]
+[node name="LeftBackGround" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+texture = ExtResource("5_mx6yk")
+patch_margin_left = 8
+patch_margin_right = 8
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="Option1Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+[node name="TitleBackground" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
+texture = ExtResource("6_m00ee")
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="Option2Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
-layout_mode = 2
+[node name="TitleLabel" type="Label" parent="QuestionPanel/Panel/VBoxContainer/HBoxContainer/TitleBackground"]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 150.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("5_qecfl")
+theme_override_font_sizes/font_size = 8
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Option3Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+[node name="RightBackGround" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+texture = ExtResource("7_v8h61")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 20
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
 
-[node name="FeedbackLabel" type="Label" parent="QuestionPanel/Panel/VBoxContainer"]
+[node name="OptionsContainer" type="HBoxContainer" parent="QuestionPanel/Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_m00ee")
+
+[node name="ButtonBackground1" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 4
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Option1Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground1"]
+layout_mode = 2
+offset_top = 26.0
+offset_right = 82.0
+offset_bottom = 57.0
+theme = ExtResource("8_mx6yk")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="ButtonBackground2" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Option2Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground2"]
+layout_mode = 2
+offset_left = -35.0
+offset_top = 26.0
+offset_right = 47.0
+offset_bottom = 57.0
+theme = ExtResource("8_mx6yk")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
+
+[node name="ButtonBackground3" type="NinePatchRect" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+
+[node name="Option3Button" type="Button" parent="QuestionPanel/Panel/VBoxContainer/OptionsContainer/ButtonBackground3"]
+layout_mode = 2
+offset_left = -70.0
+offset_top = 26.0
+offset_right = 12.0
+offset_bottom = 57.0
+theme = ExtResource("8_mx6yk")
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 3
 
 [connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

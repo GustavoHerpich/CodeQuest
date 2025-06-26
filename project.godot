@@ -14,6 +14,10 @@ config/name="CodeQuest"
 run/main_scene="uid://c3dxrvy5ou5yu"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[audio]
+
+buses/default_bus_layout="res://Resources/default_bus_layout.tres"
+
 [autoload]
 
 GameManager="*res://Management/Global Script/Core/game_manager.gd"
@@ -41,6 +45,7 @@ folder_colors={
 "res://Extensions/": "blue",
 "res://Interactables/": "green",
 "res://Management/": "purple",
+"res://Resources/": "teal",
 "res://addons/": "teal"
 }
 
