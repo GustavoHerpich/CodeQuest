@@ -53,7 +53,7 @@ tracks/0/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_ujsol"]
+[sub_resource type="Animation" id="Animation_d43tc"]
 resource_name = "kill"
 length = 0.1
 step = 0.1
@@ -75,15 +75,15 @@ _data = {
 &"RESET": SubResource("Animation_fh8a4"),
 &"hit": SubResource("Animation_77yra"),
 &"idle": SubResource("Animation_6et5v"),
-&"kill": SubResource("Animation_ujsol")
+&"kill": SubResource("Animation_d43tc")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_snqy2"]
 size = Vector2(64, 64)
 
-[node name="Tree" type="StaticBody2D" node_paths=PackedStringArray("_animation")]
+[node name="Tree" type="StaticBody2D" node_paths=PackedStringArray("animation")]
 script = ExtResource("1_6et5v")
-_animation = NodePath("Animation")
+animation = NodePath("Animation")
 
 [node name="Texture" type="Sprite2D" parent="."]
 position = Vector2(-64, -128)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://chtgt54lk7qdx"]
+[gd_scene load_steps=10 format=3 uid="uid://chtgt54lk7qdx"]
 
 [ext_resource type="Script" uid="uid://brb32f1f2iqbf" path="res://Interactables/Components/Tree/tree_swamp.gd" id="1_6qd4x"]
-[ext_resource type="Texture2D" uid="uid://mxwcd4m6314" path="res://Assets/Terrains/SwampTree.png" id="1_kvxqw"]
+[ext_resource type="Texture2D" uid="uid://d0thpuponrp5j" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Trees/Tree3.png" id="2_6qd4x"]
+[ext_resource type="Texture2D" uid="uid://cjgjnbeudnh3f" path="res://Assets/Externals/Tiny Swords/Resources/Trees/Tree.png" id="3_pnvyb"]
 
 [sub_resource type="Animation" id="Animation_qs1au"]
 length = 0.001
@@ -20,7 +21,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ohboo"]
 resource_name = "idle"
-length = 0.4
+length = 0.7
 loop_mode = 1
 step = 0.1
 tracks/0/type = "value"
@@ -30,39 +31,107 @@ tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2]
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_6qd4x"]
+resource_name = "hit"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 6]
+}
+
+[sub_resource type="Animation" id="Animation_p61ef"]
+resource_name = "kill"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("KillSprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("KillSprite:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Texture:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_66n38"]
 _data = {
 &"RESET": SubResource("Animation_qs1au"),
-&"idle": SubResource("Animation_ohboo")
+&"hit": SubResource("Animation_6qd4x"),
+&"idle": SubResource("Animation_ohboo"),
+&"kill": SubResource("Animation_p61ef")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kvxqw"]
 radius = 18.0
-height = 89.9809
+height = 41.9986
 
-[node name="TreeSwamp" type="StaticBody2D"]
+[node name="TreeSwamp" type="StaticBody2D" node_paths=PackedStringArray("animation")]
 script = ExtResource("1_6qd4x")
+animation = NodePath("Animation")
 
 [node name="Texture" type="Sprite2D" parent="."]
-position = Vector2(-3, 103)
-texture = ExtResource("1_kvxqw")
-hframes = 2
-vframes = 2
+texture = ExtResource("2_6qd4x")
+hframes = 8
+
+[node name="KillSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("3_pnvyb")
+hframes = 4
+vframes = 3
+frame = 8
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 libraries = {
 &"": SubResource("AnimationLibrary_66n38")
 }
 autoplay = "idle"
-speed_scale = 0.6
+next/kill = &"kill"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 55)
 rotation = -1.57889
 shape = SubResource("CapsuleShape2D_kvxqw")
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]

@@ -9,6 +9,7 @@ const ANIM_KILL := "kill"
 const ANIM_OPEN := "open"
 const ANIM_WALK := "walk"
 const ANIM_ROTATE := "rotate"
+const ANIM_EAT := "eat"
 
 # Grupos
 const GROUP_PLAYER := "Player"

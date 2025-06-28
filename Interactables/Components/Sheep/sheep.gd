@@ -13,6 +13,10 @@ var direction: Vector2
 
 var regular_move_speed: float
 
+var current_anim: String = ""
+var idle_time: float = 0.0
+var is_eating: bool = false
+
 @export_category("Variables")
 @export var move_speed: float = 128.00
 @export var min_health: int = 10
@@ -21,49 +25,56 @@ var regular_move_speed: float
 @export var max_meat: int = 5
 
 @export_category("Objects")
-@export var sprite: Sprite2D
-@export var animation: AnimationPlayer
+@export var animatedSprite: AnimatedSprite2D
 @export var walker_timer: Timer
 @export var run_timer: Timer
 @export var dust: CPUParticles2D
 
 func _ready() -> void:
 	regular_move_speed = move_speed
-	health =  randf_range(min_health, max_health)
-	
+	health = randf_range(min_health, max_health)
+
 	wait_time = randf_range(5.0, 15.0)
 	run_wait_time = randf_range(1.0, 3.0)
-	
+
 	direction = _get_direction()
 	walker_timer.start(wait_time)
-	
-func _physics_process(_delta: float) -> void:
+
+func _physics_process(delta: float) -> void:
 	dust.emitting = false
 	if direction:
 		dust.emitting = true
-		
+
 	velocity = direction * move_speed
 	move_and_slide()
-	
+
 	if get_slide_collision_count() > 0:
-		direction = velocity.bounce(
-			get_slide_collision(0).get_normal()
-		).normalized()
-		
+		direction = velocity.bounce(get_slide_collision(0).get_normal()).normalized()
+
+	idle_time += delta
 	_animate()
-	
+
 func _animate() -> void:
-	if velocity.x > 0:
-		sprite.flip_h = false
-	
-	if velocity.x < 0:
-		sprite.flip_h = true
-	
-	if velocity:
-		animation.play(GameConstants.ANIM_WALK)
-		return
-	
-	animation.play(GameConstants.ANIM_IDLE)
+	if velocity.length() > 0.1:
+		animatedSprite.flip_h = velocity.x < 0
+		_set_anim(GameConstants.ANIM_WALK)
+		is_eating = false
+		idle_time = 0.0
+	else:
+		if not is_eating and idle_time > 2.0 and randf() < 0.05:
+			is_eating = true
+			_set_anim(GameConstants.ANIM_EAT)
+		elif not is_eating:
+			_set_anim(GameConstants.ANIM_IDLE)
+
+func _set_anim(anim: String) -> void:
+	if current_anim != anim:
+		animatedSprite.play(anim)
+		current_anim = anim
+
+func _on_animated_sprite_animation_finished() -> void:
+	if current_anim == GameConstants.ANIM_EAT:
+		is_eating = false
 
 func _get_direction() -> Vector2:
 	return [
@@ -77,33 +88,33 @@ func _on_walk_timer_timeout() -> void:
 	if direction == Vector2.ZERO:
 		direction = _get_direction()
 		return
-		
+
 	direction = Vector2.ZERO
 
-func update_health(damage_range: Array) -> void: # [1, 5]
+func update_health(damage_range: Array) -> void:
 	if is_dead:
 		return
-		
+
 	health -= randi_range(damage_range[0], damage_range[1])
-	
+
 	_spawn_particles()
-	
+
 	if health <= 0:
 		_spawn_meat()
 		is_dead = true
 		queue_free()
 		return
-		
+
 	run_timer.start(run_wait_time)
 	direction = _get_direction()
 	move_speed *= 2
-	
+
 func _spawn_particles() -> void:
 	var hit = HIT_PARTICLES.instantiate()
 	hit.global_position = global_position
 	hit.modulate = Color.RED
 	hit.emitting = true
-	
+
 	get_tree().root.call_deferred("add_child", hit)
 
 func _spawn_meat() -> void:
@@ -113,8 +124,8 @@ func _spawn_meat() -> void:
 		meat.global_position = global_position + Vector2(
 			randi_range(-32, 32), randi_range(-32, 32)
 		)
-		
+
 		get_tree().root.call_deferred("add_child", meat)
-	
+
 func _on_run_timer_timeout() -> void:
 	move_speed = regular_move_speed

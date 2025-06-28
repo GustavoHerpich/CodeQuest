@@ -1,92 +1,205 @@
-[gd_scene load_steps=9 format=3 uid="uid://2e0jpvlhe8eh"]
+[gd_scene load_steps=30 format=3 uid="uid://2e0jpvlhe8eh"]
 
-[ext_resource type="Texture2D" uid="uid://c1uvnssptfepl" path="res://Assets/Externals/Tiny Swords/Resources/Sheep/HappySheep_All.png" id="1_jei6w"]
 [ext_resource type="Script" uid="uid://de83vucoc8jya" path="res://Interactables/Components/Sheep/sheep.gd" id="1_mjqlg"]
+[ext_resource type="Texture2D" uid="uid://84lap1vvvhm6" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Grass.png" id="2_vuor1"]
+[ext_resource type="Texture2D" uid="uid://c6pawses7ms5a" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Idle.png" id="3_k5e0y"]
 [ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="3_vuor1"]
+[ext_resource type="Texture2D" uid="uid://qoogbx72ai5m" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Move.png" id="4_28kal"]
 
-[sub_resource type="Animation" id="Animation_mjqlg"]
-resource_name = "idle"
-length = 0.8
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6kl3"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="Animation" id="Animation_vuor1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5e0y"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="Animation" id="Animation_g6kl3"]
-resource_name = "walk"
-length = 0.6
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [8, 9, 10, 11, 12, 13]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_28kal"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(256, 0, 128, 128)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_k5e0y"]
-_data = {
-&"RESET": SubResource("Animation_vuor1"),
-&"idle": SubResource("Animation_mjqlg"),
-&"walk": SubResource("Animation_g6kl3")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8q3i"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auoqc"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65f5x"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd0o6"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve557"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ovmgm"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skqy4"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r33is"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(1280, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkyf1"]
+atlas = ExtResource("2_vuor1")
+region = Rect2(1408, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kcu8p"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opshi"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ti5k2"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f46j"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ur4ck"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pin88"]
+atlas = ExtResource("3_k5e0y")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tffk5"]
+atlas = ExtResource("4_28kal")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d37nv"]
+atlas = ExtResource("4_28kal")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2h3do"]
+atlas = ExtResource("4_28kal")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gd5s"]
+atlas = ExtResource("4_28kal")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kcu8p"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6kl3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5e0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28kal")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8q3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auoqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65f5x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd0o6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ve557")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ovmgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skqy4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r33is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkyf1")
+}],
+"loop": true,
+"name": &"eat",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kcu8p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opshi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ti5k2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f46j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ur4ck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pin88")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tffk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d37nv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2h3do")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gd5s")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_28kal"]
 radius = 6.0
 height = 38.0
 
-[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("sprite", "animation", "walker_timer", "run_timer", "dust")]
+[node name="Sheep" type="CharacterBody2D" node_paths=PackedStringArray("animatedSprite", "walker_timer", "run_timer", "dust")]
 motion_mode = 1
 platform_on_leave = 2
 script = ExtResource("1_mjqlg")
-sprite = NodePath("Texture")
-animation = NodePath("Animation")
+animatedSprite = NodePath("AnimatedSprite2D")
 walker_timer = NodePath("WalkTimer")
 run_timer = NodePath("RunTimer")
 dust = NodePath("Dust")
 
-[node name="Texture" type="Sprite2D" parent="."]
-position = Vector2(0, -17)
-texture = ExtResource("1_jei6w")
-hframes = 8
-vframes = 2
-
-[node name="Animation" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_k5e0y")
-}
-autoplay = "idle"
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kcu8p")
+animation = &"walk"
+frame_progress = 0.982951
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 show_behind_parent = true
@@ -103,5 +216,6 @@ one_shot = true
 [node name="Dust" parent="." instance=ExtResource("3_vuor1")]
 amount = 8
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
 [connection signal="timeout" from="RunTimer" to="." method="_on_run_timer_timeout"]

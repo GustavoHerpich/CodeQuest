@@ -836,11 +836,12 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(1277, 2529)
+position = Vector2(738, 350)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 
 [node name="Goblins" type="Node2D" parent="Decorations"]
+y_sort_enabled = true
 position = Vector2(985, 290)
 
 [node name="Goblin" parent="Decorations/Goblins" instance=ExtResource("19_yya47")]
@@ -1022,6 +1023,7 @@ position = Vector2(4314, -194)
 position = Vector2(2771, 478)
 
 [node name="SmallGrasses" type="Node2D" parent="Decorations"]
+y_sort_enabled = true
 
 [node name="SmallGrass" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
 position = Vector2(4132, -467)
@@ -1074,236 +1076,242 @@ position = Vector2(3574, 2961)
 [node name="Trees" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
-[node name="Tree" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Trees" type="Node2D" parent="Decorations/Trees"]
+y_sort_enabled = true
+
+[node name="Tree" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2013, 755)
 
-[node name="Tree2" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree2" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2002, 11)
 
-[node name="Tree3" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree3" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2093, -24)
 
-[node name="Tree4" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree4" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(1978, -180)
 
-[node name="Tree5" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree5" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2073, -163)
 
-[node name="Tree6" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree6" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(687, 223)
 
-[node name="Tree7" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree7" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(514, 417)
 
-[node name="Tree8" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree8" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(733, 501)
 
-[node name="Tree9" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree9" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2195, -49)
 
-[node name="Tree10" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree10" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2316, -66)
 
-[node name="Tree11" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree11" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4332, -468)
 
-[node name="Tree12" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree12" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4031, -419)
 
-[node name="Tree13" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree13" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2291, 632)
 
-[node name="Tree14" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree14" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2186, 623)
 
-[node name="Tree15" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree15" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2424, 685)
 
-[node name="Tree16" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree16" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2545, 713)
 
-[node name="Tree17" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree17" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2680, 668)
 
-[node name="Tree18" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree18" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2452, -81)
 
-[node name="Tree19" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree19" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2877, 461)
 
-[node name="Tree20" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree20" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2994, 506)
 
-[node name="Tree21" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree21" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3087, 551)
 
-[node name="Tree22" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree22" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2272, 396)
 
-[node name="Tree23" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree23" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(2268, 274)
 
-[node name="Tree24" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree24" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4206, 236)
 
-[node name="Tree25" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree25" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4214, 491)
 
-[node name="Tree26" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree26" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4068, 650)
 
-[node name="Tree27" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree27" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3801, 796)
 
-[node name="Tree28" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree28" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3930, 558)
 
-[node name="Tree29" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree29" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3826, 654)
 
-[node name="Tree30" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree30" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3650, 754)
 
-[node name="Tree31" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree31" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4348, 1168)
 
-[node name="Tree32" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree32" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4485, 236)
 
-[node name="Tree33" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree33" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4815, 487)
 
-[node name="Tree34" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree34" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4811, 307)
 
-[node name="Tree35" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree35" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4916, 679)
 
-[node name="Tree36" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree36" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4097, 904)
 
-[node name="Tree37" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree37" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(4043, 1193)
 
-[node name="Tree38" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree38" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3604, -86)
 
-[node name="Tree39" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree39" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3725, 10)
 
-[node name="Tree40" parent="Decorations/Trees" instance=ExtResource("23_30a5j")]
+[node name="Tree40" parent="Decorations/Trees/Trees" instance=ExtResource("23_30a5j")]
 position = Vector2(3441, -56)
 
-[node name="TreeSwamp" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3479, 1988)
+[node name="TreesSwamp" type="Node2D" parent="Decorations/Trees"]
+y_sort_enabled = true
 
-[node name="TreeSwamp2" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3094, 2323)
-
-[node name="TreeSwamp3" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3397, 2182)
-
-[node name="TreeSwamp4" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3692, 1907)
-
-[node name="TreeSwamp5" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3696, 2598)
-
-[node name="TreeSwamp6" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3759, 2781)
-
-[node name="TreeSwamp7" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3330, 2341)
-
-[node name="TreeSwamp8" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3198, 2114)
-
-[node name="TreeSwamp9" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(4083, 1948)
-
-[node name="TreeSwamp10" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(3827, 2062)
-
-[node name="TreeSwamp11" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(4528, 2040)
-
-[node name="TreeSwamp12" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(4327, 1940)
-
-[node name="TreeSwamp13" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(4978, 2157)
-
-[node name="TreeSwamp14" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(4827, 1962)
-
-[node name="TreeSwamp15" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(5094, 1945)
-
-[node name="TreeSwamp16" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(5272, 2173)
-
-[node name="TreeSwamp17" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(5299, 1978)
-
-[node name="TreeSwamp18" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(5522, 2017)
-
-[node name="TreeSwamp19" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(5383, 2378)
-
-[node name="TreeSwamp20" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2921, 1995)
-
-[node name="TreeSwamp21" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2638, 1827)
-
-[node name="TreeSwamp22" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2403, 1706)
-
-[node name="TreeSwamp23" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2168, 1558)
-
-[node name="TreeSwamp24" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2007, 1349)
-
-[node name="TreeSwamp25" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(1745, 1342)
-
-[node name="TreeSwamp26" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(1415, 1396)
-
-[node name="TreeSwamp27" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2774, 2842)
-
-[node name="TreeSwamp28" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
-position = Vector2(2565, 2755)
-
-[node name="TreeSwamp29" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp29" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(2484, 2957)
 
-[node name="TreeSwamp30" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp30" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(2269, 2816)
 
-[node name="TreeSwamp31" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp31" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(2000, 3004)
 
-[node name="TreeSwamp32" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp32" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(1798, 2775)
 
-[node name="TreeSwamp33" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp33" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(1455, 2842)
 
-[node name="TreeSwamp34" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp34" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(1166, 2728)
 
-[node name="TreeSwamp35" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp35" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(917, 2641)
 
-[node name="TreeSwamp36" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp36" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(769, 2406)
 
-[node name="TreeSwamp37" parent="Decorations/Trees" instance=ExtResource("27_glbe0")]
+[node name="TreeSwamp37" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(769, 2406)
+
+[node name="TreeSwamp24" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2007, 1349)
+
+[node name="TreeSwamp25" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(1745, 1342)
+
+[node name="TreeSwamp26" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(1415, 1396)
+
+[node name="TreeSwamp27" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2774, 2842)
+
+[node name="TreeSwamp28" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2565, 2755)
+
+[node name="TreeSwamp14" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(4827, 1962)
+
+[node name="TreeSwamp15" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(5094, 1945)
+
+[node name="TreeSwamp16" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(5272, 2173)
+
+[node name="TreeSwamp17" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(5299, 1978)
+
+[node name="TreeSwamp18" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(5522, 2017)
+
+[node name="TreeSwamp19" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(5383, 2378)
+
+[node name="TreeSwamp20" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2921, 1995)
+
+[node name="TreeSwamp21" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2638, 1827)
+
+[node name="TreeSwamp22" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2403, 1706)
+
+[node name="TreeSwamp23" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(2168, 1558)
+
+[node name="TreeSwamp4" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3692, 1907)
+
+[node name="TreeSwamp5" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3696, 2598)
+
+[node name="TreeSwamp6" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3759, 2781)
+
+[node name="TreeSwamp7" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3330, 2341)
+
+[node name="TreeSwamp8" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3198, 2114)
+
+[node name="TreeSwamp9" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(4083, 1948)
+
+[node name="TreeSwamp10" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3827, 2062)
+
+[node name="TreeSwamp11" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(4528, 2040)
+
+[node name="TreeSwamp12" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(4327, 1940)
+
+[node name="TreeSwamp13" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(4978, 2157)
+
+[node name="TreeSwamp" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3479, 1988)
+
+[node name="TreeSwamp2" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3094, 2323)
+
+[node name="TreeSwamp3" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
+position = Vector2(3397, 2182)
 
 [node name="Interactables" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
@@ -1321,6 +1329,7 @@ dialogue_resource = ExtResource("27_ufrq5")
 shape = SubResource("CircleShape2D_ufrq5")
 
 [node name="Buildings" type="Node2D" parent="Decorations"]
+y_sort_enabled = true
 
 [node name="Houses" type="Node2D" parent="Decorations/Buildings"]
 
@@ -1394,6 +1403,7 @@ tile_set = SubResource("TileSet_qin5p")
 tile_set = SubResource("TileSet_7q4ve")
 
 [node name="Resources" type="Node2D" parent="Decorations"]
+y_sort_enabled = true
 
 [node name="Meat" type="TileMapLayer" parent="Decorations/Resources"]
 tile_set = SubResource("TileSet_e8bq6")
@@ -1405,6 +1415,7 @@ tile_set = SubResource("TileSet_ds1ct")
 tile_set = SubResource("TileSet_hi8qj")
 
 [node name="Sheeps" type="Node2D" parent="Decorations"]
+y_sort_enabled = true
 
 [node name="Sheep" parent="Decorations/Sheeps" instance=ExtResource("51_7q4ve")]
 position = Vector2(672, 318)
