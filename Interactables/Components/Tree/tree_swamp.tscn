@@ -19,6 +19,23 @@ tracks/0/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_6qd4x"]
+resource_name = "hit"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 6]
+}
+
 [sub_resource type="Animation" id="Animation_ohboo"]
 resource_name = "idle"
 length = 0.7
@@ -35,23 +52,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5, 6]
-}
-
-[sub_resource type="Animation" id="Animation_6qd4x"]
-resource_name = "hit"
-length = 0.2
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Texture:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [3, 6]
 }
 
 [sub_resource type="Animation" id="Animation_p61ef"]
@@ -112,11 +112,11 @@ script = ExtResource("1_6qd4x")
 animation = NodePath("Animation")
 
 [node name="Texture" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_6qd4x")
 hframes = 8
 
 [node name="KillSprite" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("3_pnvyb")
 hframes = 4
 vframes = 3
