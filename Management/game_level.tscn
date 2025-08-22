@@ -1,4 +1,4 @@
-[gd_scene load_steps=130 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=136 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -54,6 +54,8 @@
 [ext_resource type="Texture2D" uid="uid://b6cwcj3pkcptj" path="res://Assets/Externals/Tiny Swords/Resources/Resources/G_Idle.png" id="49_7q4ve"]
 [ext_resource type="Texture2D" uid="uid://bnldfcq2jgm77" path="res://Assets/Externals/Tiny Swords/Resources/Resources/W_Idle.png" id="50_yya47"]
 [ext_resource type="PackedScene" uid="uid://2e0jpvlhe8eh" path="res://Interactables/Components/Sheep/sheep.tscn" id="51_7q4ve"]
+[ext_resource type="Texture2D" uid="uid://cmemqodm6pl0e" path="res://Decoration/Signs/17.png" id="53_e8bq6"]
+[ext_resource type="Texture2D" uid="uid://d1bshhfc0lquf" path="res://Assets/Wheel/Roleta_Decoracao..png" id="54_j6csy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -350,7 +352,7 @@ physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_1pwjh")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mc52v"]
-size = Vector2(566.25, 32)
+size = Vector2(1075, 32)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_e8bq6"]
 radius = 42.5793
@@ -731,6 +733,37 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 sources/0 = SubResource("TileSetAtlasSource_nirgi")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ds1ct"]
+texture = ExtResource("53_e8bq6")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_nirgi"]
+tile_size = Vector2i(64, 64)
+sources/1 = SubResource("TileSetAtlasSource_ds1ct")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hi8qj"]
+texture = ExtResource("54_j6csy")
+texture_region_size = Vector2i(64, 63)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(25.1191, 31.5, -32, 31.5, -32, -31.5, 1.97566, -31.5, -12.1362, -22.8612, -11.5717, 8.18487, 8.18488, 12.7007, 9.8783, 31.5)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.1191, 31.5, 32, 31.5, 32, -31.5, 13.2651, -31.5, 23.9901, -23.9901, 23.9901, 7.6204, 3.10461, 11.5717, 0.84671, 31.5)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.2893, -31.5, 32, -31.5, 32, 31.5, 5.01206, 31.5, -7.71086, 14.0723, -15.6145, -6.74701)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-25.1191, 31.5, 32, 31.5, 32, -4.23355, 13.2651, 1.97566, -0.282234, 11.5717, -8.18487, 21.1678, -11.0072, 31.5)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(25.1191, 31.5, -32, 31.5, -32, -4.23355, -6.49145, -2.54013, 10.4428, 10.4428, 19.4743, 18.3454)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(25.1191, -31.5, -32, -31.5, -32, 31.5, 1.97566, 31.5, 20.6033, 16.0875, 27.377, -12.1362)
+
+[sub_resource type="TileSet" id="TileSet_jqj63"]
+tile_size = Vector2i(64, 63)
+physics_layer_0/collision_layer = 1
+sources/33 = SubResource("TileSetAtlasSource_hi8qj")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcjgg"]
 size = Vector2(63, 66)
 
@@ -819,7 +852,7 @@ collision_mask = 8
 script = ExtResource("11_3x2o8")
 
 [node name="Collision" type="CollisionShape2D" parent="Bridge/Bridget/BridgeArea"]
-position = Vector2(516.875, -1)
+position = Vector2(518.5, -1)
 shape = SubResource("RectangleShape2D_mc52v")
 
 [node name="BridgeArea2" type="Area2D" parent="Bridge/Bridget"]
@@ -828,24 +861,24 @@ collision_layer = 8
 collision_mask = 8
 script = ExtResource("11_3x2o8")
 
-[node name="Collision" type="CollisionShape2D" parent="Bridge/Bridget/BridgeArea2"]
-position = Vector2(265.875, -1)
+[node name="Collision2" type="CollisionShape2D" parent="Bridge/Bridget/BridgeArea2"]
+position = Vector2(266, -1)
 shape = SubResource("RectangleShape2D_mc52v")
 
 [node name="Decorations" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(738, 350)
+position = Vector2(3816, 2959)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 
 [node name="Goblins" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
-position = Vector2(985, 290)
+position = Vector2(936, 271)
 
 [node name="Goblin" parent="Decorations/Goblins" instance=ExtResource("19_yya47")]
-position = Vector2(142, 2210)
+position = Vector2(2934, 2852)
 
 [node name="Actionable" parent="Decorations/Goblins/Goblin" instance=ExtResource("26_rkog2")]
 dialogue_resource = ExtResource("21_kyvsf")
@@ -975,10 +1008,10 @@ position = Vector2(4376, 203)
 position = Vector2(4330, 263)
 
 [node name="Bushes11" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
-position = Vector2(3846, 2618)
+position = Vector2(4461, 2932)
 
 [node name="Bushes12" parent="Decorations/Bushes" instance=ExtResource("18_r3afb")]
-position = Vector2(3796, 2535)
+position = Vector2(4399, 2720)
 
 [node name="Pumpkins" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
@@ -1065,13 +1098,13 @@ position = Vector2(3841, 1361)
 position = Vector2(3897, 1320)
 
 [node name="SmallGrass16" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
-position = Vector2(3463, 2955)
+position = Vector2(3420, 3021)
 
 [node name="SmallGrass17" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
-position = Vector2(3513, 2866)
+position = Vector2(3496, 3068)
 
 [node name="SmallGrass18" parent="Decorations/SmallGrasses" instance=ExtResource("21_r3afb")]
-position = Vector2(3574, 2961)
+position = Vector2(3553, 3038)
 
 [node name="Trees" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
@@ -1278,10 +1311,10 @@ position = Vector2(2168, 1558)
 position = Vector2(3692, 1907)
 
 [node name="TreeSwamp5" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
-position = Vector2(3696, 2598)
+position = Vector2(3088, 2823)
 
 [node name="TreeSwamp6" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
-position = Vector2(3759, 2781)
+position = Vector2(4121, 3193)
 
 [node name="TreeSwamp7" parent="Decorations/Trees/TreesSwamp" instance=ExtResource("27_glbe0")]
 position = Vector2(3330, 2341)
@@ -1394,7 +1427,7 @@ tile_map_data = PackedByteArray("AACRANr/AAAAAAAAAACRANv/AAAAAAEAAACRANz/AAAAAAI
 tile_set = SubResource("TileSet_sse3w")
 
 [node name="WoodTowerConstruction" type="TileMapLayer" parent="Decorations/Buildings/Towers"]
-tile_map_data = PackedByteArray("AACdANn/AAABAAAAAACdANr/AAABAAEAAACdANv/AAABAAIAAACeANn/AAACAAAAAACeANr/AAACAAEAAACeANv/AAACAAIAAACkAOb/AAABAAAAAACkAOf/AAABAAEAAACkAOj/AAABAAIAAAClAOb/AAACAAAAAAClAOf/AAACAAEAAAClAOj/AAACAAIAAAA2ACkAAAACAAAAAAA1ACkAAAACAAAAAAA0ACkAAAACAAAAAAAyACkAAAACAAAAAAAxACkAAAACAAAAAAAwACkAAAACAAAAAAAvACkAAAACAAAAAAAuACgAAAACAAAAAAAtACcAAAACAAAAAAAsACcAAAACAAAAAAAqACcAAAACAAAAAAAoACcAAAACAAAAAAAnACgAAAACAAAAAAAmACkAAAACAAAAAAAzACYAAAACAAAAAAAyACYAAAACAAAAAAAwACYAAAACAAAAAAAvACUAAAACAAAAAAAuACQAAAACAAAAAAAtACQAAAACAAAAAAAsACQAAAACAAAAAAArACQAAAACAAAAAAAqACQAAAACAAAAAAApACQAAAACAAAAAAAnACIAAAACAAAAAAA1ACYAAAACAAAAAAA0ACYAAAACAAAAAAA2ACYAAAACAAAAAAA3ACUAAAACAAAAAAA=")
+tile_map_data = PackedByteArray("AACdANn/AAABAAAAAACdANr/AAABAAEAAACdANv/AAABAAIAAACeANn/AAACAAAAAACeANr/AAACAAEAAACeANv/AAACAAIAAACkAOb/AAABAAAAAACkAOf/AAABAAEAAACkAOj/AAABAAIAAAClAOb/AAACAAAAAAClAOf/AAACAAEAAAClAOj/AAACAAIAAAAyACkAAAACAAAAAAAxACkAAAACAAAAAAAwACkAAAACAAAAAAAvACkAAAACAAAAAAAuACgAAAACAAAAAAAtACcAAAACAAAAAAAsACcAAAACAAAAAAAqACcAAAACAAAAAAAoACcAAAACAAAAAAAnACgAAAACAAAAAAAmACkAAAACAAAAAAAzACYAAAACAAAAAAAyACYAAAACAAAAAAAwACYAAAACAAAAAAAvACUAAAACAAAAAAAuACQAAAACAAAAAAAtACQAAAACAAAAAAAsACQAAAACAAAAAAArACQAAAACAAAAAAAqACQAAAACAAAAAAApACQAAAACAAAAAAAnACIAAAACAAAAAAA1ACYAAAACAAAAAAA0ACYAAAACAAAAAAA2ACYAAAACAAAAAAA3ACUAAAACAAAAAAA3AB4AAAACAAAAAAA3AB8AAAACAAAAAAA3ACEAAAACAAAAAAA3ACAAAAACAAAAAAA3ACIAAAACAAAAAAA3ACMAAAACAAAAAAA3ACQAAAACAAAAAAAzACkAAAACAAAAAAA3ACkAAAACAAAAAAA3ACoAAAACAAAAAAA6ACkAAAACAAAAAAA6ACoAAAACAAAAAAA7ACsAAAACAAAAAAA6AB4AAAACAAAAAAA6AB8AAAACAAAAAAA6ACEAAAACAAAAAAA7ACIAAAACAAAAAAA7ACMAAAACAAAAAAA7ACQAAAACAAAAAAA7ACUAAAACAAAAAAA8ACYAAAACAAAAAAA9ACYAAAACAAAAAAA+ACYAAAACAAAAAAA/ACYAAAACAAAAAAA7ACgAAAACAAAAAAA9ACgAAAACAAAAAAA+ACgAAAACAAAAAAA/ACgAAAACAAAAAABAACYAAAACAAAAAABBACYAAAACAAAAAAA2ACkAAAACAAAAAAA1ACkAAAACAAAAAAA0ACkAAAACAAAAAAA4ACwAAAACAAAAAAA8ACwAAAACAAAAAAA5AC0AAAACAAAAAAA6AC4AAAACAAAAAAA9AC0AAAACAAAAAAA3ACsAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_qin5p")
 
 [node name="Castles" type="Node2D" parent="Decorations/Buildings"]
@@ -1413,6 +1446,18 @@ tile_set = SubResource("TileSet_ds1ct")
 
 [node name="Wood" type="TileMapLayer" parent="Decorations/Resources"]
 tile_set = SubResource("TileSet_hi8qj")
+
+[node name="Sign" type="TileMapLayer" parent="Decorations/Resources"]
+position = Vector2(-64, -66)
+tile_map_data = PackedByteArray("AAA/ADEAAQAAAAEAAAA/ADAAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_nirgi")
+
+[node name="Wheel" type="TileMapLayer" parent="Decorations/Resources"]
+position = Vector2(372, 268)
+rotation = 0.00601605
+scale = Vector2(0.935876, 1.02425)
+tile_map_data = PackedByteArray("AAAiACEAEwAAAAAAAAAiACIAEwAAAAEAAAAjACEAEwABAAAAAAAjACIAEwABAAEAAAA4ACQAGwABAAAAAAA4ACUAGwABAAEAAAA5ACQAGwACAAAAAAA5ACUAGwACAAEAAAA4ACoAIQABAAAAAAA4ACsAIQABAAEAAAA4ACwAIQABAAIAAAA5ACoAIQACAAAAAAA5ACsAIQACAAEAAAA5ACwAIQACAAIAAAA=")
+tile_set = SubResource("TileSet_jqj63")
 
 [node name="Sheeps" type="Node2D" parent="Decorations"]
 y_sort_enabled = true

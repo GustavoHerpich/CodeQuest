@@ -112,11 +112,11 @@ script = ExtResource("1_6qd4x")
 animation = NodePath("Animation")
 
 [node name="Texture" type="Sprite2D" parent="."]
-visible = false
 texture = ExtResource("2_6qd4x")
 hframes = 8
 
 [node name="KillSprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_pnvyb")
 hframes = 4
 vframes = 3
