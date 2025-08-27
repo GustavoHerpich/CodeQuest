@@ -24,3 +24,9 @@ func _open_trunk() -> void:
 				"👟 [code]increaseSpeed(amount)[/code]\nAumenta a velocidade do jogador em uma certa quantidade.\n\nExemplo:\n[code]increaseSpeed(5)[/code]",
 				"⚡ [code]moveSpeed()[/code]\nRetorna a velocidade atual do jogador.\n\nExemplo:\n[code]print(moveSpeed())[/code]"
 			)
+			BookManager.add_book_page(
+				"funcoes_objetos",
+				"📜 Placas Enigmáticas",
+				"[code]getPlateValue()[/code] → Retorna o valor oculto da placa",
+				"[code]solvePlate(array)[/code] → Valida se o array está em ordem crescente\nSe estiver correto, os números serão revelados."
+			)

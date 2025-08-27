@@ -51,3 +51,4 @@ func _process_movement_queue() -> void:
 	tween.parallel().tween_property(shadow_interact, "position", shadow_interact.position + movement_offset, 0.5)
 	
 	tween.finished.connect(_process_movement_queue)
+	

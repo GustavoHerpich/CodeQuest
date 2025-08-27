@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://shrjw4ri0vre"
+path="res://.godot/imported/FifthDialogue.dialogue-ef8142fb14539668bedd5de1a2d17c69.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/FifthDialogue.dialogue"
+dest_files=["res://.godot/imported/FifthDialogue.dialogue-ef8142fb14539668bedd5de1a2d17c69.tres"]
+
+[params]
+
+defaults=true

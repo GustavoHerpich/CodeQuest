@@ -41,13 +41,11 @@ func _load_pages() -> void:
 		"funcoes_objetos",
 		"🧩 Funções dos Objetos",
 		"[b]🔧 Ponte:[/b]\n[code]moveBridge(direction)[/code]\nDireções possíveis: 'up', 'down', 'left', 'right'\n\nExemplo:\n[code]moveBridge(\"down\")[/code]",
-		"[b]🔐 Porta:[/b]\n[code]getDoorValues()[/code] → Retorna lista de valores da porta\n[code]showPassword(valor)[/code] → Mostra a senha se o valor estiver correto\n[code]openDoor(senha)[/code] → Tenta abrir a porta com a senha\n\nExemplo:\n[code]showPassword(4)[/code]"
 	)
 
 	add_page(
 		"como_programar",
 		"📚 Como Programar em Lua",
-		"[b]🔁 Repetição (for):[/b]\n[code]for i = 1, 5 do\n  print(i)\nend[/code]\n\n[b]🔀 Condicional (if):[/b]\n[code]if x > 0 then\n  print(\"Positivo\")\nend[/code]",
 		"[b]🧠 Funções:[/b]\n[code]function minha_funcao(param)\n  print(param)\nend\n\nminha_funcao(\"Olá\")[/code]\n\n[b]💡 Dica:[/b] Combine estruturas para resolver os desafios do jogo!"
 	)
 

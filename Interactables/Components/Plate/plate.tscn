@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://crhlff63wrex4"]
+
+[ext_resource type="Script" uid="uid://c43aaed44raiw" path="res://Interactables/Components/Plate/puzzle_plate.gd" id="1_nb8uu"]
+[ext_resource type="Texture2D" uid="uid://blr0f24qqcufq" path="res://Assets/Plates/ChatGPT_Image_25_de_ago._de_2025__13_38_17-removebg-preview.png" id="2_6tsct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6tsct"]
+size = Vector2(64, 67)
+
+[node name="Plate" type="StaticBody2D"]
+script = ExtResource("1_nb8uu")
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.25, 0.247549)
+texture = ExtResource("2_6tsct")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -8.0
+offset_top = -22.0
+offset_right = 22.0
+offset_bottom = 1.0
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 6.5)
+shape = SubResource("RectangleShape2D_6tsct")

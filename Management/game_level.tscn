@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=138 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -40,6 +40,7 @@
 [ext_resource type="Texture2D" uid="uid://ha8xtme0fkcu" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Blue.png" id="32_qin5p"]
 [ext_resource type="Texture2D" uid="uid://cpmlm007xbv65" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Red.png" id="33_55utm"]
 [ext_resource type="Texture2D" uid="uid://c2rggluwlk44t" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Yellow.png" id="34_nccrl"]
+[ext_resource type="Resource" uid="uid://shrjw4ri0vre" path="res://Dialogues/Dialogues/FifthDialogue.dialogue" id="34_nirgi"]
 [ext_resource type="Texture2D" uid="uid://8nvqaspcf5ti" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Construction.png" id="35_3iw8o"]
 [ext_resource type="Texture2D" uid="uid://co3iyqu8v8sx4" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Destroyed.png" id="36_dk5ng"]
 [ext_resource type="Texture2D" uid="uid://w4lwlalvn3d6" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="38_nccrl"]
@@ -56,6 +57,7 @@
 [ext_resource type="PackedScene" uid="uid://2e0jpvlhe8eh" path="res://Interactables/Components/Sheep/sheep.tscn" id="51_7q4ve"]
 [ext_resource type="Texture2D" uid="uid://cmemqodm6pl0e" path="res://Decoration/Signs/17.png" id="53_e8bq6"]
 [ext_resource type="Texture2D" uid="uid://d1bshhfc0lquf" path="res://Assets/Wheel/Roleta_Decoracao..png" id="54_j6csy"]
+[ext_resource type="PackedScene" uid="uid://crhlff63wrex4" path="res://Interactables/Components/Plate/plate.tscn" id="56_ds1ct"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -869,7 +871,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(3816, 2959)
+position = Vector2(9696, 2209)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 
@@ -1361,6 +1363,15 @@ dialogue_resource = ExtResource("27_ufrq5")
 [node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal/Actionable"]
 shape = SubResource("CircleShape2D_ufrq5")
 
+[node name="Terminal2" parent="Decorations/Interactables" instance=ExtResource("14_uki8w")]
+position = Vector2(9583, 2182)
+
+[node name="Actionable" parent="Decorations/Interactables/Terminal2" instance=ExtResource("26_rkog2")]
+dialogue_resource = ExtResource("34_nirgi")
+
+[node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal2/Actionable"]
+shape = SubResource("CircleShape2D_ufrq5")
+
 [node name="Buildings" type="Node2D" parent="Decorations"]
 y_sort_enabled = true
 
@@ -1506,6 +1517,23 @@ position = Vector2(8165, 1482)
 
 [node name="Sheep15" parent="Decorations/Sheeps" instance=ExtResource("51_7q4ve")]
 position = Vector2(6713, 1265)
+
+[node name="Plates" type="Node2D" parent="Decorations"]
+
+[node name="Plate" parent="Decorations/Plates" instance=ExtResource("56_ds1ct")]
+position = Vector2(9753, 2070)
+
+[node name="Plate2" parent="Decorations/Plates" instance=ExtResource("56_ds1ct")]
+position = Vector2(9833, 2070)
+
+[node name="Plate3" parent="Decorations/Plates" instance=ExtResource("56_ds1ct")]
+position = Vector2(9910, 2070)
+
+[node name="Plate4" parent="Decorations/Plates" instance=ExtResource("56_ds1ct")]
+position = Vector2(9987, 2070)
+
+[node name="Plate5" parent="Decorations/Plates" instance=ExtResource("56_ds1ct")]
+position = Vector2(10064, 2070)
 
 [node name="Ladders" type="Node2D" parent="."]
 

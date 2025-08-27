@@ -8,16 +8,19 @@ reloadable = true
 
 macos.debug = "res://Extensions/bin/luaconsole/libluaconsole.macos.template_debug.framework"
 macos.release = "res://Extensions/bin/luaconsole/libluaconsole.macos.template_release.framework"
+
 windows.debug.x86_32 = "res://Extensions/bin/luaconsole/libluaconsole.windows.template_debug.x86_32.dll"
 windows.release.x86_32 = "res://Extensions/bin/luaconsole/libluaconsole.windows.template_release.x86_32.dll"
 windows.debug.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.windows.template_debug.x86_64.dll"
 windows.release.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.windows.template_release.x86_64.dll"
+
 linux.debug.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_debug.x86_64.so"
 linux.release.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_release.x86_64.so"
 linux.debug.arm64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_debug.arm64.so"
 linux.release.arm64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_release.arm64.so"
 linux.debug.rv64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_debug.rv64.so"
 linux.release.rv64 = "res://Extensions/bin/luaconsole/libluaconsole.linux.template_release.rv64.so"
+
 android.debug.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.android.template_debug.x86_64.so"
 android.release.x86_64 = "res://Extensions/bin/luaconsole/libluaconsole.android.template_release.x86_64.so"
 android.debug.arm64 = "res://Extensions/bin/luaconsole/libluaconsole.android.template_debug.arm64.so"
