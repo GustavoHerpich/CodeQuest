@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://crhlff63wrex4"]
 
 [ext_resource type="Script" uid="uid://c43aaed44raiw" path="res://Interactables/Components/Plate/puzzle_plate.gd" id="1_nb8uu"]
-[ext_resource type="Texture2D" uid="uid://blr0f24qqcufq" path="res://Assets/Plates/ChatGPT_Image_25_de_ago._de_2025__13_38_17-removebg-preview.png" id="2_6tsct"]
+[ext_resource type="Texture2D" uid="uid://b0w1pfgq4qmum" path="res://Assets/Plates/Plate.png" id="2_6tsct"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6tsct"]
 size = Vector2(64, 67)

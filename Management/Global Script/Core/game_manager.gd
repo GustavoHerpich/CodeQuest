@@ -71,7 +71,6 @@ func register_object(object: Node):
 			object.set_meta(var_name, object.get(var_name))
 
 func run_lua_script(lua_code: String):
-	print(lua_code)
 	terminal.run_script(lua_code)
 
 func set_value_variable(object: Object, var_name: String, amount: Variant) -> void:

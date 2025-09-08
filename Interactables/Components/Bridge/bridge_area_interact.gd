@@ -16,8 +16,8 @@ func _on_area_entered(_area: Area2D) -> void:
 	BookManager.add_book_page(
 		"funcoes_objetos",
 		"🚪 Porta",
-		"[code]getDoorValues()[/code] → Retorna lista de valores da porta\n[code]showPassword(valor)[/code] → Mostra a senha se o valor estiver correto",
-		"[code]openDoor(senha)[/code] → Tenta abrir a porta com a senha\n\nExemplo:\n[code]showPassword(4)[/code]"
+		"📋 [code]getDoorValues()[/code]\nRetorna lista de valores da porta.\n\n🔎 [code]showPassword(valor)[/code]\nMostra a senha se o valor estiver correto.",
+		"🗝️ [code]openDoor(senha)[/code]\nTenta abrir a porta com a senha.\n\nExemplo:\n[code]showPassword(4)[/code]"
 	)
 		
 	BookManager.add_book_page(

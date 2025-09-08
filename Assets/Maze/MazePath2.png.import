@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blr0f24qqcufq"
-path="res://.godot/imported/ChatGPT_Image_25_de_ago._de_2025__13_38_17-removebg-preview.png-3798a7da7aa674cfc98d7a84bb774ceb.ctex"
+uid="uid://cqgrcsp3mn6da"
+path="res://.godot/imported/MazePath2.png-f13ac1041289cfc552e81c6940c779c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Plates/ChatGPT_Image_25_de_ago._de_2025__13_38_17-removebg-preview.png"
-dest_files=["res://.godot/imported/ChatGPT_Image_25_de_ago._de_2025__13_38_17-removebg-preview.png-3798a7da7aa674cfc98d7a84bb774ceb.ctex"]
+source_file="res://Assets/Maze/MazePath2.png"
+dest_files=["res://.godot/imported/MazePath2.png-f13ac1041289cfc552e81c6940c779c9.ctex"]
 
 [params]
 

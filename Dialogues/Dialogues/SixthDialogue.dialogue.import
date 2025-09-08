@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ce67ws4w3v8n8"
+path="res://.godot/imported/SixthDialogue.dialogue-0e5980f8c0abb5d2087714fc893261c9.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/SixthDialogue.dialogue"
+dest_files=["res://.godot/imported/SixthDialogue.dialogue-0e5980f8c0abb5d2087714fc893261c9.tres"]
+
+[params]
+
+defaults=true

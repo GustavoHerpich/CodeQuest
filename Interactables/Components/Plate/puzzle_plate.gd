@@ -25,7 +25,6 @@ func _reset_all() -> void:
 	for p in plates:
 		p.label.text = SYMBOLS.pick_random()
 
-## Retorna todas as instâncias de PuzzlePlate dentro do mesmo pai
 func _get_all_plates() -> Array:
 	var plates: Array = []
 	var parent := get_parent()
@@ -34,6 +33,21 @@ func _get_all_plates() -> Array:
 			if c is PuzzlePlate:
 				plates.append(c)
 	return plates
+
+func _unlock_labyrinth_book() -> void:
+	BookManager.add_book_page(
+		"funcoes_objetos",
+		"🌀 Labirinto",
+		"🟩 [code]toggleCell(x, y)[/code]\nAlterna uma célula entre BLOQUEADA (parede) e LIVRE (caminho).",
+		"🚪 [code]solveMaze()[/code]\nVerifica se existe um caminho da entrada até a saída.\nMostra ✅ ou ❌ no console."
+	)
+
+	BookManager.add_book_page(
+		"como_programar",
+		"📐 Matrizes em Lua",
+		"Uma matriz é uma tabela com linhas e colunas.\nExemplo:\n[code]local matriz = {\n  {1, 2, 3},\n  {4, 5, 6},\n  {7, 8, 9}\n}[/code]",
+		"Para acessar valores usamos dois índices:\n[code]print(matriz[1][2]) -- imprime 2[/code]\n💡 Matrizes são muito usadas para mapas e labirintos."
+	)
 
 ## Methods that interact with the console
 
@@ -61,4 +75,7 @@ func solvePlate(order: Array) -> bool:
 		plates[i].label.text = str(expected[i])
 
 	GameManager.print("✅ Ordem correta da lista!")
+	
+	_unlock_labyrinth_book()
+
 	return true
