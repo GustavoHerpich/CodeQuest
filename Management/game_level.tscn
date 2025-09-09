@@ -1,4 +1,4 @@
-[gd_scene load_steps=146 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=147 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://8nvqaspcf5ti" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Construction.png" id="35_3iw8o"]
 [ext_resource type="Resource" uid="uid://ce67ws4w3v8n8" path="res://Dialogues/Dialogues/SixthDialogue.dialogue" id="36_bvyg4"]
 [ext_resource type="Texture2D" uid="uid://co3iyqu8v8sx4" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Destroyed.png" id="36_dk5ng"]
+[ext_resource type="Resource" uid="uid://h3in3htuaeah" path="res://Dialogues/Dialogues/TheFinalDialogue.dialogue" id="37_1mpnm"]
 [ext_resource type="Texture2D" uid="uid://w4lwlalvn3d6" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Destroyed.png" id="38_nccrl"]
 [ext_resource type="Texture2D" uid="uid://n3ckfmvifv2t" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/House/House_Purple.png" id="38_wcvdd"]
 [ext_resource type="Texture2D" uid="uid://c2ovesqrau54v" path="res://Assets/Externals/Tiny Swords/Factions/Knights/Buildings/Tower/Tower_Construction.png" id="39_3iw8o"]
@@ -891,7 +892,7 @@ tile_map_data = PackedByteArray("AABxANH/AAAAAAAAAABxAND/AAAAAAAAAABxAM//AAAAAAA
 tile_set = SubResource("TileSet_4mo3j")
 
 [node name="WaterInteract" type="TileMapLayer" parent="TerrainManager"]
-tile_map_data = PackedByteArray("AAAbAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAbAAYAAAAAAAAAAAAaAAYAAAAAAAAAAAC8AO7/AAAAAAAAAAC8AOv/AAAAAAAAAAC7AOj/AAAAAAAAAAC/AOj/AAAAAAAAAADAAOj/AAAAAAAAAADBAOj/AAAAAAAAAADCAOj/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_e8dj5")
 
 [node name="FoamAndRocks" type="TileMapLayer" parent="TerrainManager"]
@@ -990,7 +991,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(10066, -1090)
+position = Vector2(687, 398)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 
@@ -1504,8 +1505,7 @@ shape = SubResource("CircleShape2D_ufrq5")
 position = Vector2(12188, -1321)
 
 [node name="Actionable" parent="Decorations/Interactables/Terminal4" instance=ExtResource("26_rkog2")]
-dialogue_start = ""
-auto_start = false
+dialogue_resource = ExtResource("37_1mpnm")
 
 [node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal4/Actionable"]
 shape = SubResource("CircleShape2D_ufrq5")
@@ -1576,6 +1576,7 @@ tile_map_data = PackedByteArray("AACRANr/AAAAAAAAAACRANv/AAAAAAEAAACRANz/AAAAAAI
 tile_set = SubResource("TileSet_sse3w")
 
 [node name="WoodTowerConstruction" type="TileMapLayer" parent="Decorations/Buildings/Towers"]
+position = Vector2(-93, -433)
 tile_map_data = PackedByteArray("AACdANn/AAABAAAAAACdANr/AAABAAEAAACdANv/AAABAAIAAACeANn/AAACAAAAAACeANr/AAACAAEAAACeANv/AAACAAIAAACkAOb/AAABAAAAAACkAOf/AAABAAEAAACkAOj/AAABAAIAAAClAOb/AAACAAAAAAClAOf/AAACAAEAAAClAOj/AAACAAIAAAAyACkAAAACAAAAAAAxACkAAAACAAAAAAAwACkAAAACAAAAAAAvACkAAAACAAAAAAAuACgAAAACAAAAAAAtACcAAAACAAAAAAAsACcAAAACAAAAAAAqACcAAAACAAAAAAAoACcAAAACAAAAAAAnACgAAAACAAAAAAAmACkAAAACAAAAAAAzACYAAAACAAAAAAAyACYAAAACAAAAAAAwACYAAAACAAAAAAAvACUAAAACAAAAAAAuACQAAAACAAAAAAAtACQAAAACAAAAAAAsACQAAAACAAAAAAArACQAAAACAAAAAAAqACQAAAACAAAAAAApACQAAAACAAAAAAAnACIAAAACAAAAAAA1ACYAAAACAAAAAAA0ACYAAAACAAAAAAA2ACYAAAACAAAAAAA3ACUAAAACAAAAAAA3AB4AAAACAAAAAAA3AB8AAAACAAAAAAA3ACEAAAACAAAAAAA3ACAAAAACAAAAAAA3ACIAAAACAAAAAAA3ACMAAAACAAAAAAA3ACQAAAACAAAAAAAzACkAAAACAAAAAAA3ACkAAAACAAAAAAA3ACoAAAACAAAAAAA6ACkAAAACAAAAAAA6ACoAAAACAAAAAAA7ACsAAAACAAAAAAA6AB4AAAACAAAAAAA6AB8AAAACAAAAAAA6ACEAAAACAAAAAAA7ACIAAAACAAAAAAA7ACMAAAACAAAAAAA7ACQAAAACAAAAAAA7ACUAAAACAAAAAAA8ACYAAAACAAAAAAA9ACYAAAACAAAAAAA+ACYAAAACAAAAAAA/ACYAAAACAAAAAAA7ACgAAAACAAAAAAA9ACgAAAACAAAAAAA+ACgAAAACAAAAAAA/ACgAAAACAAAAAABAACYAAAACAAAAAABBACYAAAACAAAAAAA2ACkAAAACAAAAAAA1ACkAAAACAAAAAAA0ACkAAAACAAAAAAA4ACwAAAACAAAAAAA8ACwAAAACAAAAAAA5AC0AAAACAAAAAAA6AC4AAAACAAAAAAA9AC0AAAACAAAAAAA3ACsAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_qin5p")
 

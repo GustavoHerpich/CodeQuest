@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3dxrvy5ou5yu"]
+[gd_scene load_steps=9 format=3 uid="uid://c3dxrvy5ou5yu"]
 
 [ext_resource type="Script" uid="uid://dve50l1tj488" path="res://Management/MainMenu/main_menu.gd" id="1_h2xi5"]
 [ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="2_3qcjh"]
 [ext_resource type="Texture2D" uid="uid://bvc5cxfmwtyco" path="res://Assets/Menu/BackGroundMenu.png" id="2_lhon8"]
+[ext_resource type="Script" uid="uid://hhc1aw7pr75t" path="res://Management/MainMenu/input_settings_menu.gd" id="4_d5rs3"]
+[ext_resource type="Script" uid="uid://cv4kfag7msq0t" path="res://Management/MainMenu/settings_menu.gd" id="4_mgtyh"]
 [ext_resource type="AudioStream" uid="uid://ci5367dwo7cjw" path="res://Assets/Sounds/MainMenu.ogg" id="4_mx2ti"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lhon8"]
@@ -64,11 +66,12 @@ text = "SAIR"
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
+script = ExtResource("4_mgtyh")
 
 [node name="FullScreen" type="CheckBox" parent="CenterContainer/SettingsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TELA CHEIA"
+text = "Tela Cheia"
 
 [node name="MainVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
 custom_minimum_size = Vector2(0, 30)
@@ -79,11 +82,10 @@ step = 0.001
 [node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MainVolume"]
 custom_minimum_size = Vector2(126, 25)
 layout_mode = 0
-offset_left = -20.0
 offset_top = -16.0
-offset_right = 133.0
+offset_right = 153.0
 offset_bottom = 9.0
-text = "VOLUME PRINCIPAL"
+text = "Volume Principal"
 horizontal_alignment = 1
 
 [node name="MusicVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
@@ -95,20 +97,22 @@ step = 0.001
 [node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MusicVolume"]
 custom_minimum_size = Vector2(126, 25)
 layout_mode = 0
-offset_left = -21.0
-offset_top = -18.0
-offset_right = 138.0
-offset_bottom = 7.0
-text = "VOLUME DA MUSICA"
+offset_top = -16.0
+offset_right = 159.0
+offset_bottom = 9.0
+text = "Volume da Música"
 horizontal_alignment = 1
+
+[node name="ConfigureInputs" type="Button" parent="CenterContainer/SettingsMenu"]
+layout_mode = 2
+text = "Configurações de Teclas"
 
 [node name="Back" type="Button" parent="CenterContainer/SettingsMenu"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
-text = "VOLTAR
-"
+text = "VOLTAR"
 
 [node name="CreditsMenu" type="VBoxContainer" parent="CenterContainer"]
 visible = false
@@ -154,6 +158,31 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 20
 text = "VOLTAR"
 
+[node name="InputSettingsMenu" type="Control" parent="CenterContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("4_d5rs3")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/InputSettingsMenu"]
+layout_mode = 0
+offset_left = -95.0
+offset_top = -159.0
+offset_right = 94.0
+offset_bottom = 63.0
+
+[node name="ActionList" type="VBoxContainer" parent="CenterContainer/InputSettingsMenu/MarginContainer"]
+layout_mode = 2
+
+[node name="BackToSettings" type="Button" parent="CenterContainer/InputSettingsMenu"]
+layout_mode = 0
+offset_left = -51.0
+offset_top = 103.0
+offset_right = 49.0
+offset_bottom = 130.0
+theme_override_font_sizes/font_size = 20
+text = "VOLTAR"
+
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_mx2ti")
 autoplay = true
@@ -166,5 +195,7 @@ bus = &"MUSIC"
 [connection signal="toggled" from="CenterContainer/SettingsMenu/FullScreen" to="." method="_on_full_screen_toggled"]
 [connection signal="value_changed" from="CenterContainer/SettingsMenu/MainVolume" to="." method="_on_main_volume_value_changed"]
 [connection signal="value_changed" from="CenterContainer/SettingsMenu/MusicVolume" to="." method="_on_music_volume_value_changed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/ConfigureInputs" to="CenterContainer/SettingsMenu" method="_on_configure_inputs_pressed"]
 [connection signal="pressed" from="CenterContainer/SettingsMenu/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="CenterContainer/CreditsMenu/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CenterContainer/InputSettingsMenu/BackToSettings" to="CenterContainer/InputSettingsMenu" method="_on_back_pressed"]

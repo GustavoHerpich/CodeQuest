@@ -8,12 +8,11 @@ const BLOCKED := 0
 
 var size: Vector2i = Vector2i(15, 6)
 var maze: Array = []  
+var movement_queue: Array[Vector2i] = []
+var is_moving := false
 
 @onready var tile_map_layer: TileMapLayer = $TileMapLayer
 @onready var game_object_register := GameObject.new()
-
-var movement_queue: Array[Vector2i] = []
-var is_moving := false
 
 # Private methods
 
@@ -130,6 +129,14 @@ func solveMaze() -> bool:
 	if result:
 		GameManager.print("✅ Existe um caminho!")
 		emit_signal("puzzle_solved")
+		
+		BookManager.add_book_page(
+			"fim_da_jornada",
+			"🔮 O Último Comando",
+			"[code]endGame()[/code]\n\nNão há descrição...\nApenas uma sensação de conclusão e de algo maior além.",
+			"Talvez este comando pertença ao próprio mundo que o envolve...\nAo que mantém tudo em ordem... ou ao que pode encerrá-lo."
+		)
+		
 	else:
 		GameManager.error("❌ Nenhum caminho encontrado.")
 	return result

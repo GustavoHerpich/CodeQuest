@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmvyi4he3gx7"]
+
+[ext_resource type="Script" uid="uid://cbx0hj0el825c" path="res://Management/PostCredits/post_credits.gd" id="1_riv1e"]
+
+[node name="PostCredits" type="Control"]
+layout_mode = 3
+anchor_right = 1.0
+anchor_bottom = 1.191
+offset_bottom = 0.231934
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_riv1e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 772.0
+bbcode_enabled = true
+fit_content = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 772.0
+color = Color(0, 0, 0, 0.00392157)

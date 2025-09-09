@@ -1,7 +1,10 @@
 class_name GameLevel
 extends Node2D
 
+@onready var game_object_register := GameObject.new()
+
 func _ready() -> void:
+	add_child(game_object_register)
 	for node in get_children():
 		if node.has_method("set_process"):
 			node.set_process(false)
@@ -9,3 +12,12 @@ func _ready() -> void:
 			node.set_physics_process(false)
 			
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func endGame() -> void:
+	SceneSwitcher.stored_scenes.clear()
+
+	if SceneSwitcher.current_scene:
+		SceneSwitcher.current_scene.queue_free()
+		SceneSwitcher.current_scene = null
+
+	get_tree().change_scene_to_file("res://Management/PostCredits/post_credits.tscn")
