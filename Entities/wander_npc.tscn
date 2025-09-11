@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3hrrwoo0g47i"]
+
+[ext_resource type="Script" uid="uid://brs0yy0plnl1y" path="res://Entities/wander_npc.gd" id="1_mcxv6"]
+[ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="2_487mm"]
+
+[node name="WanderNPC" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite", "wander_timer", "dust")]
+motion_mode = 1
+script = ExtResource("1_mcxv6")
+animated_sprite = NodePath("AnimatedSprite2D")
+wander_timer = NodePath("WanderTimer")
+dust = NodePath("Dust")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="WanderTimer" type="Timer" parent="."]
+
+[node name="Dust" parent="." instance=ExtResource("2_487mm")]

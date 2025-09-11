@@ -15,6 +15,7 @@ const ANIM_EAT := "eat"
 const GROUP_PLAYER := "Player"
 const GROUP_CONSOLE_INSTANCES := "Console Instances"
 const GROUP_INTERACTABLE_OBJECTS := "Interactable Objects"
+const GROUP_NPCS := "NPCS"
 
 # Inputs
 const INPUT_MOVE_LEFT := "move_left"

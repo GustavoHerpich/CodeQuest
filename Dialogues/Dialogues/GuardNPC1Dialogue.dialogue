@@ -1,0 +1,46 @@
+~ start
+Guarda: Alto lá, viajante! Para onde você pensa que vai sem se identificar?
+Player: Eu só estou passando pela cidade.
+Guarda: Entendo... mas precisamos garantir que ninguém perigoso entre por aqui.
+- Estou apenas de passagem => passagem
+- Posso mostrar minha autorização? => autorizacao
+- Não quero falar sobre isso => recusar
+
+~ passagem
+Guarda: Tudo bem, mas fique atento! Nossa cidade já sofreu ataques de ladrões e bandidos.
+Player: Obrigado pelo aviso.
+Guarda: Mantenha-se seguro e siga seu caminho.
+=> END
+
+~ autorizacao
+Player: Aqui está minha autorização, senhor.
+Guarda: Ah, vejo que está tudo certo. Muito bem.
+- Posso fazer uma pergunta rápida? => pergunta
+- Obrigado, seguirei meu caminho => fim_autorizacao
+
+~ pergunta
+Player: Como posso aprender a me proteger melhor durante viagens?
+Guarda: A disciplina é essencial. Treine sua mente e seu corpo.
+Guarda: Um viajante preparado evita problemas antes que aconteçam.
+- Isso é parecido com o que você ensina aos recrutas? => recrutamento
+- Entendi, obrigado pelo conselho => fim_pergunta
+
+~ recrutamento
+Guarda: Exatamente. Todos os recrutas aprendem a observar o ambiente, planejar rotas e usar estratégia antes de agir.
+Player: Interessante, parece até programação: planejar antes de executar.
+Guarda: Hahaha, você tem razão! Estratégia sempre ajuda.
+=> END
+
+~ fim_autorizacao
+Guarda: Muito bem, siga em paz.
+=> END
+
+~ fim_pergunta
+Guarda: Fico feliz em ajudar. Boa sorte em sua jornada.
+=> END
+
+~ recusar
+Guarda: Hmm... essa atitude me deixa desconfiado. Vou ter que acompanhá-lo por enquanto.
+Player: Está bem, vou cooperar.
+Guarda: Ótimo, assim evitamos problemas. Lembre-se: confiança é tudo.
+=> END

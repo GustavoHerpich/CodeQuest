@@ -198,8 +198,7 @@ dust = NodePath("Dust")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcu8p")
-animation = &"walk"
-frame_progress = 0.982951
+animation = &"eat"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 show_behind_parent = true

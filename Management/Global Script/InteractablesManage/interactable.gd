@@ -18,4 +18,8 @@ func action() -> void:
 		var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 		if player:
 			player.enter_dialogue_mode()
+			var npc = get_tree().get_first_node_in_group(GameConstants.GROUP_NPCS)
+			if npc:
+				npc.enter_dialogue_mode()
+				
 			DialogueManager.show_example_dialogue_balloon(dialogue_resource, dialogue_start)

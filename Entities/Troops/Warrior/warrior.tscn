@@ -1,0 +1,137 @@
+[gd_scene load_steps=20 format=3 uid="uid://cve1acxhchgkm"]
+
+[ext_resource type="PackedScene" uid="uid://c3hrrwoo0g47i" path="res://Entities/wander_npc.tscn" id="1_qmtyt"]
+[ext_resource type="Texture2D" uid="uid://bcrkhanofuwjo" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Units/Red Units/Warrior/Warrior_Idle.png" id="2_qmtyt"]
+[ext_resource type="Texture2D" uid="uid://dyhofsyy6e54e" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Units/Red Units/Warrior/Warrior_Run.png" id="3_qmtyt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uj7u3"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bagc"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mo8xu"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwdak"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8066x"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufo0o"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d2do1"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs8nh"]
+atlas = ExtResource("2_qmtyt")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnufx"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0wqw"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr40q"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p08w7"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tomgn"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4mik2"]
+atlas = ExtResource("3_qmtyt")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vkbmt"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uj7u3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bagc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mo8xu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwdak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8066x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufo0o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d2do1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qs8nh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnufx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0wqw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr40q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p08w7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tomgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4mik2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v5uys"]
+radius = 42.5793
+
+[node name="Warrior" instance=ExtResource("1_qmtyt")]
+platform_on_leave = 2
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_vkbmt")
+animation = &"run"
+frame_progress = 0.659263
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("CircleShape2D_v5uys")
+
+[connection signal="timeout" from="WanderTimer" to="." method="_on_wander_timer_timeout"]

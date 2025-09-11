@@ -1,0 +1,48 @@
+~ start
+Guerreiro: Saudações, viajante! Você parece estar em uma jornada parecida com a minha...
+Player: Uma jornada?
+Guerreiro: Sim. Eu treino não só minha espada, mas também minha mente. Afinal, de que serve força sem estratégia?
+Player: Hm... faz sentido.
+Guerreiro: Então me diga... quer ouvir um conselho de um velho guerreiro?
+- Quero ouvir o conselho => conselho
+- Não, estou com pressa => pressa
+- Talvez... depende do assunto => depende
+
+~ conselho
+Guerreiro: Excelente! Meu conselho é simples: aprenda a dividir um grande problema em partes menores.
+Guerreiro: É como uma batalha: você não enfrenta o exército todo de uma vez, mas sim inimigo por inimigo.
+Player: Isso parece muito com a ideia de funções na programação.
+Guerreiro: Exatamente! Funções tornam qualquer jornada mais fácil.
+- Obrigado, guerreiro => obrigado
+- Pode me dar um exemplo? => exemplo
+
+~ obrigado
+Guerreiro: Hahaha, sábias palavras merecem ouvidos atentos. Boa sorte em sua jornada!
+=> END
+
+~ exemplo
+Guerreiro: Imagine que você precisa atravessar várias pontes em uma missão. Em vez de repetir "atravessar()" toda vez...
+Guerreiro: Você cria uma função chamada `atravessarPontes()`. Assim, basta chamá-la e pronto, todas são cruzadas!
+Player: Isso realmente poupa tempo!
+Guerreiro: Poupa tempo e evita erros. Lembre-se disso.
+=> END
+
+~ pressa
+Guerreiro: Justo. A pressa pode ser inimiga da perfeição... mas às vezes é necessária. Boa viagem, viajante!
+=> END
+
+~ depende
+Guerreiro: O assunto é disciplina e sabedoria. Mas se não tiver interesse, não vou insistir.
+- Ok, pode falar => ok
+- Melhor deixar para outra hora => deixar
+
+~ ok
+Guerreiro: Excelente! O segredo de um guerreiro — e de um programador — está em repetir com propósito.
+Guerreiro: Não lute a mesma batalha dez vezes... use um `for` e termine em uma só.
+Player: Gostei dessa comparação!
+Guerreiro: Guarde-a bem, pode te salvar no futuro.
+=> END
+
+~ deixar
+Guerreiro: Entendido. Que sua jornada seja iluminada, jovem viajante.
+=> END

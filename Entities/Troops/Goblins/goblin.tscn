@@ -11,6 +11,7 @@ height = 42.0
 
 [sub_resource type="Animation" id="Animation_kuka3"]
 length = 0.001
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

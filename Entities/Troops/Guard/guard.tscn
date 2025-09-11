@@ -1,0 +1,76 @@
+[gd_scene load_steps=11 format=3 uid="uid://dpsnf24cwkpyx"]
+
+[ext_resource type="PackedScene" uid="uid://c3hrrwoo0g47i" path="res://Entities/wander_npc.tscn" id="1_3khke"]
+[ext_resource type="Texture2D" uid="uid://dcg8kpjjorlyh" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Units/Black Units/Warrior/Warrior_Guard.png" id="2_ju2kv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1cdn"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6w5q"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chqj2"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31x4y"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_na2n5"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qrimo"]
+atlas = ExtResource("2_ju2kv")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2gq5"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1cdn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6w5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chqj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31x4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_na2n5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qrimo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_maixi"]
+radius = 45.0444
+
+[node name="Guard" instance=ExtResource("1_3khke")]
+platform_on_leave = 2
+can_wander = false
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_o2gq5")
+animation = &"idle"
+frame_progress = 0.84202
+
+[node name="Collision" parent="." index="1"]
+shape = SubResource("CircleShape2D_maixi")
+
+[connection signal="timeout" from="WanderTimer" to="." method="_on_wander_timer_timeout"]
