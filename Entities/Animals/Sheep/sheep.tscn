@@ -1,6 +1,6 @@
 [gd_scene load_steps=30 format=3 uid="uid://2e0jpvlhe8eh"]
 
-[ext_resource type="Script" uid="uid://de83vucoc8jya" path="res://Interactables/Components/Sheep/sheep.gd" id="1_mjqlg"]
+[ext_resource type="Script" uid="uid://de83vucoc8jya" path="res://Entities/Animals/Sheep/sheep.gd" id="1_mjqlg"]
 [ext_resource type="Texture2D" uid="uid://84lap1vvvhm6" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Grass.png" id="2_vuor1"]
 [ext_resource type="Texture2D" uid="uid://c6pawses7ms5a" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Idle.png" id="3_k5e0y"]
 [ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="3_vuor1"]

@@ -1,7 +1,7 @@
 class_name CodeStyle
 extends CodeHighlighter
 
-# Estilo por linguagem
+## Estilo por linguagem
 const LANGUAGE_KEYWORDS = {
 	"lua": [
 		"function", "local", "if", "then", "else", "elseif", "end",

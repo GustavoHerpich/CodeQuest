@@ -25,6 +25,8 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 scale = Vector2(1.129, 0.68)
+size_flags_horizontal = 3
+size_flags_vertical = 3
 texture = ExtResource("2_lhon8")
 stretch_mode = 5
 
@@ -45,6 +47,7 @@ theme = SubResource("Theme_jb8f0")
 [node name="MainButtons" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 5
+alignment = 1
 
 [node name="Play" type="Button" parent="CenterContainer/MainButtons"]
 layout_mode = 2
@@ -66,12 +69,13 @@ text = "SAIR"
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 16
+alignment = 1
 script = ExtResource("4_mgtyh")
 
 [node name="FullScreen" type="CheckBox" parent="CenterContainer/SettingsMenu"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Tela Cheia"
+text = "TELA CHEIA"
 
 [node name="MainVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
 custom_minimum_size = Vector2(0, 30)
@@ -82,10 +86,11 @@ step = 0.001
 [node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MainVolume"]
 custom_minimum_size = Vector2(126, 25)
 layout_mode = 0
+offset_left = 42.0
 offset_top = -16.0
-offset_right = 153.0
+offset_right = 195.0
 offset_bottom = 9.0
-text = "Volume Principal"
+text = "VOLUME PRINCIPAL"
 horizontal_alignment = 1
 
 [node name="MusicVolume" type="HSlider" parent="CenterContainer/SettingsMenu"]
@@ -97,15 +102,16 @@ step = 0.001
 [node name="Title" type="Label" parent="CenterContainer/SettingsMenu/MusicVolume"]
 custom_minimum_size = Vector2(126, 25)
 layout_mode = 0
-offset_top = -16.0
-offset_right = 159.0
-offset_bottom = 9.0
-text = "Volume da Música"
+offset_left = 42.0
+offset_top = -17.0
+offset_right = 201.0
+offset_bottom = 8.0
+text = "VOLUME DA MÚSICA"
 horizontal_alignment = 1
 
 [node name="ConfigureInputs" type="Button" parent="CenterContainer/SettingsMenu"]
 layout_mode = 2
-text = "Configurações de Teclas"
+text = "CONFIGURAÇÕES DE TECLAS"
 
 [node name="Back" type="Button" parent="CenterContainer/SettingsMenu"]
 custom_minimum_size = Vector2(100, 0)

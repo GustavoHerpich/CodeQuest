@@ -1,16 +1,16 @@
 extends Control
 
-const ALLOWED_ACTIONS := [
-	GameConstants.INPUT_MOVE_LEFT,
-	GameConstants.INPUT_MOVE_RIGHT,
-	GameConstants.INPUT_MOVE_UP,
-	GameConstants.INPUT_MOVE_DOWN,
-	GameConstants.INPUT_LEFT_ATTACK,
-	GameConstants.INPUT_RIGHT_ATTACK,
-	GameConstants.INPUT_INTERACT,
-	GameConstants.INPUT_OPEN_BOOK,
-	GameConstants.INPUT_EXIT
-]
+const ACTION_LABELS := {
+	GameConstants.INPUT_MOVE_LEFT: "Mover para a Esquerda",
+	GameConstants.INPUT_MOVE_RIGHT: "Mover para a Direita",
+	GameConstants.INPUT_MOVE_UP: "Mover para Cima",
+	GameConstants.INPUT_MOVE_DOWN: "Mover para Baixo",
+	GameConstants.INPUT_LEFT_ATTACK: "Atacar (Esquerda)",
+	GameConstants.INPUT_RIGHT_ATTACK: "Atacar (Direita)",
+	GameConstants.INPUT_INTERACT: "Interagir",
+	GameConstants.INPUT_OPEN_BOOK: "Abrir Livro",
+	GameConstants.INPUT_EXIT: "Sair"
+}
 
 @onready var action_list: VBoxContainer = $MarginContainer/ActionList
 @onready var settings_menu: VBoxContainer = $"../SettingsMenu"
@@ -22,14 +22,14 @@ func _populate_actions():
 	for child in action_list.get_children():
 		child.queue_free()
 
-	for action in ALLOWED_ACTIONS:
+	for action in ACTION_LABELS:
 		if not InputMap.has_action(action):
 			continue
 
 		var hbox = HBoxContainer.new()
 
 		var label = Label.new()
-		label.text = action
+		label.text = ACTION_LABELS.get(action, action)
 		hbox.add_child(label)
 
 		var events = InputMap.action_get_events(action)
