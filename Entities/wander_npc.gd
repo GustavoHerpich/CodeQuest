@@ -85,6 +85,7 @@ func _on_dialogue_ended(_resource: DialogueResource) -> void:
 
 ## Entra no modo de diálogo, bloqueando movimentação.
 func enter_dialogue_mode() -> void:
+	print("bla")
 	is_in_dialogue = true
 
 ## Sai do modo de diálogo.

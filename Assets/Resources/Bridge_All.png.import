@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cutnrxvr45r2m"
-path="res://.godot/imported/GoldMine_Inactive.png-8ea17b11ac0a8bceb5ccda496ed09bed.ctex"
+uid="uid://brackoeklf5rw"
+path="res://.godot/imported/Bridge_All.png-cfd280c395d8a5a2c60b2f6ab3b83220.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords/Resources/Gold Mine/GoldMine_Inactive.png"
-dest_files=["res://.godot/imported/GoldMine_Inactive.png-8ea17b11ac0a8bceb5ccda496ed09bed.ctex"]
+source_file="res://Assets/Resources/Bridge_All.png"
+dest_files=["res://.godot/imported/Bridge_All.png-cfd280c395d8a5a2c60b2f6ab3b83220.ctex"]
 
 [params]
 

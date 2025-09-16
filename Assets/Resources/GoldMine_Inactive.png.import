@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bskitcyd8xk2a"
-path="res://.godot/imported/Rocks_04.png-4f2697f857f6d375a3f9b9b81729822b.ctex"
+uid="uid://cutnrxvr45r2m"
+path="res://.godot/imported/GoldMine_Inactive.png-f88769b0f7a5fdc822ab0b9d4f5c7129.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords/Terrain/Water/Rocks/Rocks_04.png"
-dest_files=["res://.godot/imported/Rocks_04.png-4f2697f857f6d375a3f9b9b81729822b.ctex"]
+source_file="res://Assets/Resources/GoldMine_Inactive.png"
+dest_files=["res://.godot/imported/GoldMine_Inactive.png-f88769b0f7a5fdc822ab0b9d4f5c7129.ctex"]
 
 [params]
 

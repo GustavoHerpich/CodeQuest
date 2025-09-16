@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1rqcypjqoj7o"
-path="res://.godot/imported/Tilemap_Elevation.png-7c113dff4f92e5714e3ba4ac1ea3e1d0.ctex"
+uid="uid://cmuhbocsmnd7b"
+path="res://.godot/imported/Pawn_Blue.png-3ca6c58e467473159bd5a10483a3312e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png"
-dest_files=["res://.godot/imported/Tilemap_Elevation.png-7c113dff4f92e5714e3ba4ac1ea3e1d0.ctex"]
+source_file="res://Assets/Entities/Pawn_Blue.png"
+dest_files=["res://.godot/imported/Pawn_Blue.png-3ca6c58e467473159bd5a10483a3312e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcimiexogo778"
-path="res://.godot/imported/Lancer_Idle.png-4c4ccac0d425c6a950991cc0d2eb2f99.ctex"
+uid="uid://ch40l5cts6n2e"
+path="res://.godot/imported/Shadows.png-11ebe20b25e8843710f747f0f310c0c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Units/Black Units/Lancer/Lancer_Idle.png"
-dest_files=["res://.godot/imported/Lancer_Idle.png-4c4ccac0d425c6a950991cc0d2eb2f99.ctex"]
+source_file="res://Assets/Terrains/Shadows.png"
+dest_files=["res://.godot/imported/Shadows.png-11ebe20b25e8843710f747f0f310c0c1.ctex"]
 
 [params]
 

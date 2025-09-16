@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://b2ovknxt6pthb"]
 
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_8ahts"]
-[ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Entities/Troops/Pawn/Pawn_Blue.png" id="2_1s8jf"]
+[ext_resource type="Texture2D" uid="uid://cmuhbocsmnd7b" path="res://Assets/Entities/Pawn_Blue.png" id="2_1s8jf"]
 [ext_resource type="Script" uid="uid://d0u8s2fxemrwn" path="res://Entities/Troops/Pawn/pawn.gd" id="2_uswhi"]
 [ext_resource type="PackedScene" uid="uid://4fych35akjlc" path="res://Management/Global Script/InteractablesManage/interacting_component.tscn" id="3_bp4gk"]
 [ext_resource type="AudioStream" uid="uid://u3lo3muph8u5" path="res://Assets/Sounds/AxeAttack.mp3" id="4_oi64a"]

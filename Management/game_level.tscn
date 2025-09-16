@@ -1,16 +1,16 @@
 [gd_scene load_steps=178 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
-[ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png" id="1_hv4qn"]
-[ext_resource type="Texture2D" uid="uid://c3qeowteqrqem" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Foam/Foam.png" id="2_d57l2"]
-[ext_resource type="Texture2D" uid="uid://ddjt77d28jqbg" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Rocks/Rocks_01.png" id="3_w077c"]
-[ext_resource type="Texture2D" uid="uid://ci4ry01rymjvh" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Rocks/Rocks_02.png" id="4_0ehq6"]
-[ext_resource type="Texture2D" uid="uid://bg4o4wys06865" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Rocks/Rocks_03.png" id="5_xlu8r"]
-[ext_resource type="Texture2D" uid="uid://bskitcyd8xk2a" path="res://Assets/Externals/Tiny Swords/Terrain/Water/Rocks/Rocks_04.png" id="6_jamms"]
-[ext_resource type="Texture2D" uid="uid://caxuq524ehxao" path="res://Assets/Externals/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="7_oykk7"]
-[ext_resource type="Texture2D" uid="uid://ch40l5cts6n2e" path="res://Assets/Externals/Tiny Swords/Terrain/Ground/Shadows.png" id="8_sv0cp"]
+[ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Resources/Water.png" id="1_hv4qn"]
+[ext_resource type="Texture2D" uid="uid://c3qeowteqrqem" path="res://Assets/Resources/Foam.png" id="2_d57l2"]
+[ext_resource type="Texture2D" uid="uid://ddjt77d28jqbg" path="res://Assets/Resources/Rocks/Rocks_01.png" id="3_w077c"]
+[ext_resource type="Texture2D" uid="uid://ci4ry01rymjvh" path="res://Assets/Resources/Rocks/Rocks_02.png" id="4_0ehq6"]
+[ext_resource type="Texture2D" uid="uid://bg4o4wys06865" path="res://Assets/Resources/Rocks/Rocks_03.png" id="5_xlu8r"]
+[ext_resource type="Texture2D" uid="uid://bskitcyd8xk2a" path="res://Assets/Resources/Rocks/Rocks_04.png" id="6_jamms"]
+[ext_resource type="Texture2D" uid="uid://caxuq524ehxao" path="res://Assets/Terrains/Tilemap_Flat.png" id="7_oykk7"]
+[ext_resource type="Texture2D" uid="uid://ch40l5cts6n2e" path="res://Assets/Terrains/Shadows.png" id="8_sv0cp"]
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="10_ited3"]
-[ext_resource type="Texture2D" uid="uid://brackoeklf5rw" path="res://Assets/Externals/Tiny Swords/Terrain/Bridge/Bridge_All.png" id="10_ldbhs"]
+[ext_resource type="Texture2D" uid="uid://brackoeklf5rw" path="res://Assets/Resources/Bridge_All.png" id="10_ldbhs"]
 [ext_resource type="Script" uid="uid://hhvyotlv2pqs" path="res://Interactables/Components/Bridge/bridge_area.gd" id="11_3x2o8"]
 [ext_resource type="Texture2D" uid="uid://c1ejp6t2ox4wb" path="res://Assets/Terrains/Swamp.png" id="11_hf5q5"]
 [ext_resource type="Texture2D" uid="uid://cixjuunrxwxrp" path="res://Assets/Terrains/Earth.png" id="12_55utm"]
@@ -1262,7 +1262,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(678, 411)
+position = Vector2(687, 409)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 

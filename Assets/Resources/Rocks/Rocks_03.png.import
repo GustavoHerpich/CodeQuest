@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmuhbocsmnd7b"
-path="res://.godot/imported/Pawn_Blue.png-aa0f920a57a93342afa138074fb1bc8e.ctex"
+uid="uid://bg4o4wys06865"
+path="res://.godot/imported/Rocks_03.png-8a1399bd5ba8927d6664e8042bcfb0ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Entities/Troops/Pawn/Pawn_Blue.png"
-dest_files=["res://.godot/imported/Pawn_Blue.png-aa0f920a57a93342afa138074fb1bc8e.ctex"]
+source_file="res://Assets/Resources/Rocks/Rocks_03.png"
+dest_files=["res://.godot/imported/Rocks_03.png-8a1399bd5ba8927d6664e8042bcfb0ea.ctex"]
 
 [params]
 

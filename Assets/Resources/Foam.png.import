@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brackoeklf5rw"
-path="res://.godot/imported/Bridge_All.png-0843cdeb52846ba39e76a4811d977978.ctex"
+uid="uid://c3qeowteqrqem"
+path="res://.godot/imported/Foam.png-ab348535a51d9b51e1bf60dfeb1a91c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords/Terrain/Bridge/Bridge_All.png"
-dest_files=["res://.godot/imported/Bridge_All.png-0843cdeb52846ba39e76a4811d977978.ctex"]
+source_file="res://Assets/Resources/Foam.png"
+dest_files=["res://.godot/imported/Foam.png-ab348535a51d9b51e1bf60dfeb1a91c3.ctex"]
 
 [params]
 

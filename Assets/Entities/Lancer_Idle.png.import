@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rx57oxa12n6u"
-path="res://.godot/imported/Water.png-7bd4ef3bc1bdf3d3739053e8679a93fb.ctex"
+uid="uid://dcimiexogo778"
+path="res://.godot/imported/Lancer_Idle.png-4a5800bf88adda3a12de6a091549f974.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Externals/Tiny Swords/Terrain/Water/Water.png"
-dest_files=["res://.godot/imported/Water.png-7bd4ef3bc1bdf3d3739053e8679a93fb.ctex"]
+source_file="res://Assets/Entities/Lancer_Idle.png"
+dest_files=["res://.godot/imported/Lancer_Idle.png-4a5800bf88adda3a12de6a091549f974.ctex"]
 
 [params]
 
