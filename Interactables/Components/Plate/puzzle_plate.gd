@@ -63,7 +63,6 @@ func solvePlate(order: Array) -> bool:
 	expected.sort()
 
 	var candidate := order.duplicate()
-	candidate.sort()
 
 	if candidate != expected:
 		GameManager.error("❌ Ordem incorreta.")

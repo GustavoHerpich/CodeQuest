@@ -157,14 +157,16 @@ func show_final_feedback():
 	click_area.set_pickable(false)
 	wheel_container.visible = false
 	
+	if already_interacted:
+		return
+
 	already_interacted = true
-	if not already_interacted:
-		BookManager.add_book_page(
-			"funcoes_objetos",
-			"👤 Player",
-			"🗡️ [code]increaseAttack(min, max)[/code]\nAumenta o dano mínimo e máximo do jogador.\n\nExemplo:\n[code]increaseAttack(2, 5)[/code]",
-			"🔥 [code]attackRange()[/code]\nRetorna o intervalo de ataque atual do jogador como um Vector2 (mínimo, máximo).\n\nExemplo:\n[code]print(attackRange())  # Exemplo saída: (3, 10)[/code]"
-		)
+	BookManager.add_book_page(
+		"funcoes_objetos",
+		"👤 Player",
+		"🗡️ [code]increaseAttack(min, max)[/code]\nAumenta o dano mínimo e máximo do jogador.\n\nExemplo:\n[code]increaseAttack(2, 5)[/code]",
+		"🔥 [code]attackRange()[/code]\nRetorna o intervalo de ataque atual do jogador como um Vector2 (mínimo, máximo).\n\nExemplo:\n[code]print(attackRange())  # Exemplo saída: (3, 10)[/code]"
+	)
 
 func close() -> void:
 	self.visible = false

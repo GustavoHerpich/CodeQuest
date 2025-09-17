@@ -88,7 +88,7 @@ func _register_methods(object: Node):
 		if method_name in ["_ready", "_process", "_physics_process"]:
 			continue
 		# Ignora getters e setters
-		if method_name.begins_with("get") or method_name.begins_with("set"):
+		if method_name.begins_with("set"):
 			continue
 		
 		var method_callable := Callable(object, method_name)

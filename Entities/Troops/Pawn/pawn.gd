@@ -157,14 +157,17 @@ func exit_dialogue_mode() -> void:
 ##
 ## - `type`: "in" ou "out" para definir o estado.
 func update_collision_layer_mask(type: String) -> void:
+	print(type)
 	if type == "in":
 		set_collision_layer_value(1, false)
 		set_collision_layer_value(2, true)
+		
 		set_collision_mask_value(1, false)
 		set_collision_mask_value(2, true)
 	elif type == "out":
 		set_collision_layer_value(1, true)
 		set_collision_layer_value(2, false)
+		
 		set_collision_mask_value(1, true)
 		set_collision_mask_value(2, false)
 

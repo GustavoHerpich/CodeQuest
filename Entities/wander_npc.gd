@@ -25,10 +25,6 @@ func _ready() -> void:
 	_set_new_direction()
 	wander_timer.start(randf_range(min_wait_time, max_wait_time))
 
-## Retorna `true` se o NPC pode se mover.
-func can_move() -> bool:
-	return can_wander and not is_in_dialogue
-
 ## Processamento a cada frame de física.
 func _physics_process(delta: float) -> void:
 	dust.emitting = velocity.length() > 0.1
@@ -91,3 +87,7 @@ func enter_dialogue_mode() -> void:
 ## Sai do modo de diálogo.
 func exit_dialogue_mode() -> void:
 	is_in_dialogue = false
+	
+## Retorna `true` se o NPC pode se mover.
+func can_move() -> bool:
+	return can_wander and not is_in_dialogue

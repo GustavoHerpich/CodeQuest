@@ -28,13 +28,13 @@ func _open_trunk() -> void:
 			BookManager.add_book_page(
 				"funcoes_objetos",
 				"📜 Placas Enigmáticas",
-				"🔢 [code]getPlateValue()[/code]\nRetorna o valor oculto da placa.",
+				"🔢 [code]getPlateValues()[/code]\nRetorna o valor oculto da placa.",
 				"✅ [code]solvePlate(array)[/code]\nValida se o array está em ordem crescente.\nSe estiver correto, os números serão revelados."
 			)
 
 			BookManager.add_book_page(
 				"como_programar",
-				"📊 Ordenação (sort)",
-				"🔄 [code]sort(array)[/code]\nOrdena os elementos de um array em ordem crescente.\n\nExemplo:\n[code]local numeros = {5, 2, 8, 1}\nsort(numeros)\nprint(numeros)[/code]\n\nResultado:\n[code]{1, 2, 5, 8}[/code]",
-				"💡 O sort é muito útil quando precisamos organizar dados.\nPor exemplo, se quisermos mostrar uma lista de pontuações ou organizar valores numéricos antes de verificar uma condição."
+				"📊 Ordenação com tabelas",
+				"🔄 Em Lua, listas (arrays) são tabelas. Para organizar valores, usamos [code]table.sort()[/code], que coloca os itens em ordem crescente.\n\nExemplo:\n[code]local itens = {\"3\", \"1\", \"2\"}\ntable.sort(itens)\nprint(itens)[/code]\n\nResultado:\n[code]{\"1\", \"2\", \"3\"}[/code]",
+				"💡 Ordenar é útil para organizar dados, como nomes, números ou pontuações, antes de usá-los em um programa."
 			)

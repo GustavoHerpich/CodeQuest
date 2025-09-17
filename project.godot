@@ -54,6 +54,7 @@ folder_colors={
 "Interactable Objects"="Este grupo contém todos os objetos interativos do jogo, permitindo um gerenciamento centralizado de interações. Ele facilita a identificação e o controle de elementos que podem ser ativados pelo jogador, como NPCs, terminais, baús e portas."
 ConsoleInstances=""
 Player="Organiza e permite o acesso centralizado ao personagem principal, facilitando interações e lógicas relacionadas a ele em qualquer parte do jogo, sem depender da hierarquia de cenas. Ele é usado para centralizar ações como movimentação e interações."
+NPCS="Grupo onde todos os NPCs ficam"
 
 [input]
 
