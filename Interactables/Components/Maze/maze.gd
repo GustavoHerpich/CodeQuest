@@ -9,9 +9,9 @@ func _ready() -> void:
 	bridget_emerging.hide()
 
 func _on_puzzle_solved() -> void:
-	GameManager.print("⏳ A ponte está surgindo... aguarde 10 segundos.")
+	GameManager.print("⏳ A ponte está surgindo... aguarde 5 segundos.")
 
-	await get_tree().create_timer(10.0).timeout
+	await get_tree().create_timer(5.0).timeout
 
 	bridget_emerging.show()
 	var tween := get_tree().create_tween()

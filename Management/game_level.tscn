@@ -1,4 +1,4 @@
-[gd_scene load_steps=178 format=4 uid="uid://dre0r4vy5coly"]
+[gd_scene load_steps=181 format=4 uid="uid://dre0r4vy5coly"]
 
 [ext_resource type="Script" uid="uid://d26fh0gdw3oxc" path="res://Management/game_level.gd" id="1_fk5p6"]
 [ext_resource type="Texture2D" uid="uid://rx57oxa12n6u" path="res://Assets/Resources/Water.png" id="1_hv4qn"]
@@ -78,6 +78,7 @@
 [ext_resource type="Texture2D" uid="uid://c2vt1iqwqrqby" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Buildings/Blue Buildings/Tower.png" id="58_wye40"]
 [ext_resource type="Script" uid="uid://cubevrxng5hpg" path="res://Interactables/Components/Maze/maze.gd" id="59_7ok85"]
 [ext_resource type="Texture2D" uid="uid://dwmwh764apwnu" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Buildings/Black Buildings/Tower.png" id="59_sn5fn"]
+[ext_resource type="Texture2D" uid="uid://b0qtlm1xw6dq0" path="res://Assets/Resources/Destination.png" id="78_s5ttv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lyq1y"]
 resource_name = "water"
@@ -1145,6 +1146,15 @@ tile_size = Vector2i(64, 63)
 physics_layer_0/collision_layer = 1
 sources/33 = SubResource("TileSetAtlasSource_hi8qj")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2np8t"]
+texture = ExtResource("78_s5ttv")
+texture_region_size = Vector2i(46, 46)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_50885"]
+tile_size = Vector2i(46, 46)
+sources/3 = SubResource("TileSetAtlasSource_2np8t")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcjgg"]
 size = Vector2(63, 66)
 
@@ -1262,7 +1272,7 @@ shape = SubResource("RectangleShape2D_mc52v")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(684, 404)
+position = Vector2(731, 397)
 platform_on_leave = 0
 bridge = NodePath("../../Bridge/Bridget")
 
@@ -1292,7 +1302,7 @@ dialogue_resource = ExtResource("26_v3fi1")
 shape = SubResource("CircleShape2D_cps3o")
 
 [node name="Guard2" parent="Decorations/Characters" instance=ExtResource("25_c16ft")]
-position = Vector2(9723, -1304)
+position = Vector2(9725, -1286)
 scale = Vector2(-0.994444, 0.970367)
 
 [node name="Lancer" parent="Decorations/Characters" instance=ExtResource("26_jiq3q")]
@@ -1305,9 +1315,10 @@ scale = Vector2(-0.939574, 1.02669)
 [node name="Warrior" parent="Decorations/Characters" instance=ExtResource("24_2887q")]
 position = Vector2(7336, -2098)
 
-[node name="Interactable" parent="Decorations/Characters/Warrior" instance=ExtResource("27_cps3o")]
+[node name="Interactable" parent="Decorations/Characters/Warrior" node_paths=PackedStringArray("npc_owner") instance=ExtResource("27_cps3o")]
 interact_name = "Conversar"
 dialogue_resource = ExtResource("25_pee6w")
+npc_owner = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="Decorations/Characters/Warrior/Interactable"]
 shape = SubResource("CircleShape2D_v3fi1")
@@ -1962,6 +1973,7 @@ position = Vector2(10370, -1361)
 
 [node name="Actionable" parent="Decorations/Interactables/Terminal3" instance=ExtResource("26_rkog2")]
 dialogue_resource = ExtResource("36_bvyg4")
+max_activations = 1
 
 [node name="Collision" type="CollisionShape2D" parent="Decorations/Interactables/Terminal3/Actionable"]
 shape = SubResource("CircleShape2D_ufrq5")
@@ -2197,8 +2209,13 @@ script = ExtResource("59_7ok85")
 [node name="MazePuzzle" parent="Decorations/Maze" instance=ExtResource("58_hi8qj")]
 position = Vector2(10432, -1408)
 
+[node name="Destination" type="TileMapLayer" parent="Decorations/Maze"]
+position = Vector2(2, 159)
+tile_map_data = PackedByteArray("AAD2AOX/AwAAAAAAAAA=")
+tile_set = SubResource("TileSet_50885")
+
 [node name="BridgetEmerging" type="TileMapLayer" parent="Decorations/Maze"]
-position = Vector2(10535, -1632)
+position = Vector2(10533, -1471)
 tile_map_data = PackedByteArray("AAASAAYAAAABAAAAAAANAAYAAAAAAAAAAAAOAAYAAAABAAAAAAAPAAYAAAABAAAAAAAQAAYAAAABAAAAAAARAAYAAAABAAAAAAATAAYAAAABAAAAAAAUAAYAAAABAAAAAAAVAAYAAAABAAAAAAAWAAYAAAACAAAAAAA=")
 tile_set = SubResource("TileSet_okyr4")
 

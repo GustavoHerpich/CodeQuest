@@ -55,7 +55,7 @@ func _load_pages() -> void:
 ## Reorganiza todas as páginas em uma lista única.
 func _flatten_pages() -> void:
 	pages.clear()
-	var ordered_keys := ["inicio", "funcoes_objetos", "como_programar"]
+	var ordered_keys := ["inicio", "funcoes_objetos", "como_programar", "fim_da_jornada"]
 	for key in ordered_keys:
 		if sections.has(key):
 			pages += sections[key]
@@ -114,15 +114,15 @@ func _input(event: InputEvent) -> void:
 ## Adiciona uma nova página a uma seção específica do livro.
 ##
 ## - `section_name`: Nome da seção onde a página será inserida.
-## - `title`: Título exibido no topo da página.
+## - `page_title`: Título exibido no topo da página.
 ## - `content1`: Texto principal da página.
 ## - `content2`: Texto secundário opcional.
-func add_page(section_name: String, title: String, content1: String, content2: String = "") -> void:
+func add_page(section_name: String, page_title: String, content1: String, content2: String = "") -> void:
 	if not sections.has(section_name):
 		sections[section_name] = []
-
+	
 	var new_page = {
-		"title": title,
+		"title": page_title,
 		"content1": content1,
 		"content2": content2
 	}

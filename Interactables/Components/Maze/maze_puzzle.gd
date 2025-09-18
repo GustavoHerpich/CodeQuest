@@ -117,7 +117,7 @@ func _dfs(pos: Vector2i, visited_cells: Array) -> bool:
 		return false
 	if visited_cells[pos.y][pos.x]:
 		return false
-
+		
 	if pos == Vector2i(size.x - 1, size.y - 1):
 		return true
 
@@ -151,7 +151,6 @@ func toggleCell(x: int, y: int) -> void:
 
 ## Verifica se há um caminho do início ao fim do labirinto
 func solveMaze() -> void:
-	maze[0][0] = WALKABLE
 	maze[size.y - 1][size.x - 1] = WALKABLE
 
 	var visited_cells: Array = []
@@ -161,11 +160,18 @@ func solveMaze() -> void:
 			row_visited.append(false)
 		visited_cells.append(row_visited)
 
-	var path_exists := _dfs(Vector2i(0, 0), visited_cells)
+	var path_exists := false
+
+	for y in range(size.y):
+		if maze[y][0] == WALKABLE:
+			if _dfs(Vector2i(0, y), visited_cells):
+				path_exists = true
+				break
+
 	if path_exists:
 		GameManager.print("✅ Existe um caminho!")
 		emit_signal("puzzle_solved")
-
+		
 		BookManager.add_book_page(
 			"fim_da_jornada",
 			"🔮 O Último Comando",

@@ -99,7 +99,7 @@ func _on_actionable_finder_area_entered(_area: Area2D) -> void:
 	if actionables.size() > 0:
 		var target = actionables[0]
 		if target.has_method("action") and target.auto_start:
-			if not is_in_dialogue:
+			if not is_in_dialogue and not target.used:
 				enter_dialogue_mode()
 				target.action()
 
@@ -157,7 +157,6 @@ func exit_dialogue_mode() -> void:
 ##
 ## - `type`: "in" ou "out" para definir o estado.
 func update_collision_layer_mask(type: String) -> void:
-	print(type)
 	if type == "in":
 		set_collision_layer_value(1, false)
 		set_collision_layer_value(2, true)
@@ -189,10 +188,14 @@ func get_is_in_mountain() -> bool:
 
 ## Aumenta a velocidade de movimento do personagem, até o limite de 500.
 func increaseSpeed(amount: float) -> void:
-	if moveSpeed() + amount <= 500:
+	var current_speed = moveSpeed()
+	var new_speed = current_speed + amount
+	
+	if new_speed <= 500 and new_speed >= 0:
 		GameManager.set_value_variable(self, "move_speed", amount)
+		GameManager.print("⚡ Velocidade alterada!\nAntes: " + str(current_speed) + "\nDepois: " + str(new_speed))
 	else:
-		GameManager.print("A velocidade atribuída ultrapassou os limites. Limite: 500, Velocidade Atual: " + str(moveSpeed()))
+		GameManager.print("❌ Velocidade fora dos limites (0 - 500).\nAtual: " + str(current_speed) + "\nTentativa: " + str(new_speed))
 
 ## Retorna a velocidade de movimento atual do personagem.
 func moveSpeed() -> Variant:
