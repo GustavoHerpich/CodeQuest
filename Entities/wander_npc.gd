@@ -65,7 +65,7 @@ func _on_wander_timer_timeout() -> void:
 
 ## Define uma nova direção aleatória para o NPC.
 func _set_new_direction() -> void:
-	if not can_wander:
+	if not can_move():
 		direction = Vector2.ZERO
 		return
 	

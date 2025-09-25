@@ -1,0 +1,43 @@
+~ start
+Lanceiro Bugado: Ei... você também percebeu? Eu estou... estranho.
+Player: Estranho como?
+Lanceiro Bugado: Veja só, quando eu ando, pareço estar parado... e quando fico parado, pareço correr sem parar!
+Player: Hahaha, é verdade... parece um bug.
+Lanceiro Bugado: Exato! Eu sou o próprio exemplo vivo de um bug de programação.
+- O que é exatamente um bug? => oque
+- Hahaha, você está engraçado! => engracado
+- Isso é perigoso? => perigoso
+
+~ oque
+Lanceiro Bugado: Um bug, viajante, é um erro em um sistema. Algo que não funciona como deveria.
+Lanceiro Bugado: A palavra surgiu há muito tempo, em 1947, quando um inseto de verdade — uma mariposa — travou um computador.
+Lanceiro Bugado: Desde então, chamamos de "bug" qualquer falha inesperada em máquinas ou programas.
+Player: Então, até mesmo os programadores mais antigos enfrentavam problemas assim?
+Lanceiro Bugado: Sempre. E sempre enfrentarão. O importante não é evitar todos, mas aprender a corrigi-los.
+- Entendi, obrigado pela explicação! => obrigado
+- Você tem algum conselho para lidar com bugs? => conselho
+
+~ engracado
+Lanceiro Bugado: Engraçado para você... mas para mim é cansativo!
+Lanceiro Bugado: Imagine correr sem sair do lugar, ou andar sem mover os pés. Hahaha!
+Lanceiro Bugado: Ainda assim, veja pelo lado bom: até mesmo erros podem ensinar algo.
+=> END
+
+~ perigoso
+Lanceiro Bugado: Nem sempre... a maioria dos bugs apenas incomoda, como eu agora.
+Lanceiro Bugado: Mas em certas situações, um bug pode travar tudo, ou até abrir brechas para perigos maiores.
+Player: Então é melhor levar a sério...
+Lanceiro Bugado: Justamente. Não subestime os pequenos erros.
+=> END
+
+~ conselho
+Lanceiro Bugado: Sempre que encontrar um bug, respire fundo. Teste passo a passo e descubra onde está o erro.
+Lanceiro Bugado: É como caçar um inimigo invisível: observe os sinais, investigue e só então ataque.
+Player: Gostei dessa metáfora!
+Lanceiro Bugado: Então leve-a com você. A habilidade de caçar bugs será tão útil quanto qualquer espada.
+=> END
+
+~ obrigado
+Lanceiro Bugado: Hahaha! Às vezes até os erros podem ser bons mestres.
+Lanceiro Bugado: Que sua jornada siga sem travamentos, jovem aventureiro.
+=> END

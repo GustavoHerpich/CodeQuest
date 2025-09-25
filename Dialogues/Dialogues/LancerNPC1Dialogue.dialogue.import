@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://5r71jrl0dq2f"
+path="res://.godot/imported/LancerNPC1Dialogue.dialogue-a8003c48fee7b89159ceab1b6fac4012.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/LancerNPC1Dialogue.dialogue"
+dest_files=["res://.godot/imported/LancerNPC1Dialogue.dialogue-a8003c48fee7b89159ceab1b6fac4012.tres"]
+
+[params]
+
+defaults=true

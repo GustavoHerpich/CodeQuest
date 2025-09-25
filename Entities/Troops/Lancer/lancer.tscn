@@ -1,53 +1,78 @@
-[gd_scene load_steps=17 format=3 uid="uid://hnupo1yes88x"]
+[gd_scene load_steps=24 format=3 uid="uid://hnupo1yes88x"]
 
 [ext_resource type="PackedScene" uid="uid://c3hrrwoo0g47i" path="res://Entities/wander_npc.tscn" id="1_uti7a"]
 [ext_resource type="Texture2D" uid="uid://dcimiexogo778" path="res://Assets/Entities/Lancer_Idle.png" id="2_6adjo"]
+[ext_resource type="Texture2D" uid="uid://c8g2taao0g5sb" path="res://Assets/Entities/Lancer_Run.png" id="3_6adjo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6adjo"]
-atlas = ExtResource("2_6adjo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uti7a"]
+atlas = ExtResource("3_6adjo")
 region = Rect2(0, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3d2s3"]
-atlas = ExtResource("2_6adjo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_6adjo"]
+atlas = ExtResource("3_6adjo")
 region = Rect2(320, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_fluoi"]
-atlas = ExtResource("2_6adjo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d2s3"]
+atlas = ExtResource("3_6adjo")
 region = Rect2(640, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c2m0l"]
-atlas = ExtResource("2_6adjo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_fluoi"]
+atlas = ExtResource("3_6adjo")
 region = Rect2(960, 0, 320, 320)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qdowj"]
-atlas = ExtResource("2_6adjo")
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2m0l"]
+atlas = ExtResource("3_6adjo")
 region = Rect2(1280, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdowj"]
+atlas = ExtResource("3_6adjo")
+region = Rect2(1600, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpe4e"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(1600, 0, 320, 320)
+region = Rect2(0, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_spe6d"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(1920, 0, 320, 320)
+region = Rect2(320, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8r2sg"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(2240, 0, 320, 320)
+region = Rect2(640, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_prslb"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(2560, 0, 320, 320)
+region = Rect2(960, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nv578"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(2880, 0, 320, 320)
+region = Rect2(1280, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gx1mq"]
 atlas = ExtResource("2_6adjo")
-region = Rect2(3200, 0, 320, 320)
+region = Rect2(1600, 0, 320, 320)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5t8w0"]
+atlas = ExtResource("2_6adjo")
+region = Rect2(1920, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hpbi5"]
+atlas = ExtResource("2_6adjo")
+region = Rect2(2240, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6egp8"]
+atlas = ExtResource("2_6adjo")
+region = Rect2(2560, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lawln"]
+atlas = ExtResource("2_6adjo")
+region = Rect2(2880, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sowo5"]
+atlas = ExtResource("2_6adjo")
+region = Rect2(3200, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53f2o"]
 atlas = ExtResource("2_6adjo")
 region = Rect2(3520, 0, 320, 320)
 
@@ -59,6 +84,9 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uti7a")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6adjo")
 }, {
@@ -73,7 +101,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qdowj")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }, {
+"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gpe4e")
 }, {
@@ -94,9 +127,24 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5t8w0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hpbi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6egp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lawln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sowo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53f2o")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"run",
 "speed": 5.0
 }]
 
@@ -105,13 +153,11 @@ radius = 28.0
 height = 80.0
 
 [node name="Lancer" instance=ExtResource("1_uti7a")]
-can_wander = false
+platform_on_leave = 2
 
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_hpbi5")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.0354127
+animation = &"run"
 speed_scale = 2.0
 
 [node name="Collision" parent="." index="1"]

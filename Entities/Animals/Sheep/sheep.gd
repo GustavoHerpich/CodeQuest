@@ -35,7 +35,7 @@ var is_eating: bool = false
 ## Inicializa variáveis, direção e timers da ovelha.
 func _ready() -> void:
 	regular_move_speed = move_speed
-	health = randf_range(min_health, max_health)
+	health = randi_range(min_health, max_health)
 	wait_time = randf_range(5.0, 15.0)
 	run_wait_time = randf_range(1.0, 3.0)
 	direction = _get_direction()
@@ -51,7 +51,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	if get_slide_collision_count() > 0:
-		direction = velocity.bounce(get_slide_collision(0).get_normal()).normalized()
+		direction = velocity.bounce(
+			get_slide_collision(0).get_normal()
+		).normalized()
 
 	idle_time += delta
 	_animate()

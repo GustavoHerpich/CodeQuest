@@ -129,7 +129,6 @@ platform_on_leave = 2
 [node name="AnimatedSprite2D" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_vkbmt")
 animation = &"run"
-frame_progress = 0.659263
 
 [node name="Collision" parent="." index="1"]
 shape = SubResource("CircleShape2D_v5uys")

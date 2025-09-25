@@ -148,6 +148,8 @@ func toggleCell(x: int, y: int) -> void:
 	if x >= 0 and x < size.x and y >= 0 and y < size.y:
 		maze[y][x] = BLOCKED if maze[y][x] == WALKABLE else WALKABLE
 		_toggle_cell_visual(x, y)
+	else:
+		GameManager.error("❌ Posição inválida no labirinto: (" + str(x) + ", " + str(y) + ")")
 
 ## Verifica se há um caminho do início ao fim do labirinto
 func solveMaze() -> void:

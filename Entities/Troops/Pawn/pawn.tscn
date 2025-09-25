@@ -149,6 +149,7 @@ radius = 35.0143
 radius = 44.7214
 
 [node name="Pawn" node_paths=PackedStringArray("dust", "axe_attack_sound", "hammer_attack_sound", "attack_area_collision", "sprite2D", "animation") groups=["Player"] instance=ExtResource("1_8ahts")]
+platform_floor_layers = 4294967294
 script = ExtResource("2_uswhi")
 left_attack_name = "attack_hammer"
 right_attack_name = "attack_axe"

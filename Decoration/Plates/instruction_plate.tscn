@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr6588hks1y2j"]
+
+[ext_resource type="Script" uid="uid://cmic7gl102rxq" path="res://Decoration/Plates/instruction_plate.gd" id="1_6oemp"]
+[ext_resource type="Texture2D" uid="uid://c2rp571a6rf3a" path="res://Assets/Resources/SignInstruction.png" id="2_1x1tf"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="3_1x1tf"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x1tf"]
+radius = 21.0
+height = 76.0
+
+[node name="InstructionPlate" type="Node2D"]
+script = ExtResource("1_6oemp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(1.17188, 1.17188)
+texture = ExtResource("2_1x1tf")
+flip_h = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -22.0
+offset_top = -24.0
+offset_right = 25.0
+offset_bottom = 1.0
+theme_override_fonts/font = ExtResource("3_1x1tf")
+theme_override_font_sizes/font_size = 10
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="PshysicsCollision" type="StaticBody2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="PshysicsCollision"]
+shape = SubResource("CapsuleShape2D_1x1tf")
