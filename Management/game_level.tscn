@@ -1290,7 +1290,7 @@ shape = SubResource("RectangleShape2D_2np8t")
 y_sort_enabled = true
 
 [node name="Pawn" parent="Decorations" node_paths=PackedStringArray("bridge") instance=ExtResource("12_jskgj")]
-position = Vector2(733, 382)
+position = Vector2(718, 382)
 bridge = NodePath("../../Bridge/Bridget")
 
 [node name="Characters" type="Node2D" parent="Decorations"]

@@ -28,10 +28,10 @@ scale = Vector2(2, 2)
 transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="Panel" type="NinePatchRect" parent="QuestionPanel"]
-offset_left = 308.5
-offset_top = 98.0
-offset_right = 501.5
-offset_bottom = 199.0
+offset_left = 326.5
+offset_top = 125.0
+offset_right = 519.5
+offset_bottom = 226.0
 texture = ExtResource("3_e15rc")
 patch_margin_left = 8
 patch_margin_top = 8

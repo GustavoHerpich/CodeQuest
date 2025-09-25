@@ -22,7 +22,7 @@ func _open_roulette():
 	
 	var player = get_tree().get_first_node_in_group(GameConstants.GROUP_PLAYER)
 	if player:
-		wheel_instance.global_position = player.global_position + Vector2(250, 0)
+		wheel_instance.global_position = player.global_position + Vector2(250, 50)
 	
 	if SceneSwitcher.current_scene:
 		SceneSwitcher.current_scene.add_child(wheel_instance)
