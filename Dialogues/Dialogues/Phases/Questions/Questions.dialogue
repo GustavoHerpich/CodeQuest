@@ -1,0 +1,15 @@
+~ start
+
+Goblin: Ei, aventureiro! Você parece corajoso o bastante para testar seu conhecimento sobre... tipos de variáveis!
+Player: Tipos de variáveis? O que você quer dizer com isso?
+Goblin: Veja essa roleta ao meu lado! Cada giro te dá uma pergunta.
+Goblin: Acerte todas as cinco e... desbloqueia um novo poder no seu livro mágico! E quem sabe... algo a mais...
+Player: Hm... interessante. E o que eu ganho com isso, além de diversão?
+Goblin: Além de sabedoria, claro... Você vai liberar conteúdo secreto no seu livro de ajuda!
+Goblin: E eu vou te dar um feitiço raro: `increaseAttack(amount)`... mas use com sabedoria, só funciona algumas vezes!
+Player: Isso parece útil. Então posso tentar agora?
+Goblin: Sim… e lembre-se, aventureiro: o verdadeiro desafio, o próximo estágio da sua jornada, espera a sua frente. A roleta é apenas o começo…
+Player: Entendi. Estou pronto.
+Goblin: Boa sorte! A roleta decidirá seu destino... ou pelo menos sua pergunta!
+
+=> END

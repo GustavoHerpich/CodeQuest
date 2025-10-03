@@ -1,0 +1,14 @@
+~ start
+
+Guia Misterioso: Ei, viajante… [wait=0.8]
+Player: Quem está aí?
+Guia Misterioso: Vejo que você avançou muito rápido… [wait=1]
+Player: Rapidamente? Mas estou pronto para o desafio!
+Guia Misterioso: Talvez… mas algumas portas só se abrem para aqueles que exploram os lugares certos… [wait=1.2]
+Player: Lugares certos?
+Guia Misterioso: Há uma caverna antiga, escondida entre sombras e ecos. [wait=1]
+Guia Misterioso: Quem se aventura lá, encontra segredos que tornam possível lidar com os enigmas que esperam adiante… [wait=1.2]
+Player: Então devo ir para a caverna antes?
+Guia Misterioso: Sim… [wait=0.8] o verdadeiro caminho nem sempre é o mais visível. A caverna guarda o que você precisa para enfrentar o que está por vir.
+
+=> END

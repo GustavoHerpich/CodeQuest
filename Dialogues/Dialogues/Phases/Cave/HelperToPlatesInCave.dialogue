@@ -1,0 +1,12 @@
+~ start
+
+Guia Misterioso: Vejo que enfrentaste as sombras da caverna e saíste com o saber renovado… [wait=1] poucos conseguem ir tão longe.  
+Player: A caverna foi difícil… mas sinto que ainda falta algo.  
+Guia Misterioso: Falta, sim. [wait=0.8] O próximo caminho não está oculto em pedras ou trevas, mas exposto ao sol ardente.  
+Player: O sol… está falando do deserto?  
+Guia Misterioso: Exato. Além das dunas, repousa uma ilha esquecida pelo tempo. [wait=1]  
+Guia Misterioso: Lá, placas antigas guardam enigmas de ordem e equilíbrio, esperando o viajante que ousa decifrá-las.  
+Player: Então esse é meu próximo destino… o deserto e sua ilha.  
+Guia Misterioso: Sim. [wait=0.8] Vai, viajante… e lembra-te: até a areia obedece a um ritmo. Quem entende esse compasso, encontra o caminho.  
+
+=> END

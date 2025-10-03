@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://c48bk81asu26m"
+path="res://.godot/imported/HelperToPlateInMaze.dialogue-6018d831f32cc3dcf4b4bc66c6db3db3.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Maze/HelperToPlateInMaze.dialogue"
+dest_files=["res://.godot/imported/HelperToPlateInMaze.dialogue-6018d831f32cc3dcf4b4bc66c6db3db3.tres"]
+
+[params]
+
+defaults=true

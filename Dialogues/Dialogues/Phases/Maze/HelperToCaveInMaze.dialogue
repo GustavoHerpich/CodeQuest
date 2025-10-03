@@ -1,0 +1,14 @@
+~ start
+
+Sábio Errante: Ah… vejo que você chegou até aqui… [wait=0.8]
+Player: Quem fala?
+Sábio Errante: Apenas alguém que observa os caminhos de quem se aventura rápido demais. [wait=1]
+Player: Rápido demais? Eu pensei que estava seguindo a trilha correta.
+Sábio Errante: Nem todo caminho à frente se revela para olhos apressados… [wait=1.2]
+Player: Então devo voltar?
+Sábio Errante: Há uma caverna antiga, escondida entre sombras e ecos. [wait=1]
+Sábio Errante: Seus segredos não são óbvios, mas quem se atreve a explorá-la encontrará o conhecimento necessário para prosseguir. [wait=1.2]
+Player: Então é lá que devo ir antes de continuar?
+Sábio Errante: Exatamente… [wait=0.8] a jornada verdadeira exige paciência, e a caverna guarda o que você precisa para enfrentar os desafios que te aguardam além.
+
+=> END

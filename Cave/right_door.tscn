@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cqm312lqswmcj"]
 
-[ext_resource type="Texture2D" uid="uid://6ddm8enkh36d" path="res://Assets/Doors/DoorCave.png" id="1_qpdtj"]
+[ext_resource type="Texture2D" uid="uid://6ddm8enkh36d" path="res://Assets/Resources/Cave/DoorCave.png" id="1_qpdtj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lk6j5"]
 size = Vector2(112, 136)

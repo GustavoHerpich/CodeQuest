@@ -16,15 +16,17 @@ config/features=PackedStringArray("4.4", "Forward Plus")
 
 [audio]
 
-buses/default_bus_layout="res://Resources/default_bus_layout.tres"
+buses/default_bus_layout="res://Resources/Audio/audio.tres"
 
 [autoload]
 
 GameManager="*res://Management/Global Script/Core/game_manager.gd"
-SceneSwitcher="*res://Management/Global Script/SceneSwitcher/scene_switcher.tscn"
-BookManager="*res://Interactables/BookHelper/book_manager.gd"
+SceneSwitcher="*res://Management/SceneSwitcher/scene_switcher.tscn"
+BookManager="*res://Management/BookHelper/book_manager.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameConstants="*res://Management/Global Script/Enumns/game_constants.gd"
+NotificationManager="*res://Management/Notification/notification.tscn"
+ProgressManager="*res://Management/Global Script/ProgressGame/progress_manager.gd"
 
 [dialogue_manager]
 
@@ -106,7 +108,7 @@ open_book={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogues/Dialogues/FirstDialog.dialogue", "res://Dialogues/Dialogues/SecondDialogue.dialogue", "res://Dialogues/Dialogues/ThirdDialogue.dialogue", "res://Dialogues/Dialogues/FourthDialogue.dialogue", "res://Dialogues/Dialogues/FifthDialogue.dialogue", "res://Dialogues/Dialogues/SixthDialogue.dialogue", "res://Dialogues/Dialogues/TheFinalDialogue.dialogue", "res://Dialogues/Dialogues/WarriorNPC1Dialogue.dialogue", "res://Dialogues/Dialogues/GuardNPC1Dialogue.dialogue", "res://Dialogues/Dialogues/LancerNPC1Dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogues/Dialogues/NPC\'s/GuardNPC1Dialogue.dialogue", "res://Dialogues/Dialogues/NPC\'s/LancerNPC1Dialogue.dialogue", "res://Dialogues/Dialogues/NPC\'s/WarriorNPC1Dialogue.dialogue", "res://Dialogues/Dialogues/Phases/Bridge/HelperToCaveInBridge.dialogue", "res://Dialogues/Dialogues/Phases/Bridge/Bridge.dialogue", "res://Dialogues/Dialogues/Phases/Cave/Door.dialogue", "res://Dialogues/Dialogues/Phases/Cave/Treasure.dialogue", "res://Dialogues/Dialogues/Phases/Maze/HelperToCaveInMaze.dialogue", "res://Dialogues/Dialogues/Phases/Maze/Maze.dialogue", "res://Dialogues/Dialogues/Phases/Final/TheFinal.dialogue", "res://Dialogues/Dialogues/Phases/Plates/HelperToCaveInPlates.dialogue", "res://Dialogues/Dialogues/Phases/Plates/Plates.dialogue", "res://Dialogues/Dialogues/Phases/Questions/Questions.dialogue", "res://Dialogues/Dialogues/Phases/Maze/HelperToPlateInMaze.dialogue", "res://Dialogues/Dialogues/Phases/Bridge/HelperToPlateInBridge.dialogue", "res://Dialogues/Dialogues/Phases/Plates/HelperToMazeInPlates.dialogue", "res://Dialogues/Dialogues/Phases/Cave/HelperToPlatesInCave.dialogue")
 
 [layer_names]
 

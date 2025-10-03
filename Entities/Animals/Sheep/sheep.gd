@@ -19,6 +19,8 @@ var current_anim: String = ""
 var idle_time: float = 0.0
 var is_eating: bool = false
 
+@onready var sheep_screaming: AudioStreamPlayer2D = $SheepAudio
+
 @export_category("Variables")
 @export var move_speed: float = 128.0
 @export var min_health: int = 10
@@ -107,6 +109,7 @@ func update_health(damage_range: Array) -> void:
 
 	health -= randi_range(damage_range[0], damage_range[1])
 	_spawn_particles()
+	sheep_screaming.play()
 
 	if health <= 0:
 		_spawn_meat()

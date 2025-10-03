@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bf36qt5it4cha" path="res://Interactables/Components/WheelScene/wheel.tscn" id="2_ho8ay"]
 [ext_resource type="Texture2D" uid="uid://ckdv3675cdwuu" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0018.png" id="3_e15rc"]
 [ext_resource type="Texture2D" uid="uid://cuvedni4085f3" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0056.png" id="5_mx6yk"]
-[ext_resource type="FontFile" uid="uid://7h8vri6nq2rb" path="res://Assets/Fonts/PressStart2P-Regular.ttf" id="5_qecfl"]
+[ext_resource type="FontFile" uid="uid://7h8vri6nq2rb" path="res://Assets/Resources/Fonts/PressStart2P-Regular.ttf" id="5_qecfl"]
 [ext_resource type="Texture2D" uid="uid://bsvl5ynjbeext" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0057.png" id="6_m00ee"]
 [ext_resource type="Texture2D" uid="uid://d1tm4fvc1a6dr" path="res://Assets/Externals/Question/Tiles/Large tiles/Thick outline/tile_0058.png" id="7_v8h61"]
-[ext_resource type="Theme" uid="uid://36vlbe7emmbk" path="res://Resources/Default_Button.tres" id="8_mx6yk"]
+[ext_resource type="Theme" uid="uid://36vlbe7emmbk" path="res://Resources/Materials/Default_Button.tres" id="8_mx6yk"]
 
 [sub_resource type="Theme" id="Theme_m00ee"]
 default_font = ExtResource("5_qecfl")

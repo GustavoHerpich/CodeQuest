@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bs2221niyviv1"
+path="res://.godot/imported/FifthOctArpH.wav-9b6d252bc5bcf30199a02a6ee0999619.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_3/Runs/High/FifthOctArpH.wav"
+dest_files=["res://.godot/imported/FifthOctArpH.wav-9b6d252bc5bcf30199a02a6ee0999619.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

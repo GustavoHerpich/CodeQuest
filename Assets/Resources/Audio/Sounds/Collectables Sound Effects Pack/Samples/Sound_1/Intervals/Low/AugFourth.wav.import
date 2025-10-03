@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8nw2uh3q6ckd"
+path="res://.godot/imported/AugFourth.wav-7854ec7bcc29a9116a2fdd814f9f37d3.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_1/Intervals/Low/AugFourth.wav"
+dest_files=["res://.godot/imported/AugFourth.wav-7854ec7bcc29a9116a2fdd814f9f37d3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

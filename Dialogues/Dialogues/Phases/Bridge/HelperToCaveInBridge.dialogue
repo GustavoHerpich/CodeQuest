@@ -1,0 +1,15 @@
+~ start
+
+Guia Misterioso: Vejo que conseguiu alinhar a ponte… [wait=1] coragem e lógica o trouxeram até aqui.  
+Player: Você…?  
+Guia Misterioso: Sim. Eu sempre estive aqui, apenas à sombra dos seus passos. [wait=1]  
+Player: Então… isso significa que a jornada continua?  
+Guia Misterioso: Continua, mas não como antes. [wait=0.8] A ponte foi apenas a primeira chave.  
+Guia Misterioso: À frente, há uma caverna. Antiga, profunda e silenciosa… [wait=1]  
+Guia Misterioso: Muitos a evitam por medo, mas é lá que repousa o próximo fragmento do saber.  
+Player: E o que vou encontrar dentro dela?  
+Guia Misterioso: Perguntas que exigem mais que força… exigem raciocínio e clareza. [wait=1.2]  
+Player: Então é hora de entrar na caverna…  
+Guia Misterioso: Exato. [wait=0.8] É lá que o verdadeiro aprendizado começa.  
+
+=> END

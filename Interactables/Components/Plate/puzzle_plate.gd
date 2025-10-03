@@ -76,5 +76,8 @@ func solvePlate(order: Array) -> bool:
 	GameManager.print("✅ Ordem correta da lista!")
 	
 	_unlock_labyrinth_book()
+	
+	ProgressManager.complete_stage("plates")
+	ProgressManager.unlock_stage("maze")
 
 	return true

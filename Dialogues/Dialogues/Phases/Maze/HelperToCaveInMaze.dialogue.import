@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bgysnkojxtx0o"
+path="res://.godot/imported/HelperToCaveInMaze.dialogue-40d220a2683134c002be1ea872564c0e.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Maze/HelperToCaveInMaze.dialogue"
+dest_files=["res://.godot/imported/HelperToCaveInMaze.dialogue-40d220a2683134c002be1ea872564c0e.tres"]
+
+[params]
+
+defaults=true

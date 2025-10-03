@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://ce67ws4w3v8n8"
+path="res://.godot/imported/Maze.dialogue-f92aa0c0bd7f54de379d47a65f11e66b.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Maze/Maze.dialogue"
+dest_files=["res://.godot/imported/Maze.dialogue-f92aa0c0bd7f54de379d47a65f11e66b.tres"]
+
+[params]
+
+defaults=true

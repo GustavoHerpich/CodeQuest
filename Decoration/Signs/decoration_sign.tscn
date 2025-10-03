@@ -5,7 +5,7 @@
 
 [node name="DecorationSign" instance=ExtResource("1_c61l6")]
 script = ExtResource("2_c61l6")
-texture_list = Array[String](["res://Decoration/Signs/16.png", "res://Decoration/Signs/17.png", "res://Decoration/Signs/18.png"])
+texture_list = Array[String](["res://Assets/Resources/Decorations/Plates/Signs/16.png", "res://Assets/Resources/Decorations/Plates/Signs/17.png", "res://Assets/Resources/Decorations/Plates/Signs/18.png"])
 
 [node name="Texture1" parent="." index="0"]
 position = Vector2(0, -64)

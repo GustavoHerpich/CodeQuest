@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://btu6x6wtk4ix0"
+path="res://.godot/imported/Treasure.dialogue-e57260336dd7d2150bfe245213645c00.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Cave/Treasure.dialogue"
+dest_files=["res://.godot/imported/Treasure.dialogue-e57260336dd7d2150bfe245213645c00.tres"]
+
+[params]
+
+defaults=true

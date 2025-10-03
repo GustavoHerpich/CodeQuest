@@ -6,7 +6,9 @@
 extends CanvasLayer
 
 @onready var sub_viewport: SubViewport = $UI/MarginContainer/SubViewportContainer/SubViewport
-@onready var mini_map_camera: Camera2D = sub_viewport.get_node("MiniMapCamera")
+
+@export_node_path("Camera2D") var camera_path: NodePath
+var mini_map_camera: Camera2D
 
 var player_node: Node2D
 
@@ -14,8 +16,16 @@ var player_node: Node2D
 ## Sincroniza o SubViewport com o mesmo mundo 2D da cena principal.
 func _ready() -> void:
 	sub_viewport.world_2d = get_viewport().world_2d
+	
+	if camera_path and has_node(camera_path):
+		mini_map_camera = get_node(camera_path)
 
 ## Atualiza a posição da câmera do minimapa a cada frame de física,
 ## garantindo que ela siga a posição global do jogador.
 func _physics_process(_delta: float) -> void:
-	mini_map_camera.global_position = player_node.global_position
+	if player_node and mini_map_camera:
+		mini_map_camera.global_position = player_node.global_position
+	
+## Setter público para o jogador
+func set_player(player: Node2D) -> void:
+	player_node = player

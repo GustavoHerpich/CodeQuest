@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctvh3wa4c2t2h"
+path="res://.godot/imported/CHH.wav-e64eaf6767fd70f7bf207d532f7ee05c.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Notes/High/CHH.wav"
+dest_files=["res://.godot/imported/CHH.wav-e64eaf6767fd70f7bf207d532f7ee05c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

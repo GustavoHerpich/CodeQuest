@@ -17,7 +17,7 @@ var maze: Array = []
 var movement_queue: Array[Vector2i] = []
 var is_moving: bool = false
 
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
+@onready var maze_path: TileMapLayer = $MazePath
 @onready var game_object_register := GameObject.new()
 var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
@@ -67,7 +67,7 @@ func _shuffle_array(array_to_shuffle: Array) -> void:
 
 ## Cria a representação visual do labirinto usando TileMapLayer
 func _build_visual_maze() -> void:
-	tile_map_layer.clear()
+	maze_path.clear()
 
 	var visual_cells: Array = []
 	for y in range(size.y):
@@ -76,7 +76,7 @@ func _build_visual_maze() -> void:
 			visual_cells.append([Vector2i(x, y), tile_type])
 
 	for cell_data in visual_cells:
-		tile_map_layer.set_cell(cell_data[0], cell_data[1], Vector2i(0, 0))
+		maze_path.set_cell(cell_data[0], cell_data[1], Vector2i(0, 0))
 
 # ----------------------------
 # Animações / Efeitos auxiliares
@@ -93,17 +93,17 @@ func _process_movement_queue() -> void:
 	var movement_offset: Vector2 = Vector2(movement_offset_vec.x, movement_offset_vec.y) * 64
 
 	var tween := get_tree().create_tween()
-	tween.tween_property(tile_map_layer, "position", tile_map_layer.position + movement_offset, 0.5)
+	tween.tween_property(maze_path, "position", maze_path.position + movement_offset, 0.5)
 	tween.finished.connect(_process_movement_queue)
 
 ## Alterna visual de uma célula (walkable / blocked) com efeito de fade
 func _toggle_cell_visual(x: int, y: int) -> void:
 	var tile_type := 0 if maze[y][x] == WALKABLE else 1
-	tile_map_layer.set_cell(Vector2i(x, y), tile_type, Vector2i(0, 0))
+	maze_path.set_cell(Vector2i(x, y), tile_type, Vector2i(0, 0))
 
 	var tween := get_tree().create_tween()
-	tile_map_layer.modulate = Color(1, 1, 1, 0)
-	tween.tween_property(tile_map_layer, "modulate", Color(1, 1, 1, 1), 0.3)
+	maze_path.modulate = Color(1, 1, 1, 0)
+	tween.tween_property(maze_path, "modulate", Color(1, 1, 1, 1), 0.3)
 
 # ----------------------------
 # DFS para verificação de caminho
@@ -173,6 +173,9 @@ func solveMaze() -> void:
 	if path_exists:
 		GameManager.print("✅ Existe um caminho!")
 		emit_signal("puzzle_solved")
+		
+		ProgressManager.complete_stage("maze")
+		ProgressManager.unlock_stage("end")
 		
 		BookManager.add_book_page(
 			"fim_da_jornada",

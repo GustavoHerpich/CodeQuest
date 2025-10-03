@@ -24,7 +24,7 @@ func _on_play_pressed() -> void:
 	tween.tween_property(menu_music, "volume_db", -30, 2.0)
 	await tween.finished
 	menu_music.stop()
-	SceneSwitcher.switch_scene("res://Management/game_level.tscn")
+	SceneSwitcher.switch_scene("res://Management/GameLevel/game_level.tscn")
 
 func _on_settings_pressed() -> void:
 	main_buttons.visible = false

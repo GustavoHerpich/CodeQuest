@@ -1,0 +1,13 @@
+~ start
+
+Guia Misterioso: Vejo que atravessaste a ilha e desvendaste os segredos das placas… [wait=1] estás cada vez mais próximo do fim da jornada.  
+Player: O fim… então ainda há mais à frente?  
+Guia Misterioso: Sim. [wait=0.8] Além das areias, encontrarás terras firmes de chão batido, onde guardas e reinos ergueram suas fortalezas.  
+Player: Guardas e reinos? Isso soa perigoso…  
+Guia Misterioso: Todo conhecimento verdadeiro é protegido… [wait=1] e lá, o desafio final toma forma: um labirinto antigo, construído para testar tanto a mente quanto a coragem.  
+Player: Um labirinto… e se eu me perder?  
+Guia Misterioso: Não temas. Cada encruzilhada traz um ensinamento, e cada escolha errada é apenas um reflexo daquilo que ainda precisas compreender. [wait=1.2]  
+Player: Então é lá que devo ir… para enfrentar o último enigma.  
+Guia Misterioso: Exatamente. [wait=0.8] O labirinto guarda o desfecho da tua busca — e apenas quem percorre suas sombras encontra a verdadeira saída.  
+
+=> END

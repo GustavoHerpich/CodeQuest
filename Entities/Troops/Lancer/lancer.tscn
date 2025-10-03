@@ -1,8 +1,8 @@
 [gd_scene load_steps=24 format=3 uid="uid://hnupo1yes88x"]
 
 [ext_resource type="PackedScene" uid="uid://c3hrrwoo0g47i" path="res://Entities/wander_npc.tscn" id="1_uti7a"]
-[ext_resource type="Texture2D" uid="uid://dcimiexogo778" path="res://Assets/Entities/Lancer_Idle.png" id="2_6adjo"]
-[ext_resource type="Texture2D" uid="uid://c8g2taao0g5sb" path="res://Assets/Entities/Lancer_Run.png" id="3_6adjo"]
+[ext_resource type="Texture2D" uid="uid://dcimiexogo778" path="res://Assets/Resources/Characters/Entities/Lancer_Idle.png" id="2_6adjo"]
+[ext_resource type="Texture2D" uid="uid://c8g2taao0g5sb" path="res://Assets/Resources/Characters/Entities/Lancer_Run.png" id="3_6adjo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uti7a"]
 atlas = ExtResource("3_6adjo")

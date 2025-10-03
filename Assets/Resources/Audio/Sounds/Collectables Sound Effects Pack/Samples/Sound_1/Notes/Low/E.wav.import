@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bld370ph4pw1c"
+path="res://.godot/imported/E.wav-91bc2cdfcb1a6d1c2e2ba2145bf6e0e8.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_1/Notes/Low/E.wav"
+dest_files=["res://.godot/imported/E.wav-91bc2cdfcb1a6d1c2e2ba2145bf6e0e8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

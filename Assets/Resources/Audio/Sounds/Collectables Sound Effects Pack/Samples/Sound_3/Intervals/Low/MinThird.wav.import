@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ppxjk15ousd1"
+path="res://.godot/imported/MinThird.wav-1594bc65ac814732e6e62f007deebd9a.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_3/Intervals/Low/MinThird.wav"
+dest_files=["res://.godot/imported/MinThird.wav-1594bc65ac814732e6e62f007deebd9a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

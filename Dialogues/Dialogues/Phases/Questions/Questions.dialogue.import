@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://dx0hxwjqek27j"
+path="res://.godot/imported/Questions.dialogue-24d9b09576776340f1a4af5aff324a87.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Questions/Questions.dialogue"
+dest_files=["res://.godot/imported/Questions.dialogue-24d9b09576776340f1a4af5aff324a87.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://buw50fcue0twq"
+path="res://.godot/imported/Door.dialogue-247414b0ab6ee319bf0783d971dea444.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Cave/Door.dialogue"
+dest_files=["res://.godot/imported/Door.dialogue-247414b0ab6ee319bf0783d971dea444.tres"]
+
+[params]
+
+defaults=true

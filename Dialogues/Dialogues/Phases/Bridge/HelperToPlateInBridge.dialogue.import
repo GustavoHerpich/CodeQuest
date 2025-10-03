@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bpqgdvf1rxt7l"
+path="res://.godot/imported/HelperToPlateInBridge.dialogue-59ca1c3b09fd4d511e6eaff9ca651071.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Bridge/HelperToPlateInBridge.dialogue"
+dest_files=["res://.godot/imported/HelperToPlateInBridge.dialogue-59ca1c3b09fd4d511e6eaff9ca651071.tres"]
+
+[params]
+
+defaults=true

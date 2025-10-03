@@ -1,0 +1,14 @@
+~ start
+
+Guardião das Areias: Viajante… [wait=0.8] sinto teus passos inquietos sobre este terreno antigo.
+Player: Quem está me observando?
+Guardião das Areias: Sou aquele que guarda os segredos do vento e da areia. [wait=1]
+Player: Segredos? Que devo fazer aqui?
+Guardião das Areias: Antes de avançar, observa o solo… [wait=1.2] as marcas que o tempo deixou são pistas silenciosas.
+Guardião das Areias: Placas antigas repousam à tua frente, esperando serem despertadas pela ordem correta. [wait=1]
+Player: Ordem correta? Mas como saberei qual é?
+Guardião das Areias: Presta atenção aos sinais, viajante… [wait=0.8] cada movimento revela o fluxo do antigo equilíbrio.
+Guardião das Areias: Somente aqueles que entendem o ritmo da areia e respeitam seus padrões poderão avançar sem tropeçar. [wait=1.2]
+Guardião das Areias: Lembra-te: a paciência e a observação são tão poderosas quanto qualquer comando em teu livro. [wait=1]
+
+=> END

@@ -1,10 +1,11 @@
-[gd_scene load_steps=30 format=3 uid="uid://2e0jpvlhe8eh"]
+[gd_scene load_steps=31 format=3 uid="uid://2e0jpvlhe8eh"]
 
 [ext_resource type="Script" uid="uid://de83vucoc8jya" path="res://Entities/Animals/Sheep/sheep.gd" id="1_mjqlg"]
-[ext_resource type="Texture2D" uid="uid://84lap1vvvhm6" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Grass.png" id="2_vuor1"]
-[ext_resource type="Texture2D" uid="uid://c6pawses7ms5a" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Idle.png" id="3_k5e0y"]
+[ext_resource type="Texture2D" uid="uid://84lap1vvvhm6" path="res://Assets/Resources/Characters/Sheep/Sheep_Grass.png" id="2_vuor1"]
+[ext_resource type="Texture2D" uid="uid://c6pawses7ms5a" path="res://Assets/Resources/Characters/Sheep/Sheep_Idle.png" id="3_k5e0y"]
 [ext_resource type="PackedScene" uid="uid://bpnohd4y6ftiq" path="res://Decoration/Effects/dust.tscn" id="3_vuor1"]
-[ext_resource type="Texture2D" uid="uid://qoogbx72ai5m" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Sheep/Sheep_Move.png" id="4_28kal"]
+[ext_resource type="Texture2D" uid="uid://qoogbx72ai5m" path="res://Assets/Resources/Characters/Sheep/Sheep_Move.png" id="4_28kal"]
+[ext_resource type="AudioStream" uid="uid://c4vkkpmhihbwd" path="res://Assets/Resources/Audio/Sounds/Sheep.mp3" id="6_gxs80"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g6kl3"]
 atlas = ExtResource("2_vuor1")
@@ -198,7 +199,7 @@ dust = NodePath("Dust")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kcu8p")
-animation = &"eat"
+animation = &"walk"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 show_behind_parent = true
@@ -214,6 +215,9 @@ one_shot = true
 
 [node name="Dust" parent="." instance=ExtResource("3_vuor1")]
 amount = 8
+
+[node name="SheepAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gxs80")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_animation_finished"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

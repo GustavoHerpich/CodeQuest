@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cg35why84vxhp"
+path="res://.godot/imported/WarriorNPC1Dialogue.dialogue-4ec1b23a567de5ec3e9843e2c738fc5f.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/NPC's/WarriorNPC1Dialogue.dialogue"
+dest_files=["res://.godot/imported/WarriorNPC1Dialogue.dialogue-4ec1b23a567de5ec3e9843e2c738fc5f.tres"]
+
+[params]
+
+defaults=true

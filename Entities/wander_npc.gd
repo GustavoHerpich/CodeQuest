@@ -34,10 +34,9 @@ func _physics_process(delta: float) -> void:
 func _move() -> void:
 	if not can_move():
 		velocity = Vector2.ZERO
-		move_and_slide()
-		return
+	else:
+		velocity = direction * wander_speed
 		
-	velocity = direction * wander_speed
 	move_and_slide()
 
 ## Atualiza animações do NPC com base na movimentação.

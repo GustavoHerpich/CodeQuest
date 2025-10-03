@@ -47,15 +47,17 @@ func _attack() -> void:
 	if is_busy(): return
 	
 	if Input.is_action_just_pressed(GameConstants.INPUT_LEFT_ATTACK) and can_attack:
-		can_attack = false
-		attack_animation_name = left_attack_name
-		hammer_attack_sound.play()
+		_start_attack(left_attack_name, hammer_attack_sound)
 
-	elif Input.is_action_just_pressed(GameConstants.INPUT_RIGHT_ATTACK) and can_attack:
-		can_attack = false
-		attack_animation_name = right_attack_name
-		axe_attack_sound.play()
+	if Input.is_action_just_pressed(GameConstants.INPUT_RIGHT_ATTACK) and can_attack:
+		_start_attack(right_attack_name, axe_attack_sound)
 
+## Método para aplicar os efeitos do ataque corpo a corpo
+func _start_attack(anim_name: String, sound: AudioStreamPlayer2D) -> void:
+	can_attack = false
+	attack_animation_name = anim_name
+	if sound: sound.play()
+	
 ## Atualiza animações do personagem com base em ataques e movimentação.
 func _animate() -> void:
 	if is_busy():
@@ -70,15 +72,11 @@ func _animate() -> void:
 		sprite2D.flip_h = true
 		attack_area_collision.position.x = -48
 	
-	if can_attack == false:
+	if not can_attack:
 		animation.play(attack_animation_name)
 		return
 	
-	if velocity:
-		animation.play(GameConstants.ANIM_RUN)
-		return
-	
-	animation.play(GameConstants.ANIM_IDLE)
+	super._animate()
 
 ## Controla a emissão de partículas (poeira) durante a movimentação.
 func _check_particles() -> void:
@@ -99,14 +97,14 @@ func _on_actionable_finder_area_entered(_area: Area2D) -> void:
 	if actionables.size() > 0:
 		var target = actionables[0]
 		if target.has_method("action") and target.auto_start:
-			if not is_in_dialogue and not target.used:
-				enter_dialogue_mode()
-				target.action()
+			if not is_in_dialogue:
+				if target.action():
+					enter_dialogue_mode()
 
 ## Evento disparado quando a área de ataque atinge um inimigo/objeto.
-func _on_attack_area_body_entered(_body: Node2D) -> void:
-	if _body is PshysicsTree or _body is Sheep:
-		_body.update_health([min_attack, max_attack])
+func _on_attack_area_body_entered(body: Node2D) -> void:
+	if body is PshysicsTree or body is Sheep:
+		body.update_health([min_attack, max_attack])
 
 # ----------------------------
 # Métodos Públicos
@@ -173,10 +171,8 @@ func update_collision_layer_mask(type: String) -> void:
 ## Atualiza o estado de "montanha" do personagem e ajusta a camada da ponte.
 func update_montain_state(state: bool) -> void:
 	is_in_montain = state
-	if is_in_montain:
-		bridge.z_index = 0
-	else:
-		bridge.z_index = 1
+	if bridge:
+		bridge.z_index = 0 if is_in_montain else 1
 
 ## Retorna se o personagem está na montanha.
 func get_is_in_mountain() -> bool:

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://h3in3htuaeah"
+path="res://.godot/imported/TheFinal.dialogue-7966dc4c4d34b24e24490802f2d9dae9.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Final/TheFinal.dialogue"
+dest_files=["res://.godot/imported/TheFinal.dialogue-7966dc4c4d34b24e24490802f2d9dae9.tres"]
+
+[params]
+
+defaults=true

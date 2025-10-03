@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://fgao6pum83kj"
+path="res://.godot/imported/OctH.wav-dc1a83e2bee2d9cb49ac7f545ed47739.sample"
+
+[deps]
+
+source_file="res://Assets/Resources/Audio/Sounds/Collectables Sound Effects Pack/Samples/Sound_2/Intervals/High/OctH.wav"
+dest_files=["res://.godot/imported/OctH.wav-dc1a83e2bee2d9cb49ac7f545ed47739.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

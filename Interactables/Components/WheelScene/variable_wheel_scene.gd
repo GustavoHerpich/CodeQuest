@@ -161,6 +161,7 @@ func show_final_feedback():
 		return
 
 	already_interacted = true
+	ProgressManager.complete_stage("questions")
 	BookManager.add_book_page(
 		"funcoes_objetos",
 		"👤 Player",

@@ -1,18 +1,19 @@
-[gd_scene load_steps=26 format=4 uid="uid://cj48ven86xi7s"]
+[gd_scene load_steps=27 format=4 uid="uid://cj48ven86xi7s"]
 
 [ext_resource type="PackedScene" uid="uid://ci1c2td2l4op2" path="res://Decoration/Cave/elevation.tscn" id="1_ej5d6"]
 [ext_resource type="Script" uid="uid://mx6p4blokmyp" path="res://Cave/cave.gd" id="1_sak7u"]
-[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/Global Script/InteractablesManage/interactable.tscn" id="2_0ida8"]
-[ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Terrains/Tilemap_Elevation.png" id="3_420yn"]
-[ext_resource type="Script" uid="uid://ryqxkjy7lgl2" path="res://Cave/TreasureScene/treasure_layer.gd" id="3_lk6j5"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/InteractablesManage/interactable.tscn" id="2_0ida8"]
+[ext_resource type="Texture2D" uid="uid://1rqcypjqoj7o" path="res://Assets/Resources/Terrains/Grounds/Tilemap_Elevation.png" id="3_420yn"]
+[ext_resource type="Script" uid="uid://ryqxkjy7lgl2" path="res://Cave/doors_cave.gd" id="3_lk6j5"]
 [ext_resource type="PackedScene" uid="uid://c4gkei8yt75pn" path="res://Cave/tourch.tscn" id="4_pohhc"]
-[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Components/Terminal/terminal.tscn" id="5_0ulg3"]
+[ext_resource type="PackedScene" uid="uid://bahx37arsxye5" path="res://Interactables/Terminal/terminal.tscn" id="5_0ulg3"]
 [ext_resource type="PackedScene" uid="uid://cqm312lqswmcj" path="res://Cave/right_door.tscn" id="5_rgstr"]
 [ext_resource type="Script" uid="uid://d1v747dw6ckqe" path="res://Cave/TreasureScene/enter_treasure.gd" id="6_rgstr"]
-[ext_resource type="AudioStream" uid="uid://5wyogobj7iub" path="res://Assets/Sounds/CaveMusic.ogg" id="10_06e0p"]
-[ext_resource type="PackedScene" uid="uid://iqng6n74dui3" path="res://Dialogues/actionable.tscn" id="10_8syav"]
-[ext_resource type="Resource" uid="uid://buw50fcue0twq" path="res://Dialogues/Dialogues/SecondDialogue.dialogue" id="11_3w21a"]
-[ext_resource type="AudioStream" uid="uid://bc168hfciik1m" path="res://Assets/Sounds/DoorOpen.mp3" id="11_77t66"]
+[ext_resource type="AudioStream" uid="uid://5wyogobj7iub" path="res://Assets/Resources/Audio/Sounds/CaveMusic.ogg" id="10_06e0p"]
+[ext_resource type="PackedScene" uid="uid://iqng6n74dui3" path="res://Interactables/Dialogues/actionable.tscn" id="10_8syav"]
+[ext_resource type="Resource" uid="uid://ygc3nxfrn8av" path="res://Dialogues/Dialogues/Phases/Cave/HelperToPlatesInCave.dialogue" id="10_aw07x"]
+[ext_resource type="Resource" uid="uid://buw50fcue0twq" path="res://Dialogues/Dialogues/Phases/Cave/Door.dialogue" id="11_3w21a"]
+[ext_resource type="AudioStream" uid="uid://bc168hfciik1m" path="res://Assets/Resources/Audio/Sounds/DoorOpen.mp3" id="11_77t66"]
 
 [sub_resource type="Gradient" id="Gradient_sak7u"]
 offsets = PackedFloat32Array(0.31, 1)
@@ -197,7 +198,13 @@ position = Vector2(-16611, 40)
 position = Vector2(165, 565)
 
 [node name="Actionable" parent="Interactables/Terminal" instance=ExtResource("10_8syav")]
-dialogue_resource = ExtResource("11_3w21a")
+phase_dialogues = Array[Dictionary]([{
+"dialogue_resource": ExtResource("11_3w21a"),
+"phase": "cave"
+}, {
+"dialogue_resource": ExtResource("10_aw07x"),
+"phase": "plates"
+}])
 
 [node name="Collision" type="CollisionShape2D" parent="Interactables/Terminal/Actionable"]
 position = Vector2(16, -45)

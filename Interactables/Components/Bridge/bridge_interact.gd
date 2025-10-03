@@ -7,6 +7,7 @@ var is_moving := false
 @onready var game_object_register = GameObject.new()
 @onready var shadow_interact: TileMapLayer = $"../../TerrainManager/ShadowInteract"
 @onready var pawn: BaseCharacter = $"../../Decorations/Pawn"
+@onready var bridge_move: AudioStreamPlayer = $BridgeMove
 
 ## Private method
 
@@ -45,6 +46,7 @@ func _process_movement_queue() -> void:
 			is_moving = false
 			return
 	
+	bridge_move.play()
 	var movement_offset = target_position * 64
 	var tween := get_tree().create_tween()
 	tween.tween_property(self, "position", self.position + movement_offset, 0.5)

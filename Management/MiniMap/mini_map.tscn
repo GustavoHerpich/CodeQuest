@@ -4,6 +4,7 @@
 
 [node name="MiniMap" type="CanvasLayer"]
 script = ExtResource("1_8wnkd")
+camera_path = NodePath("UI/MarginContainer/SubViewportContainer/SubViewport/Camera")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -37,7 +38,7 @@ handle_input_locally = false
 size = Vector2i(190, 190)
 render_target_update_mode = 4
 
-[node name="MiniMapCamera" type="Camera2D" parent="UI/MarginContainer/SubViewportContainer/SubViewport"]
+[node name="Camera" type="Camera2D" parent="UI/MarginContainer/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.2, 0.2)
 position_smoothing_enabled = true
 position_smoothing_speed = 12.0

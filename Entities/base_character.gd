@@ -16,25 +16,26 @@ func _physics_process(_delta):
 	_animate()
 
 ## Atualiza a movimentação do personagem.
-func _move():
+func _move() -> void:
 	if not can_move():
 		velocity = Vector2.ZERO
-		move_and_slide()
-		return
-
-	var direction: Vector2 = Input.get_vector(
-		GameConstants.INPUT_MOVE_LEFT,
-		GameConstants.INPUT_MOVE_RIGHT,
-		GameConstants.INPUT_MOVE_UP,
-		GameConstants.INPUT_MOVE_DOWN
-	)
-
-	velocity = direction * move_speed
+	else:
+		var direction: Vector2 = Input.get_vector(
+			GameConstants.INPUT_MOVE_LEFT,
+			GameConstants.INPUT_MOVE_RIGHT,
+			GameConstants.INPUT_MOVE_UP,
+			GameConstants.INPUT_MOVE_DOWN
+		)
+		velocity = direction * move_speed
+	
 	move_and_slide()
 
 ## Retorna a animação atual com base na velocidade do personagem.
 func _animate():
-	return GameConstants.ANIM_RUN if velocity.length() > 0.0 else GameConstants.ANIM_IDLE
+	if velocity.length() > 0.0:
+		animation.play(GameConstants.ANIM_RUN)
+	else:
+		animation.play(GameConstants.ANIM_IDLE)
 
 ## Retorna `true` se o personagem pode se mover.
 func can_move() -> bool:

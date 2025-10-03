@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://bl6tesjk1afey"
+path="res://.godot/imported/HelperToCaveInBridge.dialogue-e5e62e335498b31a7aef08ba4167bc8d.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Bridge/HelperToCaveInBridge.dialogue"
+dest_files=["res://.godot/imported/HelperToCaveInBridge.dialogue-e5e62e335498b31a7aef08ba4167bc8d.tres"]
+
+[params]
+
+defaults=true

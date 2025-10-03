@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpnohd4y6ftiq"]
 
-[ext_resource type="Texture2D" uid="uid://d1a645r1gtlmk" path="res://Assets/Effects/dust.png" id="1_lgqts"]
+[ext_resource type="Texture2D" uid="uid://d1a645r1gtlmk" path="res://Assets/Resources/Characters/Effects/dust.png" id="1_lgqts"]
 
 [sub_resource type="Curve" id="Curve_faqhb"]
 _limits = [0.0, 2.0, 0.0, 1.0]

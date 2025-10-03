@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://wqdjcm0kmxkf"
+path="res://.godot/imported/HelperToCaveInPlates.dialogue-ddd482777f9f909fe2222d8f4b523e38.tres"
+
+[deps]
+
+source_file="res://Dialogues/Dialogues/Phases/Plates/HelperToCaveInPlates.dialogue"
+dest_files=["res://.godot/imported/HelperToCaveInPlates.dialogue-ddd482777f9f909fe2222d8f4b523e38.tres"]
+
+[params]
+
+defaults=true

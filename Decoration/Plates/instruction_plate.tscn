@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr6588hks1y2j"]
 
 [ext_resource type="Script" uid="uid://cmic7gl102rxq" path="res://Decoration/Plates/instruction_plate.gd" id="1_6oemp"]
-[ext_resource type="Texture2D" uid="uid://c2rp571a6rf3a" path="res://Assets/Resources/SignInstruction.png" id="2_1x1tf"]
-[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Fonts/alagard.ttf" id="3_1x1tf"]
+[ext_resource type="Texture2D" uid="uid://c2rp571a6rf3a" path="res://Assets/Resources/Decorations/Plates/Signs/SignInstruction.png" id="2_1x1tf"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Resources/Fonts/alagard.ttf" id="3_1x1tf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1x1tf"]
 radius = 21.0

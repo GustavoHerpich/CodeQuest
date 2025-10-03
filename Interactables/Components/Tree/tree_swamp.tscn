@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://chtgt54lk7qdx"]
 
 [ext_resource type="Script" uid="uid://brb32f1f2iqbf" path="res://Interactables/Components/Tree/tree_swamp.gd" id="1_6qd4x"]
-[ext_resource type="Texture2D" uid="uid://d0thpuponrp5j" path="res://Assets/Externals/Tiny Swords_New/Tiny Swords (Free Pack)/Decorations/Trees/Tree3.png" id="2_6qd4x"]
-[ext_resource type="Texture2D" uid="uid://cjgjnbeudnh3f" path="res://Assets/Externals/Tiny Swords/Resources/Trees/Tree.png" id="3_pnvyb"]
+[ext_resource type="Texture2D" uid="uid://d0thpuponrp5j" path="res://Assets/Resources/Decorations/Trees/Tree3.png" id="2_6qd4x"]
+[ext_resource type="Texture2D" uid="uid://cjgjnbeudnh3f" path="res://Assets/Resources/Decorations/Trees/Tree.png" id="3_pnvyb"]
 
 [sub_resource type="Animation" id="Animation_qs1au"]
 length = 0.001

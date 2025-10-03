@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://v6bmnt8scuy"]
+
+[ext_resource type="Script" uid="uid://btsx5dkj0lypl" path="res://Management/Notification/notification.gd" id="1_fvb6i"]
+[ext_resource type="FontFile" uid="uid://msapfxvvnw31" path="res://Assets/Resources/Fonts/alagard.ttf" id="2_e7c2n"]
+[ext_resource type="AudioStream" uid="uid://dt78e6be6pcqv" path="res://Assets/Resources/Audio/Sounds/GameNotification.wav" id="3_e7c2n"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7c2n"]
+bg_color = Color(0.117647, 0.117647, 0.117647, 0.27451)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 1)
+border_blend = true
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_size = 4
+
+[sub_resource type="Animation" id="Animation_6fhu1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(20, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_v6wjc"]
+resource_name = "hide"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 250), Vector2(800, 600)]
+}
+
+[sub_resource type="Animation" id="Animation_wu4p2"]
+resource_name = "show"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(800, 600), Vector2(800, 250)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cvpwh"]
+_data = {
+&"RESET": SubResource("Animation_6fhu1"),
+&"hide": SubResource("Animation_v6wjc"),
+&"show": SubResource("Animation_wu4p2")
+}
+
+[node name="Notification" type="CanvasLayer"]
+layer = 10
+visible = false
+script = ExtResource("1_fvb6i")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(300, 150)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -352.0
+offset_top = -48.0
+offset_right = -52.0
+offset_bottom = 102.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e7c2n")
+
+[node name="Label" type="Label" parent="PanelContainer"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("2_e7c2n")
+theme_override_font_sizes/font_size = 18
+text = "TESTE"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cvpwh")
+}
+speed_scale = 0.5
+
+[node name="NotifictionSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_e7c2n")

@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b72b26bopx4f7" path="res://Entities/base_character.tscn" id="1_o6666"]
 [ext_resource type="Script" uid="uid://e5sldqf56t2b" path="res://Entities/Troops/Goblins/goblin.gd" id="2_66pte"]
 [ext_resource type="Texture2D" uid="uid://dvaiaxrik5fin" path="res://Assets/Externals/Tiny Swords/Factions/Goblins/Troops/Torch/Blue/Torch_Blue.png" id="2_gulpl"]
-[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/Global Script/InteractablesManage/interactable.tscn" id="4_66pte"]
+[ext_resource type="PackedScene" uid="uid://co4wo17djqold" path="res://Management/InteractablesManage/interactable.tscn" id="4_66pte"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_66pte"]
 radius = 4.0
